@@ -1,0 +1,96 @@
+﻿	body {
+	margin: 0px auto; 
+	width: 1248px;
+	border: 1px #4A708B solid;
+	position: relative;
+	font-family: Century Gothic;
+}
+
+	header, footer {
+	width: 1240px;
+	background-image: url('boston_desktop_background_339751.jpg');
+	padding: 8px 4px;
+	clear: both;
+}
+	
+	header {
+	height: 580px; 
+	border-bottom: 1px #4A708B groove;
+}
+
+	footer {
+	height: 25px;
+	border-top: 2px #4A708B solid;
+	clear: both;
+}
+	aside {
+	float: left; 
+	width: 140px; 
+	padding: 0px 15px;
+	margin: 0px 4px 0px 0px;
+	display: inline; 
+	border-right: 1px #0D4F8B dashed;
+}
+	section{
+	//float: left;
+	//width: 1200px;
+}
+	aside, section{
+	margin-bottom: 8px;
+	
+}
+
+	nav {
+	float: none;
+	height: 28px;
+	border-bottom: 1px #2F4F4F dotted;
+	font-size: medium;
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+	padding-left: 280px;
+	padding-top: 7px;
+	width: 959px;
+    position: fixed;
+    top: 0px;
+}
+	nav ul {
+	margin: 0px;
+	padding: 5px;
+}
+
+	nav ul li {
+ 	list-style-type: none;
+ 	display: inline-block;
+ 	margin: 0px;
+ 	border: 1px #2F4F4F solid;
+
+}
+
+	nav li a {
+	color: black;
+	font-weight:bold;
+	font-size: 17px;
+	//background-image: url('headercloudpix1.png');
+    transition: 0.4s;   
+    display: block;
+	float: left;	
+	padding: 1px 25px;
+	text-decoration: none;
+	background-color: #ffffff;
+	opacity:0.7;
+
+    }
+
+	nav li a:hover {
+	color: white;
+	background-color: white;
+    text-shadow: -1px 1px 5px black, 1px -1px 5px black;
+    font-family: Century Gothic;
+	  
+    }
+    
+    a:link {
+    color: black;
+}
+
+
