@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Signup Page</title>
+	<link href="../402/402_WEBSITE/images/avatar.png" rel="shortcut icon" type="image/png">
+	<link href="styleCoreHome.css" rel="stylesheet" type="text/css">
+	<link href="styleDesignHome.css" rel="stylesheet" type="text/css">
+	<script src="javaScriptHome.js" type="text/javascript"></script>
+	<style type="text/css">
+	</style>
+	
+	<script type="text/javascript">
+	function validatePassword() {
+    var x = userInfo.pw.value;
+    var y = userInfo.confirmpw.value;
+    if (x != y) {
+        alert("Please Reconfirm Password");
+        return false;
+    }
+}
+	</script>
+	
+</head>
+<body>
+	<header>
+	</header>
+	<nav>
+		<ul>
+		<li><a href="TVPage_1.html">PAGE ONE (Test)</a></li>
+		<li><a href="template.html">PAGE NAME</a></li>
+		<li><a href="template.html">PAGE NAME</a></li>
+		<li><a href="template.html">PAGE NAME</a></li>
+		</ul>
+	</nav>
+	
+	<!-- <aside>
+	<img src="http://s10.postimg.org/zck4xlgk5/Bentley_University_Logo.jpg" class="_siz128">
+	<ul style="list-style-type:none">
+		<li></li>
+ 		<li>text list</li>
+ 		<li>text</li>
+ 		<li>text</li>
+ 		<li>text</li>
+ 		<li>text</li>
+ 		<li>text</li>
+ 		<li>text</li>
+ 		<li>text</li>
+		</ul>  
+			</aside> -->
+	
+	<section>
+	<form id="userInfo" action="signup_get.php" method="post">
+			<fieldset>
+				<legend>Sign Up</legend>
+				<label for="username">User Name</label><br>
+				<input type="text" id="username" value= "" required><br>
+				<label for="email">Email Address</label><br>
+				<input type="text" id="email" value="" required ><br>
+				<label for="pw">Password</label><br>
+				<input type="password" id="pw" value="" required><br>
+				<label for="confirmpw">Confirm Password</label><br>
+				<input type="password" id="confirmpw" value="" required><br>
+				<input type="submit" onclick="return validatePassword();">
+
+				
+
+				
+
+
+
+			</fieldset>
+	</form>
+	</section>
+	
+	<footer>
+	<font size="2" color="black"><a href="url">App Name</a>|<a href="url">By Team Vulcan</a>| CS460 | Bentley University | Spring 2015 |</font>
+	</footer>
+</body>
+</html>
