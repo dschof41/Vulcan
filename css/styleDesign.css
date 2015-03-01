@@ -1,6 +1,6 @@
 ﻿aside {
 	padding-top: 5px;
-	padding-left: 4px;
+	padding-left: 5px;
 }
 #_name {
 	position: absolute;
@@ -12,48 +12,51 @@
 #_firstname {
 	position: relative;
 	font-family: Century Gothic;
-	font-size: 58pt;
-	top: 150px;
-	left: 370px;
+	font-size: 50pt;
+	top: 80px;
+	left: 50px;
 	float: left;
 	color: white;
 	font-weight: bold;
 	text-shadow: -1px 1px 10px black, 1px -1px 10px black;
-}
+}}
+/*
 #_headersubtext {
-	font-size: 20pt;
-	//font-variant: small-caps;
+	font-size: 25pt;
+	font-variant: small-caps;
 	position: relative;
-	left: 420px;
-	top: 200px;
+	left: 200px;
+	top: 320px;
 	float: left;
 	z-index: 1;
 	color: white;	
 	font-family: Century Gothic;
 	font-weight: bold;
-	text-shadow: -1px 1px 10px black, 1px -1px 10px black;
+	text-shadow: 5px 5px 5px #104E8B;
 }
-#_headerlogo {
-	position: relative;
-	 top: -28px;
-   left: -820px;	
-   float: right;
-	z-index: 1;
-	opacity: 10;
-	}
 
 #_lastname {
 	font-size: 20pt;
 	font-variant: small-caps;
 	position: relative;
-	left: 370px;
-	top: 190px;
+	left: 10px;
+	text-align: left
+	top: 150px;
 	float: left;
 	z-index: 1;
-	color: white;	
+	color: black;	
 	font-family: Century Gothic;
-{	
 }	
+*/
+#_headerlogo {
+	position: relative;
+	top: 80px;
+   left: 50px;	
+   float: left;
+	z-index: 1;
+	opacity: 10;
+	}
+
 #_shortname {
 	font-size: x-small;
 	text-transform: lowercase;
@@ -156,4 +159,5 @@
 ._sizdim {
 	opacity: .3;
 }
-s
+
+

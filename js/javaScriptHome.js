@@ -8,10 +8,10 @@ window.onload = function () {
 	//html += "<div id='_avatar64'><img src='"+AVATAR+".png' class='_siz64'></div>";
 	html += "<div id='_name'>";
 	html += "<div id='_firstname'>TEAM VULCAN</div>";
-	html += "<div id='_lastname'>[CS460]</div>";
-	html += "<div id='_headersubtext'>COMING SOON</div>";
+	//html += "<div id='_lastname'>[CS460]</div>";
+	html += "<div id='_headersubtext'>Description Description Description <br> ABCabc ABCabc ABCabc ABC</div>";
 	
-	html += "<div id='_headerlogo'><img src='http://s15.postimg.org/4bnr3thon/Bentley_University_Logo.jpg'/> </div>";
+	html += "<div id='_headerlogo'><a href='http://philip.bentley.edu/LU_HUAN/TVHome.html'><img src='http://s15.postimg.org/4bnr3thon/Bentley_University_Logo.jpg'/> </div>";
 
 	//html += "<div id='_shortname'>JDRobertson</div>";
 	html += "</div>";

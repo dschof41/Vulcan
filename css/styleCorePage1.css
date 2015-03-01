@@ -1,21 +1,20 @@
 ﻿	body {
 	margin: 0px auto; 
-	width: 1280px;
+	width: 1275px;
 	border: 1px #4A708B solid;
 	position: relative;
 	font-family: Century Gothic;
 }
 
 	header, footer {
-	width: 1272px;
-	//background-image: url("http://s27.postimg.org/4qunszf4z/boston_desktop_background_339751.jpg");
-	background-image: url("http://s12.postimg.org/dyoghju6j/default_hero_hires.jpg");
+	width: 1267px;
+	background-image: url("http://s1.postimg.org/ogfmwwq67/bostonskylinepic1.png");
 	padding: 8px 4px;
 	clear: both;
 }
 	
 	header {
-	height: 480px; 
+	height: 280px; 
 	border-bottom: 1px #4A708B groove;
 }
 
@@ -23,10 +22,11 @@
 	height: 25px;
 	border-top: 1px #4A708B solid;
 	clear: both;
+	
 }
 	aside {
 	float: left; 
-	width: 140px; 
+	width: 120px; 
 	padding: 0px 15px;
 	margin: 0px 4px 0px 0px;
 	display: inline; 
@@ -44,13 +44,13 @@
 	nav {
 	float: none;
 	height: 28px;
-	border-bottom: 1px #2F4F4F solid;
+   	border-bottom: 1px #2F4F4F solid;
 	font-size: medium;
-	margin-bottom: 10px;	
+	margin-bottom: 10px;
 	padding-bottom: 15px;
-	padding-left: 280px;
+	padding-left: 320px;
 	padding-top: 7px;
-	width: 1000px;
+	width: 955px;
     position: fixed;
     top: 0px;
 }
@@ -64,12 +64,11 @@
  	display: inline-block;
  	margin: 0px;
  	//border: 1px #2F4F4F solid;
-
-}
+  	}
 
 	nav li a {
 	color: black;
-	font-weight: bold;
+	font-weight:bold;
 	font-size: 18px;
 	//background-image: url("http://s2.postimg.org/yoexptlth/headercloudpix1.png");
     transition: 0.2s;   
@@ -80,7 +79,6 @@
 	//background-color: #ffffff;
 	opacity:0.7;
 	text-shadow: -1px 1px 10px white, 1px -1px 10px white;
-
     }
 
 	nav li a:hover {
@@ -88,5 +86,4 @@
 	//background-color: white;
     text-shadow: -1px 1px 5px black, 1px -1px 5px black;
     font-family: Century Gothic;
-    //opacity:0.7;
-	 
+    opacity:0.7;
