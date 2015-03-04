@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 /**
  * Yelp API v2.0 code sample.
@@ -121,7 +120,7 @@ function query_api($term, $location) {
     $business_id = $response->businesses[0]->id;
     
     print sprintf(
-        "%d businesses found, querying business info for the top result \"%s\"<br>\n",         
+        "%d businesses found, querying business info for the top result \"%s\"<br>",         
         count($response->businesses),
         $business_id
     );
