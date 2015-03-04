@@ -31,8 +31,8 @@ $TOKEN_SECRET = 'qxPnc6XC5_mI1i7-QLTlHGiCdr0';
 
 
 $API_HOST = 'api.yelp.com';
-$DEFAULT_TERM = 'dinner';
-$DEFAULT_LOCATION = 'San Francisco, CA';
+$DEFAULT_TERM = 'bars';
+$DEFAULT_LOCATION = 'Waltham, MA';
 $SEARCH_LIMIT = 3;
 $SEARCH_PATH = '/v2/search/';
 $BUSINESS_PATH = '/v2/business/';
@@ -121,15 +121,15 @@ function query_api($term, $location) {
     $business_id = $response->businesses[0]->id;
     
     print sprintf(
-        "%d businesses found, querying business info for the top result \"%s\"\n\n",         
+        "%d businesses found, querying business info for the top result \"%s\"<br>\n",         
         count($response->businesses),
         $business_id
     );
     
     $response = get_business($business_id);
     
-    print sprintf("Result for business \"%s\" found:\n", $business_id);
-    print "$response\n";
+    print sprintf("Result for business \"%s\" <br> found:<br>", $business_id);
+    print "$response<br>";
 }
 
 /**
