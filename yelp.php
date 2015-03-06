@@ -117,19 +117,19 @@ function get_business($business_id) {
  */
 function query_api($term, $location) {
 	echo "<div id=business>";
-	print "<p>Query set to Bars in Waltham, only looks for 3 results and only pulls data for 1st result</p>";
+	echo "<p>Query set to '%d' in '%s', only looks for 3 results and only pulls data for 1st result</p>", $term, $location;
     $response = json_decode(search($term, $location));
     $business_id = $response->businesses[0]->id;
 
    	$bus = $response->businesses[0];
     $phone = $bus->phone;
-    $location = $bus->location->display_address;
+    $loc = $bus->location->display_address;
     $street = $location[0];
     $state = $location[1];
 
 
-    print sprintf(
-        "<p>%d businesses found, querying business info for the top result \"%s\</p><br>",
+    echo sprintf(
+        "<p>%d businesses found, querying business info for the top result \'%s'\</p>",
         count($response->businesses),
         $business_id
     );
@@ -139,12 +139,8 @@ function query_api($term, $location) {
     //print sprintf("Result for business \"%s\" <br><br> All data found:<br>", $business_id);
     //print "$response<br>";
 
-    print "<p>Practice pulling specific pieces of data:</p><p>$phone</p><p>$street</p><p>$state</p>";
+    echo "<p>Practice pulling specific pieces of data:</p><p>$phone</p><p>Street: $street</p><p>State: $state</p>";
 	echo "</div>";
-
-
-
-
 }
 
 /**
