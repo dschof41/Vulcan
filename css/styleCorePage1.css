@@ -18,11 +18,11 @@
 	border-bottom: 1px #4A708B groove;
 }
 
-	.footer, footer {
+	footer {
 	height: 25px;
 	border-top: 1px #4A708B solid;
 	clear: both;
-	background-color: #4F94CD;
+	background-color: #0D4F8B;
 	padding-bottom: 10px;
 	padding-top: 10px;
 
@@ -92,6 +92,10 @@
     font-family: Century Gothic;
     opacity:0.7;
     }
+        
+    a
+    { color: white; }
+
     
     
     
