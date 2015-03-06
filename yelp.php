@@ -117,15 +117,15 @@ function get_business($business_id) {
  */
 function query_api($term, $location) {
 	echo "<div id=business>";
-	echo "<p>Query set to '%term' in '%location', only looks for 3 results and only pulls data for 1st result</p>"
+	echo "<p>Query set to 'Bars' in 'Waltham', only looks for 3 results and only pulls data for 1st result</p>";
     $response = json_decode(search($term, $location));
     $business_id = $response->businesses[0]->id;
 
    	$bus = $response->businesses[0];
     $phone = $bus->phone;
     $loc = $bus->location->display_address;
-    $street = $location[0];
-    $state = $location[1];
+    $street = $loc[0];
+    $state = $loc[1];
 
 
     echo sprintf(
