@@ -6,9 +6,9 @@
 	font-family: Century Gothic;
 }
 
-	header, footer {
+	header{
 	width: 1267px;
-	background-image: url("http://s1.postimg.org/ogfmwwq67/bostonskylinepic1.png");
+	background-image: url("http://s30.postimg.org/yp7q00l75/snowmtskyheader1.png");
 	padding: 8px 4px;
 	clear: both;
 }
@@ -22,6 +22,10 @@
 	height: 25px;
 	border-top: 1px #4A708B solid;
 	clear: both;
+	background-color: #4F94CD;
+	padding-bottom: 10px;
+	padding-top: 10px;
+
 	
 }
 	aside {
@@ -87,3 +91,9 @@
     text-shadow: -1px 1px 5px black, 1px -1px 5px black;
     font-family: Century Gothic;
     opacity:0.7;
+    }
+    
+    
+    
+    
+  

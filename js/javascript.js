@@ -12,9 +12,9 @@ window.onload = function () {
 	//html += "<div id='_headersubtext'>COMING SOON</div>";
 	//html += "<div id='_shortname'>JDRobertson</div>";
 	
-	html += "<div id='_headerlogo'><img src='http://s10.postimg.org/zck4xlgk5/Bentley_University_Logo.jpg'/> </div>";
+	//html += "<div id='_headerlogo'><img src='http://s10.postimg.org/zck4xlgk5/Bentley_University_Logo.jpg'/> </div>";
 
-
+	
 	html += "</div>";
 	//html += "<div id='_headback'><img src='"+AVATAR+".png' class='_siz196'></div>";
 	document.getElementsByTagName("header")[0].innerHTML = html; // set header

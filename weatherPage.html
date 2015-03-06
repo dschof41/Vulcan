@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Weather</title>
+	<link href="../images/avatar.png" rel="shortcut icon" type="image/png">
+	<link href="../CS460Style/styleWeatherPage.css" rel="stylesheet" type="text/css">
+	<link href="../CS460Style/styleDesign.css" rel="stylesheet" type="text/css">
+	<script src="../CS460JavaScript/javaScript.js" type="text/javascript"></script>
+	<style type="text/css">
+	
+	
+	.centerText {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: #0D4F8B;
+    color: white;
+    float: inherit;
+    font-family: Century Gothic;
+    text-align: center;
+    padding-top: 1.2px;
+    padding-bottom: 2px;
+    border-top: 18px white solid;
+}
+	
+	
+	</style>
+	
+	<script type="text/javascript">
+	
+window.onload = function () {
+// updated by jd robertson: Fri, Jan 9, 2015
+	var html = "";
+	//html += "<div id='_avatar64'><img src='"+AVATAR+".png' class='_siz64'></div>";
+	html += "<div id='_name'>";
+	html += "<div id='_firstname'>WEATHER</div>";
+	//html += "<div id='_lastname'>[CS460]</div>";
+	//html += "<div id='_headersubtext'>COMING SOON</div>";
+	//html += "<div id='_shortname'>JDRobertson</div>";
+	
+	//html += "<div id='_headerlogo'><img src='http://s10.postimg.org/zck4xlgk5/Bentley_University_Logo.jpg'/> </div>";
+
+	
+	html += "</div>";
+	//html += "<div id='_headback'><img src='"+AVATAR+".png' class='_siz196'></div>";
+	document.getElementsByTagName("header")[0].innerHTML = html; // set header
+	html = "";
+	//html += "<span id='_avatar32'><img src='"+AVATAR+".png' class='_siz32'></span>";	
+	}
+	
+	</script>
+	
+</head>
+<body>
+	<header>
+	</header>
+	<nav>
+		<ul>
+		<li><a href="../TVHome.html">HOME</a></li>
+		<li><a href="../template.html">PAGE NAME</a></li>
+		<li><a href="../template.html">PAGE NAME</a></li>
+		<li><a href="../template.html">PAGE NAME</a></li>
+		</ul>
+	</nav>
+		
+	<section>
+		<div class="centerText">
+  <p>For your convenience, use the weather app below to plan your trip ahead.</p>
+  </div>		
+		<div style="padding-left: 270px; padding-top: 28px; padding-bottom: 25px;">
+		<iframe style="display: block;" src="http://cdnres.willyweather.com/widget/loadView.html?id=16085" 
+		width="700" height="520" frameborder="0"  scrolling="no"></iframe><a style="display: block;margin: -20px 0 0 0;position: relative;text-indent: -9999em;z-index: 1;height: 20px" href="http://www.willyweather.com/ma/suffolk-county/downtown-boston.html">Willie's Weather</a></div>
+	
+	</section>
+	
+	<footer>
+	<font size="2" color="black"> <a href="../url">App Name</a>|<a href="../url">By Team Vulcan</a>| Bentley University | CS460| Spring 2015 |</font>
+	</footer>
+</body>
+</html>

@@ -5,13 +5,68 @@
 	<meta charset="utf-8">
 	<title>Signup Page</title>
 	<link href="images/avatar.png" rel="shortcut icon" type="image/png">
-	<link href="css/styleCoreHome.css" rel="stylesheet" type="text/css">
-	<link href="css/styleDesignHome.css" rel="stylesheet" type="text/css">
-	<script src="js/javaScriptHome.js" type="text/javascript"></script>
+	<link href="css/styleCorePage1.css" rel="stylesheet" type="text/css">
+	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
+	<script src="../CS460JavaScript/javaScript.js" type="text/javascript"></script>
 	<style type="text/css">
+	
+	.centerText {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: #0D4F8B;
+    color: white;
+    float: inherit;
+    font-family: Century Gothic;
+    text-align: center;
+    padding-top: 1.2px;
+    padding-bottom: 2px;
+    border-top: 18px white solid;	
+    border-bottom: 20px white solid;
+}
+#submit
+{
+ cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+padding:5px 25px; /*add some padding to the inside of the button*/
+background:#35b128; /*the colour of the button*/
+border:1px solid #33842a; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+/*give the button a drop shadow*/
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+font-size:1.1em;
+}
+
+#submit:hover {
+	background-color :#399630; /*make the background a little darker*/
+/*reduce the drop shadow size to give a pushed button effect*/
+-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+box-shadow: 0 0 1px rgba(0,0,0, .75);
+}
+
 	</style>
 	
 	<script type="text/javascript">
+		
+	window.onload = function () {
+	// updated by jd robertson: Fri, Jan 9, 2015
+	var html = "";
+	//html += "<div id='_avatar64'><img src='"+AVATAR+".png' class='_siz64'></div>";
+	html += "<div id='_name'>";
+	html += "<div id='_firstname'>SIGN UP</div>";
+	html += "</div>";
+	document.getElementsByTagName("header")[0].innerHTML = html; // set header
+	html = "";
+	}
+
+
 	function validatePassword() {
     var x = userInfo.pw.value;
     var y = userInfo.confirmpw.value;
@@ -51,9 +106,15 @@
 			</aside> -->
 	
 	<section>
+	
+	<div class="centerText">
+  <p>Welcome to ... Create your account to get started.</p>
+  </div>		
+  
+  <div style="padding-left: 450px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
+  
 	<form id="userInfo" action="php/connect.php" method="post">
-			<fieldset>
-				<legend>Sign Up</legend>
+	
 				<label for="username">User Name</label><br>
 				<input type="text" id="username" value= "" required><br>
 				<label for="email">Email Address</label><br>
@@ -62,20 +123,13 @@
 				<input type="password" id="pw" value="" required><br>
 				<label for="confirmpw">Confirm Password</label><br>
 				<input type="password" id="confirmpw" value="" required><br>
-				<input type="submit" onclick="return validatePassword();">
-
-				
-
-				
-
-
-
-			</fieldset>
-	</form>
+				<input id="submit" type="submit" onclick="return validatePassword();">
+		</form>
+	
 	</section>
 	
 	<footer>
-	<font size="2" color="black"><a href="url">App Name</a>|<a href="url">By Team Vulcan</a>| CS460 | Bentley University | Spring 2015 |</font>
+	<font size="2" color="black"> <a href="url">App Name</a>|<a href="url">By Team Vulcan</a>| Bentley University | CS460| Spring 2015 |</font>
 	</footer>
 </body>
 </html>
