@@ -17,4 +17,4 @@ vti_cachedhasborder:BR|false
 vti_metatags:VR|HTTP-EQUIV=Content-Type text/html;\\ charset=utf-8
 vti_charset:SR|utf-8
 vti_title:SR|Test
-vti_backlinkinfo:VX|Vulcan/index.html
+vti_backlinkinfo:VX|

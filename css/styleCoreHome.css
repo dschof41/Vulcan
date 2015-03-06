@@ -6,7 +6,7 @@
 	font-family: Century Gothic;
 }
 
-	header, footer {
+	header{
 	width: 1272px;
 	//background-image: url("http://s27.postimg.org/4qunszf4z/boston_desktop_background_339751.jpg");
 	background-image: url("http://s12.postimg.org/dyoghju6j/default_hero_hires.jpg");
@@ -23,6 +23,10 @@
 	height: 25px;
 	border-top: 1px #4A708B solid;
 	clear: both;
+	background-color: #4F94CD;
+	padding-bottom: 10px;
+	padding-top: 10px;
+
 }
 	aside {
 	float: left; 
