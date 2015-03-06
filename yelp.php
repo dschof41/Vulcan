@@ -116,34 +116,31 @@ function get_business($business_id) {
  * @param    $location    The location of the business to query
  */
 function query_api($term, $location) {
-	print "Query set to Bars in Waltham, only looks for 3 results and only pulls data for 1st result<br><br>";
+	echo "<div id=business>";
+	echo "<p>Query set to 'Bars' in 'Waltham', only looks for 3 results and only pulls data for 1st result</p>";
     $response = json_decode(search($term, $location));
     $business_id = $response->businesses[0]->id;
 
    	$bus = $response->businesses[0];
     $phone = $bus->phone;
-    $location = $bus->location->display_address;
-    $street = $location[0];
-    $state = $location[1];
+    $loc = $bus->location->display_address;
+    $street = $loc[0];
+    $state = $loc[1];
 
 
-    print sprintf(
-        "%d businesses found, querying business info for the top result \"%s\"<br>",
+    echo sprintf(
+        "<p>%d businesses found, querying business info for the top result \'%s'\</p>",
         count($response->businesses),
         $business_id
     );
 
     $response = get_business($business_id);
 
-    print sprintf("Result for business \"%s\" <br><br> All data found:<br>", $business_id);
-    print "$response<br>";
+    //print sprintf("Result for business \"%s\" <br><br> All data found:<br>", $business_id);
+    //print "$response<br>";
 
-    print "<br><br>Practice pulling specific pieces of data:<br>$phone<br>$street<br>$state";
-
-
-
-
-
+    echo "<p>Practice pulling specific pieces of data:</p><p>$phone</p><p>Street: $street</p><p>State: $state</p>";
+	echo "</div>";
 }
 
 /**
