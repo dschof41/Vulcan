@@ -116,8 +116,8 @@ function get_business($business_id) {
  * @param    $location    The location of the business to query
  */
 function query_api($term, $location) {
-	echo "<div id=yelp>";
-	print "<p>Query set to Bars in Waltham, only looks for 3 results and only pulls data for 1st result</p><br><br>";
+	echo "<div id=business>";
+	print "<p>Query set to Bars in Waltham, only looks for 3 results and only pulls data for 1st result</p>";
     $response = json_decode(search($term, $location));
     $business_id = $response->businesses[0]->id;
 
@@ -139,7 +139,7 @@ function query_api($term, $location) {
     //print sprintf("Result for business \"%s\" <br><br> All data found:<br>", $business_id);
     //print "$response<br>";
 
-    print "<br><br><p>Practice pulling specific pieces of data:</p><br><p>$phone</p><br><p>$street</p><br><p>$state</p>";
+    print "<p>Practice pulling specific pieces of data:</p><p>$phone</p><p>$street</p><p>$state</p>";
 	echo "</div>";
 
 
