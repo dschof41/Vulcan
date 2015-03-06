@@ -9,6 +9,37 @@
 	<script src="js/javaScriptHome.js" type="text/javascript"></script>
 <!--<script src="signupvalidation.js" type="text/javascript"></script> -->
 	<style type="text/css">
+	
+	#headerbutton
+{	
+ position: relative;
+  top: -110px;
+  left: 520px;
+ cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+padding:10px 25px; /*add some padding to the inside of the button*/
+background:#35b128; /*the colour of the button*/
+border:1px solid #33842a; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 0px;
+/*give the button a drop shadow*/
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+font-size:1.1em;
+}
+
+#headerbutton:hover {
+	background-color :#399630; /*make the background a little darker*/
+/*reduce the drop shadow size to give a pushed button effect*/
+-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+box-shadow: 0 0 1px rgba(0,0,0, .75);
+}
+
 	</style>	
 	<script type="text/javascript">
 	</script>	
@@ -41,11 +72,14 @@
 			</aside> -->
 	
 	<section>
-	sign up fields moved to sign up page
+	
+	<FORM action="signup.html"> <INPUT TYPE="submit" id="headerbutton" value ="GET STARTED">
+	</FORM>
+
 	</section>
 	
 	<footer>
-	<font size="2" color="black"><a href="url">App Name</a>|<a href="url">By Team Vulcan</a>| CS460 | Bentley University | Spring 2015 |</font>
+	<font size="2" color="black"><a href="url">App Name</a>|<a href="url">By Team Vulcan</a>| Bentley University | CS460 | Spring 2015 |</font>
 	</footer>
 </body>
 </html>
