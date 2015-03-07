@@ -26,29 +26,25 @@
 }
 #submit
 {	
- position: relative;
-  top: 19px;
-  left: 0px;
- cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
-padding:5px 25px; /*add some padding to the inside of the button*/
-background:#35b128; /*the colour of the button*/
-border:1px solid #33842a; /*required or the default border for the browser will appear*/
-/*give the button curved corners, alter the size as required*/
+position: relative;
+top: 19px;
+left: 0px;
+cursor:pointer; 
+padding:5px 25px;
+background:#35b128; 
+border:1px solid #33842a; 
 -moz-border-radius: 10px;
 -webkit-border-radius: 10px;
 border-radius: 0px;
-/*give the button a drop shadow*/
 -webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
 -moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
 box-shadow: 0 0 4px rgba(0,0,0, .75);
-/*style the text*/
 color:#f3f3f3;
 font-size:1.1em;
 }
 
 #submit:hover {
-	background-color :#399630; /*make the background a little darker*/
-/*reduce the drop shadow size to give a pushed button effect*/
+background-color :#399630;
 -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
 -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
 box-shadow: 0 0 1px rgba(0,0,0, .75);
@@ -84,16 +80,32 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 <body>
 	<header>
 	</header>
-	<nav>
-		<ul>
-		<li><a href="index.html">HOME</a></li>
-		<li><a href="TVPage_1.html">PAGE ONE (Test)</a></li>
-		<li><a href="template.html">PAGE NAME</a></li>
-		<li><a href="template.html">PAGE NAME</a></li>
-		<li><a href="template.html">PAGE NAME</a></li>
-		</ul>
-	</nav>
 	
+	<nav id="primary_nav_wrap">
+<ul>
+  <li class="current-menu-item"><a href="index.html">Home</a></li>
+  <li><a href="#">MENU ONE</a>
+    <ul>
+      <li><a href="TVPage_1.html">PAGE ONE</a></li>
+      <li><a href="#">Sub Menu 2</a></li>
+      <li><a href="#">Sub Menu 3</a></li>
+      <li><a href="#">Sub Menu 4</a></li>
+      <li><a href="#">Sub Menu 5</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Menu 2</a>
+    <ul>
+      <li><a href="#">Sub Menu 1</a></li>
+      <li><a href="#">Sub Menu 2</a></li>
+      <li><a href="#">Sub Menu 3</a></li>
+    </ul>
+  </li>
+   <li><a href="weatherPage.html">WEATHER</a></li>
+  <li><a href="signup.html">SIGN UP</a></li>
+  <li><a href="#">PAGE NAME</a></li>
+  </ul>
+</nav>	
+
 	<!-- <aside>
 	<img src="http://s10.postimg.org/zck4xlgk5/Bentley_University_Logo.jpg" class="_siz128">
 	<ul style="list-style-type:none">
