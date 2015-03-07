@@ -8,7 +8,7 @@
 
 	header{
 	width: 1267px;
-	background-image: url("http://s18.postimg.org/cjg6chn2x/cityskylinenycheader.png");
+	background-image: url("http://s15.postimg.org/bqrtxwu7f/oceanviewrestheader.png");
 	padding: 8px 4px;
 	clear: both;
 }
@@ -19,13 +19,12 @@
 }
 
 	footer {
-	height: 25px;
+	height: 28px;
 	border-top: 1px #4A708B solid;
 	clear: both;
 	background-color: #0D4F8B;
 	padding-bottom: 10px;
 	padding-top: 10px;
-
 	
 }
 	aside {
@@ -48,13 +47,13 @@
 	nav {
 	float: none;
 	height: 28px;
-   	border-bottom: 1px black solid;
+   	border-bottom: 1px #2F4F4F solid;
 	font-size: medium;
 	margin-bottom: 10px;
 	padding-bottom: 15px;
-	padding-left: 280px;
+	padding-left: 270px;
 	padding-top: 7px;
-	width: 995px;
+	width: 955px;
     position: fixed;
     top: 0px;
 }
@@ -74,7 +73,6 @@
 	color: black;
 	font-weight:bold;
 	font-size: 18px;
-	//background-image: url("http://s2.postimg.org/yoexptlth/headercloudpix1.png");
     transition: 0.2s;   
     display: block;
 	float: left;	
@@ -92,12 +90,11 @@
     font-family: Century Gothic;
     opacity:0.7;
     }
-        
+ 
     a
     { color: white; }
 
-
-    #primary_nav_wrap
+#primary_nav_wrap
 {
 	margin-top:15px
 }
