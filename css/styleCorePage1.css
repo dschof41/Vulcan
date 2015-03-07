@@ -48,13 +48,13 @@
 	nav {
 	float: none;
 	height: 28px;
-   	border-bottom: 1px #2F4F4F solid;
+   	border-bottom: 1px black solid;
 	font-size: medium;
 	margin-bottom: 10px;
 	padding-bottom: 15px;
-	padding-left: 320px;
+	padding-left: 280px;
 	padding-top: 7px;
-	width: 955px;
+	width: 995px;
     position: fixed;
     top: 0px;
 }
