@@ -81,13 +81,22 @@ window.onload = function () {
   </ul>
 </nav>			
 	<section>
-		<div class="centerText">
-  <p>For your convenience, use the weather app below to plan your trip ahead.</p>
+	<div class="centerText">	
+  <p>For your convenience, use the weather apps below to plan your trip ahead.
+  <br>
+  <br> The left app displays the four day forecast along with the options to display info about the wind, rain, sunset/sunrise, and UV.
+  <br>
+  <br> The right app will display the forecast for the day when the "show forecast" (eye) icon is clicked.
+  </p>
   </div>		
-		<div style="padding-left: 270px; padding-top: 28px; padding-bottom: 25px;">
-		<iframe style="display: block;" src="http://cdnres.willyweather.com/widget/loadView.html?id=16085" 
-		width="700" height="520" frameborder="0"  scrolling="no"></iframe><a style="display: block;margin: -20px 0 0 0;position: relative;text-indent: -9999em;z-index: 1;height: 20px" href="http://www.willyweather.com/ma/suffolk-county/downtown-boston.html">Willie's Weather</a></div>
-	
+  
+  	<div style="padding-left: 200px; padding-top: 28px; padding-bottom: 25px; float: left">
+	<iframe style="display: block;" src="http://cdnres.willyweather.com/widget/loadView.html?id=16140" width="300" height="228" frameborder="0" scrolling="no">
+	</iframe><a style="z-index: 1;margin: -20px 0 0 0;position: relative;text-indent: -9999em;display: block;height: 20px" href="http://www.willyweather.com/ma/suffolk-county/boston.html">The latest boston weather</a></div>
+		
+		<div style="padding-left: 10px; padding-top: 5px; padding-bottom: 5px; float: right">
+<iframe src="http://www.weatherfor.us/load.php?" scrolling="no" frameborder="0" allowtransparency="true" style="background: transparent; width: 720px; height: 250px; overflow: hidden;"></iframe>
+		</div>
 	</section>
 	
 	<footer>
