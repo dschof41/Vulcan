@@ -57,6 +57,7 @@
 	width: 995px;
     position: fixed;
     top: 0px;
+    z-index: 1;
 }
 	nav ul {
 	margin: 0px;
