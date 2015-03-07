@@ -12,7 +12,7 @@ vti_filesize:IR|2389
 vti_cachedtitle:SR|Test
 vti_cachedbodystyle:SR|<body>
 vti_cachedlinkinfo:VX|H|images/avatar.png Q|css/styleCorePage1.css Q|css/styleDesign.css S|js/javaScript.js S|http://maps.googleapis.com/maps/api/js H|index.html H|template.html H|template.html H|template.html H|url H|url
-vti_cachedsvcrellinks:VX|FHUS|Vulcan/images/avatar.png FQUS|Vulcan/css/styleCorePage1.css FQUS|Vulcan/css/styleDesign.css FSUS|Vulcan/js/javaScript.js NSHS|http://maps.googleapis.com/maps/api/js FHUS|Vulcan/index.html NHUS|Vulcan/template.html NHUS|Vulcan/template.html NHUS|Vulcan/template.html NHUS|Vulcan/url NHUS|Vulcan/url
+vti_cachedsvcrellinks:VX|FHUS|Vulcan/images/avatar.png NQUS|Vulcan/css/styleCorePage1.css FQUS|Vulcan/css/styleDesign.css FSUS|Vulcan/js/javaScript.js NSHS|http://maps.googleapis.com/maps/api/js FHUS|Vulcan/index.html NHUS|Vulcan/template.html NHUS|Vulcan/template.html NHUS|Vulcan/template.html NHUS|Vulcan/url NHUS|Vulcan/url
 vti_cachedneedsrewrite:BR|false
 vti_cachedhasbots:BR|false
 vti_cachedhastheme:BR|false
