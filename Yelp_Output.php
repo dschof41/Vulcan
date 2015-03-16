@@ -1,14 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta charset="utf-8">
 	<title>Test</title>
-	<link href="images/avatar.png" rel="shortcut icon" type="image/png"/>
-	<link href="css/styleCorePage1.css" rel="stylesheet" type="text/css"/>
-	<link href="css/styleDesign.css" rel="stylesheet" type="text/css"/>
-	<script src="js/javaScript.js" type="text/javascript"></script>
-	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<link href="images/avatar.png" rel="shortcut icon" type="image/png">
+	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
+	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
+	<script src="css/javaScript.js" type="text/javascript"></script>
 	<style type="text/css">
+	header{
+	width: 1267px;
+	background-image: url("http://s18.postimg.org/cjg6chn2x/cityskylinenycheader.png");
+	padding: 8px 4px;
+	clear: both;
+}
+	nav {
+	width: 995px;
+    position: fixed;
+  	}
 	</style>
 	
 	<script type="text/javascript">
@@ -33,37 +42,43 @@ window.onload = function () {
 	//html += "<span id='_avatar32'><img src='"+AVATAR+".png' class='_siz32'></span>";
 	}
 
-function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-
-
 	</script>
 	
 </head>
 <body>
 	<header>
 	</header>
-	<nav>
-		<ul>
-		<li><a href="index.html">HOME</a></li>
-		<li><a href="template.html">PAGE NAME</a></li>
-		<li><a href="template.html">PAGE NAME</a></li>
-		<li><a href="template.html">PAGE NAME</a></li>
-		</ul>
-	</nav>	
-	<div class="section">
-	<?php include 'yelp.php'; ?>		
-	</div>
 	
-	<div class="footer">
-	<font size="2" color="white"> <a href="url">App Name</a>|<a href="url">By Team Vulcan</a>| CS460 | Bentley University | Spring 2015 |</font>
-	</div>
+	<nav id="primary_nav_wrap">
+<ul>
+  <li class="current-menu-item"><a href="index.html">Home</a></li>
+  <li><a href="#">MENU ONE</a>
+    <ul>
+      <li><a href="Yelp_Output.php">PAGE ONE</a></li>
+      <li><a href="#">Sub Menu 2</a></li>
+      <li><a href="#">Sub Menu 3</a></li>
+      <li><a href="#">Sub Menu 4</a></li>
+      <li><a href="#">Sub Menu 5</a></li>
+    </ul>
+  </li>
+  <li><a href="#">Menu 2</a>
+    <ul>
+      <li><a href="#">Sub Menu 1</a></li>
+      <li><a href="#">Sub Menu 2</a></li>
+      <li><a href="#">Sub Menu 3</a></li>
+    </ul>
+  </li>
+   <li><a href="Vulcan/weatherPage.html">WEATHER</a></li>
+  <li><a href="Vulcan/signup.html">SIGN UP</a></li>
+  <li><a href="#">PAGE NAME</a></li>
+  </ul>
+</nav>
+<section>
+<?php include 'yelp.php'; ?>		
+</section>
+	
+	<footer>
+	<font size="2" color="white"> <a href="Vulcan/url">App Name</a>|<a href="Vulcan/url">By Team Vulcan</a>| Bentley University | CS460 | Spring 2015 |</font>
+	</footer>
 </body>
 </html>
