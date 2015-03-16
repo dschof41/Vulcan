@@ -74,7 +74,7 @@ window.onload = function () {
   </ul>
 </nav>
 <section>
-<?php include 'yelp.php'; ?>		
+<?php include 'yelp-out.php'; ?>		
 </section>
 	
 	<footer>
