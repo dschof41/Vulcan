@@ -123,7 +123,10 @@ function query_api($term, $location) {
     $loc = $bus->location->display_address;
     $street = $loc[0];
     $state = $loc[1];
-    $response = get_business($business_id);
+    //$response = get_business($business_id);
+    $out = array($bus, $phone, $street, $state);
+    
+    return $out;
 }
 
 /**
