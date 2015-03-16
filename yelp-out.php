@@ -2,12 +2,11 @@
 
 require 'yelp.php';
 
-$t = "chinese";
-$l = "Waltham, MA";
-
 $query = query_api($t, $l);
 
-echo "Business: " . $query[0];
+echo "Name: " . $query[0] . "<br>" . 
+		"Phone: " . $query[1] . "<br>" .
+		"Address: " . $query[2] . " " . $query[3];
 
 
 ?>

@@ -114,17 +114,20 @@ function get_business($business_id) {
  *
  * @param    $term        The search term to query
  * @param    $location    The location of the business to query
+ 
+ 	Edited by Dan Schofer 3/16/2015
  */
 function query_api($term, $location) {
     $response = json_decode(search($term, $location));
     $business_id = $response->businesses[0]->id;
    	$bus = $response->businesses[0];
+   	$name = $bus->name;
     $phone = $bus->phone;
     $loc = $bus->location->display_address;
     $street = $loc[0];
     $state = $loc[1];
     //$response = get_business($business_id);
-    $out = array($bus, $phone, $street, $state);
+    $out = array($name, $phone, $street, $state);
     
     return $out;
 }

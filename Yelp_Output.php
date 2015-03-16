@@ -74,6 +74,10 @@ window.onload = function () {
   </ul>
 </nav>
 <section>
+<?php
+	$t = $_POST["term"];
+	$l = $_POST["location"];
+?>
 <?php include 'yelp-out.php'; ?>		
 </section>
 	

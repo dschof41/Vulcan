@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Signup Page</title>
+	<title>Search</title>
 	<link href="images/avatar.png" rel="shortcut icon" type="image/png">
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
@@ -71,7 +71,7 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 	var html = "";
 	//html += "<div id='_avatar64'><img src='"+AVATAR+".png' class='_siz64'></div>";
 	html += "<div id='_name'>";
-	html += "<div id='_firstname'>SIGN UP</div>";
+	html += "<div id='_firstname'>Search</div>";
 	html += "</div>";
 	document.getElementsByTagName("header")[0].innerHTML = html; // set header
 	html = "";
@@ -113,41 +113,24 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
     </ul>
   </li>
    <li><a href="weatherPage.html">WEATHER</a></li>
-  <li><a href="signup.html">SIGN UP</a></li>
+  <li><a href="Yelp_Input.php">SIGN UP</a></li>
   <li><a href="#">PAGE NAME</a></li>
   </ul>
 </nav>	
-
-	<!-- <aside>
-	<img src="http://s10.postimg.org/zck4xlgk5/Bentley_University_Logo.jpg" class="_siz128">
-	<ul style="list-style-type:none">
-		<li></li>
- 		<li>text list</li>
- 		<li>text</li>
- 		<li>text</li>
- 		<li>text</li>
- 		<li>text</li>
- 		<li>text</li>
- 		<li>text</li>
- 		<li>text</li>
-		</ul>  
-			</aside> -->
-	
-	<section>
+<section>
 	
 	<div class="centerText">
-  <p>Welcome to ... Create your account to get started.</p>
+  <p>Enter a term and location here!</p>
   </div>		
   
   <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
   
-	<form id="userInfo" action="php/connect.php" method="post">
+	<form id="yelpIn" action="Yelp_Output.php" method="post">
+	
 				Fill out all fields: <p>
-				Username: <input type="text" name="username" value= "" required><br>
-				Email: <input type="text" name="email" value="" required ><br>
-				Password: <input type="password" name="pw" value="" required><br>
-				Confirm Password: <input type="password" name="confirmpw" value="" required><br>
-				<input id="submit" type="submit" value ="Create Account" onclick="return validatePassword();">
+				Term:<br><input type="text" name="term" value= "" required><br>
+				Location:<br> <input type="text" name="location" value="" required ><br>
+				<input id="submit" type="submit">
 		</form>
 	
 	</section>
