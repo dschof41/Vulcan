@@ -5,7 +5,7 @@ require 'yelp.php';
 $t = "chinese";
 $l = "Waltham, MA";
 
-$query = api_query($t, $l);
+$query = query_api($t, $l);
 
 echo "Business: " . $query[0];
 
