@@ -32,7 +32,7 @@ $TOKEN_SECRET = 'qxPnc6XC5_mI1i7-QLTlHGiCdr0';
 $API_HOST = 'api.yelp.com';
 $DEFAULT_TERM = 'bars';
 $DEFAULT_LOCATION = 'Waltham, MA';
-$SEARCH_LIMIT = 3;
+$SEARCH_LIMIT = 5;
 $SEARCH_PATH = '/v2/search/';
 $BUSINESS_PATH = '/v2/business/';
 
@@ -117,24 +117,29 @@ function get_business($business_id) {
  
  	Edited by Dan Schofer 3/16/2015
  */
-function query_api($term, $location) {
+ //----------------------------------------------------------
+/* function query_api($term, $location) {
     $response = json_decode(search($term, $location));
-    $business_id = $response->businesses[0]->id;
-   	$bus = $response->businesses[0];
+    
+    for ($i = 0; $i < $SEARCH_LIMIT; $i++) 
+{
+    $business_id = $response->businesses[i]->id;
+   	$bus = $response->businesses[i];
    	$name = $bus->name;
     $phone = $bus->phone;
     $loc = $bus->location->display_address;
     $street = $loc[0];
-    $state = $loc[1];
+    $state = $loc[1];  
+}
     //$response = get_business($business_id);
     $out = array($name, $phone, $street, $state);
     
     return $out;
 }
-
+//----------------------------------------------------------------
 /**
  * User input is handled here
- */
+ */ /*
 $longopts  = array(
     "term::Bars",
     "location::Boston",
@@ -146,5 +151,5 @@ $term = $options['term'] ?: '';
 $location = $options['location'] ?: '';
 
 query_api($term, $location);
-
+*/
 ?>
