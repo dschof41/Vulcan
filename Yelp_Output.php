@@ -6,7 +6,7 @@
 	<link href="images/avatar.png" rel="shortcut icon" type="image/png">
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
-	<script src="css/javaScript.js" type="text/javascript"></script>
+	<script src="js/javaScript.js" type="text/javascript"></script>
 	<style type="text/css">
 	header{
 	width: 1267px;

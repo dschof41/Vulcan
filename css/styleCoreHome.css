@@ -1,14 +1,13 @@
-﻿	body {
+﻿body {
 	margin: 0px auto; 
 	width: 1280px;
-	border: 1px #4A708B solid;
+	border: 1px silver solid;
 	position: relative;
 	font-family: Century Gothic;
 }
 
 	header{
 	width: 1272px;
-	//background-image: url("http://s27.postimg.org/4qunszf4z/boston_desktop_background_339751.jpg");
 	background-image: url("http://s12.postimg.org/dyoghju6j/default_hero_hires.jpg");
 	padding: 8px 4px;
 	clear: both;
@@ -49,16 +48,16 @@
 	{
 	float: none;
 	height: 28px;
-	border-bottom: 1px #2F4F4F solid;
-	font-size: medium;
-	margin-bottom: 10px;	
+  	margin-bottom: 10px;
 	padding-bottom: 15px;
 	padding-left: 280px;
-	padding-top: 7px;
-	width: 1000px;
+	padding-top: 15px;
     position: fixed;
-    top: 0px;
+    top: -15px;
     z-index: 1;
+    background: white;
+    opacity: 0.8;
+    width: 1000px;
 }
 	nav ul {
 	margin: 0px;
@@ -83,13 +82,13 @@
 	text-decoration: none;
 	//background-color: #ffffff;
 	opacity:0.7;
-	text-shadow: -1px 1px 10px white, 1px -1px 10px white;
+	//text-shadow: -1px 1px 10px white, 1px -1px 10px white;
 
     }
 
 	nav li a:hover {
 	color: white;
-	//background-color: white;
+	background-color: white;
     text-shadow: -1px 1px 5px black, 1px -1px 5px black;
     font-family: Century Gothic;
     }
@@ -159,7 +158,7 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 
 #primary_nav_wrap ul li:hover
 {
-	background:white;
+	background: white;
 	opacity:0.9;
 }
 
@@ -176,7 +175,7 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 #primary_nav_wrap ul ul li
 {
 	float:none;
-	width:200px
+	width:150px
 }
 
 #primary_nav_wrap ul ul a
@@ -195,3 +194,4 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 {
 	display:block
 }
+
