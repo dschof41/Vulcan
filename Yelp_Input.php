@@ -10,7 +10,7 @@
 	<style type="text/css">
 	header{
 	width: 1267px;
-	background-image: url("http://s30.postimg.org/yp7q00l75/snowmtskyheader1.png");
+	background-image: url("http://s29.postimg.org/oxn2apl93/cityskylinenycheader.png");
 	padding: 8px 4px;
 	clear: both;
 	}
