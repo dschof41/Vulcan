@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,70 +13,11 @@
 	background-image: url("http://s30.postimg.org/yp7q00l75/snowmtskyheader1.png");
 	padding: 8px 4px;
 	clear: both;
-}
-	nav {
-	width: 995px;
-    position: fixed;
-  	}
-
-	.centerText {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    background-color: #0D4F8B;
-    color: white;
-    float: inherit;
-    font-family: Century Gothic;
-    text-align: center;
-    padding-top: 1.2px;
-    padding-bottom: 2px;
-    border-top: 18px white solid;	
-    border-bottom: 20px white solid;
-    opacity:0.9;
-}
-
-#submit
-{	
-position: relative;
-top: 19px;
-left: 0px;
-cursor:pointer; 
-padding:5px 25px;
-background: #009cde; 
-border:1px solid #009cde; 
--moz-border-radius: 10px;
--webkit-border-radius: 10px;
-border-radius: 5px;
--webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
--moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
-box-shadow: 0 0 4px rgba(0,0,0, .75);
-color:#f3f3f3;
-font-size:1.1em;
-}
-
-#submit:hover {
-background-color :#0079ad;
--webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
--moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
-box-shadow: 0 0 1px rgba(0,0,0, .75);
-}
-
+	}
 	</style>
 	
 	<script type="text/javascript">
 		
-	window.onload = function () {
-	// updated by jd robertson: Fri, Jan 9, 2015
-	var html = "";
-	//html += "<div id='_avatar64'><img src='"+AVATAR+".png' class='_siz64'></div>";
-	html += "<div id='_name'>";
-	html += "<div id='_firstname'>Search</div>";
-	html += "</div>";
-	document.getElementsByTagName("header")[0].innerHTML = html; // set header
-	html = "";
-	}
-
-
 	function validatePassword() {
     var x = userInfo.pw.value;
     var y = userInfo.confirmpw.value;
@@ -94,31 +34,10 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 	</header>
 	
 	<nav id="primary_nav_wrap">
-<ul>
-  <li class="current-menu-item"><a href="index.html">Home</a></li>
-  <li><a href="#">MENU ONE</a>
-    <ul>
-      <li><a href="TVPage_1.html">PAGE ONE</a></li>
-      <li><a href="#">Sub Menu 2</a></li>
-      <li><a href="#">Sub Menu 3</a></li>
-      <li><a href="#">Sub Menu 4</a></li>
-      <li><a href="#">Sub Menu 5</a></li>
-    </ul>
-  </li>
-  <li><a href="#">Menu 2</a>
-    <ul>
-      <li><a href="#">Sub Menu 1</a></li>
-      <li><a href="#">Sub Menu 2</a></li>
-      <li><a href="#">Sub Menu 3</a></li>
-    </ul>
-  </li>
-   <li><a href="weatherPage.html">WEATHER</a></li>
-  <li><a href="Yelp_Input.php">SIGN UP</a></li>
-  <li><a href="#">PAGE NAME</a></li>
-  </ul>
-</nav>	
+	</nav>	
 <section>
-	
+
+	<div class="headerTitle">Search</div>
 	<div class="centerText">
   <p>Enter a term and location here!</p>
   </div>		
@@ -128,8 +47,8 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 	<form id="yelpIn" action="Yelp_Output.php" method="post">
 	
 				Fill out all fields: <p>
-				Term:<br><input type="text" name="term" value= "" required><br>
-				Location:<br> <input type="text" name="location" value="" required ><br>
+				What are you looking for?<br><input type="text" name="term" value= "" required><br>
+				Where?<br> <input type="text" name="location" value="" required ><br>
 				<input id="submit" type="submit">
 		</form>
 	
