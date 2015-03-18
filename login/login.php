@@ -53,12 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			if ($num_rows > 0) {
 				session_start();
 				$_SESSION['login'] = "1";
-				header ("Location: page1.php");
+				header ("Location: ../home.php");
 			}
 			else {
 				session_start();
 				$_SESSION['login'] = "";
-				header ("Location: signup.php");
+				header ("Location: ../signup.html");
 			}	
 		}
 		else {
