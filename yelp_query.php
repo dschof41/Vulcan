@@ -48,7 +48,10 @@ function yelp_query($term, $location) {
 }
 
 
-/* Runs a query to retrieve map data for map object*/
+/* Runs a query to retrieve map data for map object
+
+Created by Dan Schofer 3/18/2015
+*/
 function map_query($term, $location) {
 	
 	$response = json_decode(search($term, $location)); //decodes the business data from yelp server

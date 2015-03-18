@@ -32,7 +32,7 @@ $TOKEN_SECRET = 'qxPnc6XC5_mI1i7-QLTlHGiCdr0';
 $API_HOST = 'api.yelp.com';
 $DEFAULT_TERM = 'bars';
 $DEFAULT_LOCATION = 'Waltham, MA';
-$SEARCH_LIMIT = 5;
+$SEARCH_LIMIT = 7;
 $SEARCH_PATH = '/v2/search/';
 $BUSINESS_PATH = '/v2/business/';
 

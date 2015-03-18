@@ -7,6 +7,7 @@
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
 	<script src="js/javaScript.js" type="text/javascript"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9Rt9jw2Sr2Rdz3Q00L-4XeG8wSJz9JxY"></script>
 	<style type="text/css">
 	header{
 	width: 1267px;
@@ -18,6 +19,21 @@
 	width: 995px;
     position: fixed;
   	}
+  	
+  	#map-canvas {
+  	height: 6in;
+  	margin: 10px;
+  	padding: 0;
+  	width:8in;
+  	display:inline-block;	
+  	float:right;
+  	}
+  	#card-holder {
+	display:inline-block;
+	margin:10px;
+	float:left;
+	
+}
 	</style>
 	
 	<script type="text/javascript">
@@ -78,8 +94,8 @@ window.onload = function () {
 	$t = $_POST["term"];
 	$l = $_POST["location"];
 ?>
-<?php include 'yelp_query'; ?>
-<?php include 'yelp_query_out.php'; ?>		
+<?php include 'yelp_query_output.php'; ?>
+<div id="map-canvas"></div>		
 </section>
 	
 	<footer>
