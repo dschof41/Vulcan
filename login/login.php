@@ -13,7 +13,7 @@ function quote_smart($value, $handle) {
    }
 
    if (!is_numeric($value)) {
-       $value = "'" . mysql_real_escape_string($value, $handle) . "'";
+       $value = "'" . mysqli_real_escape_string($value, $handle) . "'";
    }
    return $value;
 }
@@ -32,8 +32,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$pass_word = "vulcan123";
 	$database = "vulcandb";
 	$server = "127.0.0.1";
+	
+	$db_handle = mysqli_connect("localhost", "root", "vulcan123", "vulcandb");
+	
+	if(mysqli_connect_errno())
+	{
+		echo "Error with DB";
+	}
+	
+	$uname = quote_smart($db_handle, $uname);
+	$pword = quote_smart($db_handle, $pword);
 
-	$db_handle = mysql_connect($server, $user_name, $pass_word);
+	
+	$SQL = "SELECT * FROM login WHERE L1 = $uname AND L2 = md5($pword)";
+	
+	
+	$result = mysqli_query($db_handle,$SQL);
+	$num_rows = mysqli_num_rows($result);
+
+	/*$db_handle = mysql_connect($server, $user_name, $pass_word);
 	$db_found = mysql_select_db($database, $db_handle);
 
 	if ($db_found) {
@@ -43,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$SQL = "SELECT * FROM login WHERE L1 = $uname AND L2 = md5($pword)";
 		$result = mysql_query($SQL);
-		$num_rows = mysql_num_rows($result);
+		$num_rows = mysql_num_rows($result);*/
 
 	//====================================================
 	//	CHECK TO SEE IF THE $result VARIABLE IS TRUE
@@ -53,19 +70,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			if ($num_rows > 0) {
 				session_start();
 				$_SESSION['login'] = "1";
-				header ("Location: ../home.php");
+				header ("Location: ../Vulcan_Home.php");
 			}
 			else {
 				session_start();
 				$_SESSION['login'] = "";
-				header ("Location: ../signup.html");
+				header ("Location: ../Vulcan_Signup.php");
 			}	
 		}
 		else {
 			$errorMessage = "Error logging on";
 		}
 
-	mysql_close($db_handle);
+	mysqli_close($db_handle);
 
 	}
 
@@ -73,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$errorMessage = "Error logging on";
 	}
 
-}
+//}
 
 
 ?>

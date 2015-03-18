@@ -14,17 +14,16 @@ window.onload = function () {
 	//html += "<span id='_avatar32'><img src='"+AVATAR+".png' class='_siz32'></span>";	
 	
 	document.getElementById("primary_nav_wrap").innerHTML =
-	"<ul><li class='current-menu-item'>"+
-  "<a href='index.html'>HOME</a></li>" +
-  "<li><a href='#'>MENU ONE</a>" +
-    "<ul> <li><a href='TVPage_1.html'>PAGE ONE</a></li>" +
-     "<li><a href='templatePage.html'>PAGE TWO</a></li>" +
-      "<li><a href='#'>Sub Menu 3</a></li>" +	
-      "<li><a href='#'>Sub Menu 4</a></li>" +
-     "</ul>" +
-  "</li>" +
-   "<li><a href='weatherPage.html'>WEATHER</a></li>" +
-  "<li><a href='signup.html'>SIGN UP</a></li>" +
-  "<li><a href='Yelp_Input.php'>Yelp</a></li>"
+	"<ul>"+
+	"<li class='current-menu-item'>"+
+  	"<a href='index.html'>HOME</a></li>" +
+  	"<li><a href='Yelp_Input.php'>SEARCH</a></li>"+
+  	"<li><a href='weatherPage.html'>WEATHER</a></li>"+
+  	"<li><a href='Vulcan_Login.php'>LOGIN</a></li>" +
+  	"<li><a href='Vulcan_Signup.php'>REGISTER</a></li>"+
+  	"</ul>"
+
+	
+	
 
 	}

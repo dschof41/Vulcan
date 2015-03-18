@@ -24,9 +24,7 @@
 
 <section>
 
-	<FORM action="Yelp_Input.php"> <INPUT TYPE="submit" id="headerbutton" value ="Get Searching!">
-	</FORM>
-	<div><p>Thanks for logging in!</p></div>
+	<div><p style="margin-left:43%;">Thanks for logging in!</p></div>
  	</section>
 
 	<footer>

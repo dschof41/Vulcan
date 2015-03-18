@@ -10,7 +10,6 @@
 	width: 1272px;
 	background-image: url("http://s12.postimg.org/dyoghju6j/default_hero_hires.jpg");
 	padding: 8px 4px;
-	clear: both;
 }
 	
 	header {
@@ -95,14 +94,21 @@
             
     a
     { color: white; }
-    
-#headerbutton
+
+#buttons {
+	display:inline-block;
+	position:relative;
+	margin-left:40%;
+	margin-right:50%;
+	margin-top:40px;
+}
+
+#buttons ul li
 {	
-position: relative;
-top: -110px;
-left: 500px;
-cursor:pointer; 
-padding:15px 40px; 
+display:inline-block;
+height:0.3in;
+width:1in;
+cursor:pointer;  
 background: #009cde; 
 border:1px solid #009cde;
 -moz-border-radius: 10px;
@@ -113,14 +119,24 @@ border-radius: 5px;
 box-shadow: 0 0 4px rgba(0,0,0, .75);
 color:#f3f3f3;
 font-size:19px;
+text-align:center;
+padding:15px;
+margin:10px;
 }
 
-#headerbutton:hover {
+#buttons ul li:hover {
 background-color: #0079ad; 
 -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
 -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
 box-shadow: 0 0 1px rgba(0,0,0, .75);
 }
+
+#buttons ul li a{
+	text-decoration:none;
+	padding:20px;
+}
+
+
 
 #primary_nav_wrap
 {

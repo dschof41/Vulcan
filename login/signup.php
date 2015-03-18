@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			session_start();
 			$_SESSION['login'] = "1";
 
-			header ("Location: page1.php");
+			header ("Location: ../Vulcan_Login.php");
 
 		}
 
@@ -134,29 +134,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 ?>
-
-	<html>
-	<head>
-	<title>Basic Login Script</title>
-
-
-	</head>
-	<body>
-
-
-<FORM NAME ="form1" METHOD ="POST" ACTION ="signup.php">
-
-Username: <INPUT TYPE = 'TEXT' Name ='username'  value="<?PHP print $uname;?>" maxlength="20">
-Password: <INPUT TYPE = 'TEXT' Name ='password'  value="<?PHP print $pword;?>" maxlength="16">
-
-<P>
-<INPUT TYPE = "Submit" Name = "Submit1"  VALUE = "Register">
-
-
-</FORM>
-<P>
-
-<?PHP print $errorMessage;?>
-
-	</body>
-	</html>

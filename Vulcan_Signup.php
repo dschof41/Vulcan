@@ -19,7 +19,7 @@
 	<script type="text/javascript">
 		
 	function validatePassword() {
-    var x = userInfo.pw.value;
+    var x = userInfo.password.value;
     var y = userInfo.confirmpw.value;
     if (x != y) {
         alert("Please Reconfirm Password");
@@ -45,15 +45,14 @@
   
   <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
   
-	<form id="userInfo" action="php/connect.php" method="post">
+  <form id="userInfo" action="login/signup.php" method="post">
 				Fill out all fields: <p>
 				Username: <input type="text" name="username" value= "" required><br>
 				Email Address: <input type="text" name="email" value="" required ><br>
-				Password: <input type="password" name="pw" value="" required><br>
+				Password: <input type="password" name="password" value="" required><br>
 				Confirm Password: <input type="password" name="confirmpw" value="" required><br>
 				<input id="submit" type="submit" value ="Create Account" onclick="return validatePassword();">
 		</form>
-	
 	</section>
 	
 	<footer>
