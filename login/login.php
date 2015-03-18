@@ -29,8 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	//	CONNECT TO THE LOCAL DATABASE
 	//==========================================
 	$user_name = "root";
-	$pass_word = "";
-	$database = "login";
+	$pass_word = "vulcan123";
+	$database = "vulcandb";
 	$server = "127.0.0.1";
 
 	$db_handle = mysql_connect($server, $user_name, $pass_word);

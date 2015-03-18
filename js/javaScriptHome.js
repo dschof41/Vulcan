@@ -18,9 +18,9 @@ window.onload = function () {
 	"<ul><li class='current-menu-item'>"+
   "<a href='index.html'>HOME</a></li>" +
   "<li><a href='#'>MENU ONE</a>" +
-    "<ul> <li><a href='Yelp_Input.php'>PAGE ONE</a></li>" +
+    "<ul> <li><a href='login/login.php'>Login Test</a></li>" +
      "<li><a href='templatePage.html'>PAGE TWO</a></li>" +
-      "<li><a href='#'>Sub Menu 3</a></li>" +	
+      "<li><a href='login/login.php'>Login Test</a></li>" +	
       "<li><a href='#'>Sub Menu 4</a></li>" +
      "</ul>" +
   "</li>" +
