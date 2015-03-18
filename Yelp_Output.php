@@ -78,7 +78,8 @@ window.onload = function () {
 	$t = $_POST["term"];
 	$l = $_POST["location"];
 ?>
-<?php include 'yelp-out.php'; ?>		
+<?php include 'yelp_query'; ?>
+<?php include 'yelp_query_out.php'; ?>		
 </section>
 	
 	<footer>

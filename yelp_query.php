@@ -23,15 +23,10 @@ class map_object {
 
 Created by Dan Schofer 3/17/2015
 */
-function user_query($term, $location) {
+function yelp_query($term, $location) {
 
     $response = json_decode(search($term, $location)); //decodes the business data from yelp server
-    
-    $map_parameters = new map_object();//sets map params
-    $map_parameters->lat = $response->region->center->latitude;
-    $map_parameters->long = $response->region->center->longitude;
-    
-    
+     
     $display_businesses = array();
     //loops each business, making a new object and setting variables
     for ($i = 0; $i < $GLOBALS['SEARCH_LIMIT']; $i++) 
@@ -52,14 +47,17 @@ function user_query($term, $location) {
 	return $display_businesses;//returns an array of business_card objects
 }
 
-//Run query using input variables and output
-$qry = user_query($t, $l);
-for ($i = 0; $i < count($qry); $i++)
-{
-	$bus = $qry[$i]; //string for ease of use
-	echo "Name: ". $bus->name . "(" . $bus->phone . ")<br>";
-	echo "Address: " . $bus->address . "<br><br>";
-} 
 
+/* Runs a query to retrieve map data for map object*/
+function map_query($term, $location) {
+	
+	$response = json_decode(search($term, $location)); //decodes the business data from yelp server
+	
+	$map_parameters = new map_object();//sets map params
+    $map_parameters->lat = $response->region->center->latitude;
+    $map_parameters->long = $response->region->center->longitude;
+    
+  	return $map_parameters;
+}
 
 ?>
