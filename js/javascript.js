@@ -25,6 +25,6 @@ window.onload = function () {
   "</li>" +
    "<li><a href='weatherPage.html'>WEATHER</a></li>" +
   "<li><a href='signup.html'>SIGN UP</a></li>" +
-  "<li><a href='#'>PAGE NAME</a></li>"
+  "<li><a href='Yelp_Input.php'>Yelp</a></li>"
 
 	}
