@@ -8,10 +8,7 @@
     {
     echo "Failed to connect: " . mysqli_connect_error();
     }
-	echo "<script type='text/javascript'>\n";
-	echo "alert('thanks you are successfully registered');\n";
-	echo "</script>";
-
+	echo "Connected"
 
 	//Close connection
 	mysqli_close($con);
