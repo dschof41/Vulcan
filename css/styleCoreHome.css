@@ -96,17 +96,17 @@
     { color: white; }
 
 #buttons {
+	position:fixed;
 	float: left;
   	margin-bottom: 10px;
 	padding-left: 350px;
-    position: fixed;
-    top: 280px;
+    top: 290px;
     opacity: 0.8;
 }
 
 #buttons ul li
 {	
-display:inline-block;
+display:inline;
 height:0.3in;
 width:1in;
 cursor:pointer;  

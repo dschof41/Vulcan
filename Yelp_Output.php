@@ -19,16 +19,13 @@
   	#map-canvas {
   	height: 6in;
   	margin: 10px;
+  	margin-top:-70px;
   	padding: 0;
-  	width:8in;
-  	display:inline-block;	
+  	width:7in;
+  	display:inline;	
   	float:right;
+  	border:2px silver solid;
   	}
-  	#card-holder {
-	display:inline-block;
-	margin:10px;
-	float:left;
-	}
 	
 	</style>
 	

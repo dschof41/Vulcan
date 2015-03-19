@@ -19,15 +19,16 @@ class map_object {
 	public $long;
 }
 
+
 /*queries yelp's server with the term and location provided
 
 Created by Dan Schofer 3/17/2015
 */
-function yelp_query($term, $location) {
+function populate_cards($term, $location) {
 
-    $response = json_decode(search($term, $location)); //decodes the business data from yelp server
-     
-    $display_businesses = array();
+    $response =  json_decode(search($term, $location));
+    $display_businesses = array(); //array to hold card objects
+    
     //loops each business, making a new object and setting variables
     for ($i = 0; $i < $GLOBALS['SEARCH_LIMIT']; $i++) 
 	{
@@ -53,8 +54,8 @@ function yelp_query($term, $location) {
 Created by Dan Schofer 3/18/2015
 */
 function map_query($term, $location) {
-	
-	$response = json_decode(search($term, $location)); //decodes the business data from yelp server
+
+	$response =  json_decode(search($term, $location));
 	
 	$map_parameters = new map_object();//sets map params
     $map_parameters->lat = $response->region->center->latitude;

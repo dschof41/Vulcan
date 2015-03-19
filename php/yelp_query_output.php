@@ -2,20 +2,30 @@
 
 require 'yelp_query.php';
 
-//Run query using input variables from user and output into html
-$qry = yelp_query($t, $l);
+//populate business cards from response
+$qry = populate_cards($t, $l);
+
 echo "<div id='card-holder'>";
 for ($i = 0; $i < count($qry); $i++)
 {
 	$bus = $qry[$i]; //string for ease of use
-	echo $bus->name . "<br>(" . $bus->phone . ")<br>";
-	echo $bus->address . "<br><br>";
-	
+	echo "<div class='card'>";
+	echo "<div class='img'>";
+	echo "<image src='" . $bus->image . "'>";
+	echo "</div>";
+	//echo "<div class='rating'>";
+	//echo "<image src='" . $bus->rating ."'>";
+	//echo "</div>";
+	echo "<div class='info'>";
+	echo $bus->name . "<br>";
+	echo $bus->phone . "<br>";
+	echo $bus->address;
+	echo "</div>";
+	echo "</div>";	
 } 
 echo "</div>";
 
-
-//Run a query using input to create javascript for map object
+//Determine map object from response
 $map = map_query($t, $l);
 
 echo "<script type=text/javascript>";
@@ -24,9 +34,16 @@ echo  "var map = new google.maps.Map(document.getElementById('map-canvas'), mapO
 echo "google.maps.event.addDomListener(window, 'load', initialize);";
 echo "</script>";
 
+/*
+//Add addresses to array for markers
+$markers = array();
+for ($i = 0; $i < count($qry); $i++){
+	$marker = $qry[$i]->address;	//add addresses to markers array
+	echo "var marker = new google.maps.Marker({position: " . $marker . ", map: map, });";
+    echo "</script>";
+}
 
-//Loop through businesses 
-
+*/
 
 
 

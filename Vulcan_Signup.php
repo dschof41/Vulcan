@@ -10,7 +10,7 @@
 	<style type="text/css">
 	header{
 	width: 1267px;
-	background-image: url("http://s29.postimg.org/8qn5kky13/cityskylinenycheader.png");
+	background-image: url("http://s11.postimg.org/zcogdwd7n/cityskylinenycheader.png");
 	padding: 8px 4px;
 	clear: both;
 }

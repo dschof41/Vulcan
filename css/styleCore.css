@@ -160,6 +160,32 @@
 	display:block
 }
 
+#card-holder{
+	width:6in;
+	margin-top:-70px;
+	float:left;
+}
+.card{
+	border:2px blue solid;
+	margin:5px;
+	background:aqua;
+}
+.img {
+	display:inline-block;
+	border-right:2px blue solid;
+}
+.info {
+	display:inline-block;
+	height:50%;
+	padding-left:5px;
+	font-weight:bold;
+}
+.rating {
+	display:inline;
+	position:relative;
+	height:4px;
+	margin-bottom:50px;
+}
 .centerText {
     margin-left: auto;
     margin-right: auto;
@@ -187,3 +213,5 @@
 	font-weight: bold;
 	text-shadow: -1px 1px 10px black, 1px -1px 10px black;
 }
+
+

@@ -10,12 +10,11 @@
 	<style type="text/css">
 	header{
 	width: 1267px;
-	background-image: url("http://s29.postimg.org/oxn2apl93/cityskylinenycheader.png");
-	padding: 8px 4px;
+	background-image: url("http://s28.postimg.org/gq88l8vst/cityskylinenycheader.png");
+		padding: 8px 4px;
 	clear: both;
 	}
 	</style>
-	
 	<script type="text/javascript">
 		
 	function validatePassword() {
