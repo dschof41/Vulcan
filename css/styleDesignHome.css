@@ -14,7 +14,7 @@
 	display:inline-block;
 	margin-left:28%;
 	margin-right:20%;
-	margin-top:5%;
+	margin-top:7%;
 	font-family: Century Gothic;
 	font-size: 58pt;
 	color: white;
@@ -27,6 +27,7 @@
 	position: relative;
 	margin-right:40%;
 	margin-left:40%;
+	margin-top: 1%;
 	display:inline-block;
 	z-index: 1;
 	color: white;	

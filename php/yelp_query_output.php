@@ -10,8 +10,11 @@ for ($i = 0; $i < count($qry); $i++)
 	$bus = $qry[$i]; //string for ease of use
 	echo $bus->name . "<br>(" . $bus->phone . ")<br>";
 	echo $bus->address . "<br><br>";
+	
 } 
 echo "</div>";
+
+
 //Run a query using input to create javascript for map object
 $map = map_query($t, $l);
 
@@ -20,6 +23,14 @@ echo "function initialize() { var mapOptions = { center: { lat: " . $map->lat . 
 echo  "var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions); }";
 echo "google.maps.event.addDomListener(window, 'load', initialize);";
 echo "</script>";
+
+
+//Loop through businesses 
+
+
+
+
+
 
 
 ?>

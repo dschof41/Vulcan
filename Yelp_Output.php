@@ -49,7 +49,7 @@
 	$t = $_POST["term"];
 	$l = $_POST["location"];
 ?>
-<?php include 'yelp_query_output.php'; ?>
+<?php include 'php/yelp_query_output.php'; ?>
 <div id="map-canvas"></div>		
 </section>
 	

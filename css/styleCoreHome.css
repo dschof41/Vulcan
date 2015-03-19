@@ -96,11 +96,12 @@
     { color: white; }
 
 #buttons {
-	display:inline-block;
-	position:relative;
-	margin-left:40%;
-	margin-right:50%;
-	margin-top:40px;
+	float: left;
+  	margin-bottom: 10px;
+	padding-left: 350px;
+    position: fixed;
+    top: 280px;
+    opacity: 0.8;
 }
 
 #buttons ul li
@@ -131,12 +132,10 @@ background-color: #0079ad;
 box-shadow: 0 0 1px rgba(0,0,0, .75);
 }
 
-#buttons ul li a{
+#buttons ul li a {
 	text-decoration:none;
 	padding:20px;
 }
-
-
 
 #primary_nav_wrap
 {
