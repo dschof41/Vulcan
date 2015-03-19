@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			session_start();
 			$_SESSION['login'] = "1";
 
-			header ("Location: ../Vulcan_Login.php");
+			header ("Location: ../Vulcan_Signup_Login.php");
 
 		}
 
