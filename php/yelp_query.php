@@ -37,7 +37,7 @@ function populate_cards($term, $location) {
 	   	$card->name = $busInfo->name;
 	    $card->phone = $busInfo->display_phone;
 	    $card->address = $busInfo->location->display_address[0] . " " . $busInfo->location->display_address[1];
-	    $card->rating = $busInfo->rating_img_url_small;
+	    $card->rating = $busInfo->rating_img_url_large;
 	    $card->image = $busInfo->image_url;
 	    $card->url = $busInfo->url;
 	    //$card->distance = $busInfo->distance;
