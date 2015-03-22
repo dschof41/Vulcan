@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+<?PHP include 'login/check_session.php'; ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
