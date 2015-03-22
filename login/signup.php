@@ -14,6 +14,8 @@
 //collect other information: date and time of login, ip address, etc
 //don't store passwords without encrypting them
 
+//$USERNAME_ERROR = "";
+
 $uname = "";
 $pword = "";
 $errorMessage = "";
@@ -97,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$num_rows = mysql_num_rows($result);
 
 		if ($num_rows > 0) {
-			$errorMessage = "Username already taken";
+			header ("Location: ../Vulcan_Signup_Taken.php");
 		}
 		
 		else {

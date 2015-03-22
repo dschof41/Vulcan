@@ -41,12 +41,12 @@
 
 	<div class="centerText">
   <p>Welcome to ... Create your account to get started.</p>
-  </div>		
+  </div>
+  
+	<p class="error">Username taken! Please try another one</p>		
   
   <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
-  
-  <?php echo "<p>" . $GLOBALS['USERNAME_ERROR'] . "</p>"; ?>
-  
+    
   <form id="userInfo" action="login/signup.php" method="post">
 				Fill out all fields: <p>
 				Username: <input type="text" name="username" value= "" required><br>
