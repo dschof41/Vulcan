@@ -1,4 +1,3 @@
-<?php include 'login/login.php' ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +45,7 @@
   
   <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
   
-	<form id="userInfo" action="Vulcan_Login.php" method="post">
+	<form id="userInfo" action="login/login.php" method="post">
 				Username: <input type="text" name="username" value= "" required><br>
 				Password: <input type="password" name="password" value="" required><br>
 				<input id="submit" type="submit" value ="Login">
