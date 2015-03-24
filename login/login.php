@@ -21,6 +21,7 @@ function quote_smart($value, $handle) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$uname = $_POST['username'];
 	$pword = $_POST['password'];
+	session_start();
 
 	$uname = htmlspecialchars($uname);
 	$pword = htmlspecialchars($pword);
@@ -43,24 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$uname = quote_smart($db_handle, $uname);
 	$pword = quote_smart($db_handle, $pword);
 
-	
 	$SQL = "SELECT * FROM login WHERE L1 = $uname AND L2 = md5($pword)";
-	
 	
 	$result = mysqli_query($db_handle,$SQL);
 	$num_rows = mysqli_num_rows($result);
-
-	/*$db_handle = mysql_connect($server, $user_name, $pass_word);
-	$db_found = mysql_select_db($database, $db_handle);
-
-	if ($db_found) {
-
-		$uname = quote_smart($uname, $db_handle);
-		$pword = quote_smart($pword, $db_handle);
-
-		$SQL = "SELECT * FROM login WHERE L1 = $uname AND L2 = md5($pword)";
-		$result = mysql_query($SQL);
-		$num_rows = mysql_num_rows($result);*/
 
 	//====================================================
 	//	CHECK TO SEE IF THE $result VARIABLE IS TRUE
@@ -68,14 +55,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		if ($result) {
 			if ($num_rows > 0) {
-				session_start();
+				//session_start();
 				$_SESSION['login'] = "1";
+				$_SESSION['user'] = $uname;
 				header ("Location: ../Vulcan_Home.php");
 			}
 			else {
-				session_start();
+				//session_start();
 				$_SESSION['login'] = "";
-				header ("Location: ../Vulcan_Signup.php");
+				$_SESSION['attempts']--;
+				if ($_SESSION['attempts'] == 0){
+					header ("Location: ../Vulcan_Signup.php");
+				}
 			}	
 		}
 		else {
@@ -94,30 +85,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
 ?>
-
-
-<html>
-<head>
-<title>Basic Login Script</title>
-</head>
-<body>
-
-<FORM NAME ="form1" METHOD ="POST" ACTION ="login.php">
-
-Username: <INPUT TYPE = 'TEXT' Name ='username'  value="<?PHP print $uname;?>" maxlength="20">
-Password: <INPUT TYPE = 'TEXT' Name ='password'  value="<?PHP print $pword;?>" maxlength="16">
-
-<P align = center>
-<INPUT TYPE = "Submit" Name = "Submit1"  VALUE = "Login">
-</P>
-
-</FORM>
-
-<P>
-<?PHP print $errorMessage;?>
-
-
-
-
-</body>
-</html>
