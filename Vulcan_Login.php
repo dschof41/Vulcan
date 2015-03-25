@@ -1,3 +1,8 @@
+<?php 
+	
+	session_start();
+	include 'login/login.php';
+?>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +22,9 @@
 	</style>
 	
 	<script type="text/javascript">
-		
+	
+	var ref = <?php json_encode($_SERVER['HTTP_REFERER']); ?>
+	//alert(ref);
 	function validatePassword() {
     var x = userInfo.pw.value;
     var y = userInfo.confirmpw.value;
@@ -42,10 +49,16 @@
 	<div class="centerText">
   <p>Welcome to Vulcan... Please Login.</p>
   </div>		
-  
+  <p><span class="error">
+  <?php 
+  	if($_SESSION['attempts'] < 4){
+  	echo "You have: " . $_SESSION['attempts'] . " attempts remaining";
+  	}
+ ?>
+ </span></p>
   <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
   
-	<form id="userInfo" action="login/login.php" method="post">
+	<form id="userInfo" action="Vulcan_Login.php" method="post">
 				Username: <input type="text" name="username" value= "" required><br>
 				Password: <input type="password" name="password" value="" required><br>
 				<input id="submit" type="submit" value ="Login">
