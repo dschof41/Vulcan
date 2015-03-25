@@ -23,6 +23,7 @@ class map_object {
 /*queries yelp's server with the term and location provided
 
 Created by Dan Schofer 3/17/2015
+Updated by Dan Schofer 3/25/2015
 */
 function populate_cards($term, $location) {
 
@@ -35,10 +36,26 @@ function populate_cards($term, $location) {
 		$card = new business_card();
 	   	$busInfo = $response->businesses[$i]; //shortcut to current business
 	   	$card->name = $busInfo->name;
-	    $card->phone = $busInfo->display_phone;
-	    $card->address = $busInfo->location->display_address[0] . " " . $busInfo->location->display_address[1];
+	   	
+	   	if (isset($busInfo->display_phone)){
+	    	$card->phone = $busInfo->display_phone;
+	    }else{
+	    	$card->phone = 'no phone provided';
+	    }
+	    
+	    if (isset($busInfo->location->display_address[0]) && isset($busInfo->location->display_address[1])) { 
+	    	$card->address = $busInfo->location->display_address[0] . " " . $busInfo->location->display_address[1];
+	    }else{
+	    	$card->address = "no address provided";
+	    }
+	    
 	    $card->rating = $busInfo->rating_img_url_large;
-	    $card->image = $busInfo->image_url;
+	    
+	    if (isset($busInfo->image_url)){
+	    	$card->image = $busInfo->image_url;
+	    }else{
+	    	$card->image = 'images/default.jpg';
+	    }
 	    $card->url = $busInfo->url;
 	    //$card->distance = $busInfo->distance;
 	    

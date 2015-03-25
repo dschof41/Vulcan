@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Search Results</title>
-	<link href="images/avatar.png" rel="shortcut icon" type="image/png">
-	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
-	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
-	<script src="js/javaScript.js" type="text/javascript"></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9Rt9jw2Sr2Rdz3Q00L-4XeG8wSJz9JxY"></script>
-	<style type="text/css">
-	header{
-	width: 1267px;
-	background-image: url("http://s18.postimg.org/cjg6chn2x/cityskylinenycheader.png");
-	padding: 8px 4px;
-	clear: both;
-	}
-
-  	#map-canvas {
-  	height: 6in;
-  	margin: 10px;
-  	margin-top:-70px;
-  	padding: 0;
-  	width:7in;
-  	display:inline;	
-  	float:right;
-  	border:2px silver solid;
-  	}
-	</style>
-	<?php
-	$t = $_POST["term"];
-	$l = $_POST["location"];
-	
-	include 'php/yelp_vulcan_query.php';
-	?>
-	
-	
-	<script type="text/javascript">
-
-	
-	//Pull latitude and longitude from PHP script and create javascript variables
+﻿//Pull latitude and longitude from PHP script and create javascript variables
 	var latitude = <?php echo json_encode($latitude); ?>;
 	var longitude = <?php echo json_encode($longitude); ?>;
 	
@@ -90,7 +50,7 @@ function initialize() {
 		    	}
 			});	 	  		
 	}*/
- }
+}
 google.maps.event.addDomListener(window, 'load', initialize);
 
 	/*function mapCenter(){
@@ -105,9 +65,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			});	 	  	
 	}*/
 	
-	
-/* 
-Select function that allows user to select a business card from given list, and removes previous selections if any
+/* Select function that allows user to select a business card from given list, and removes previous selections if any
 
 Created by Dan Schofer 3/25/2015
 */
@@ -124,24 +82,6 @@ Created by Dan Schofer 3/25/2015
         	e.id = 'card-selected';
         }
     }
+    //initialize();
 }	
 
-	</script>
-	
-</head>
-<body>
-	<header>
-	</header>
-	
-	<nav id="primary_nav_wrap">
-	</nav>
-<section>
-<div class="headerTitle">Search Results</div>
-<?php include 'php/yelp_query_output.php'; ?>
-<div id="map-canvas"></div>		
-</section>
-	
-	<footer id="footer">
-	</footer>
-</body>
-</html>
