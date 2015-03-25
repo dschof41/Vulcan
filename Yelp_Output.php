@@ -91,8 +91,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div id="map-canvas"></div>		
 </section>
 	
-	<footer>
-	<font size="2" color="white"> <a href="Vulcan/url">App Name</a>|<a href="Vulcan/url">By Team Vulcan</a>| Bentley University | CS460 | Spring 2015 |</font>
+	<footer id="footer">
 	</footer>
 </body>
 </html>

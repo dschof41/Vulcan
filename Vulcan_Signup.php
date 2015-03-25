@@ -1,8 +1,12 @@
+<?php
+session_start();
+include 'login/signup.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Sign Up</title>
+	<title>Register</title>
 	<link href="images/avatar.png" rel="shortcut icon" type="image/png">
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
@@ -18,17 +22,17 @@
 	<script type="text/javascript">
 								 	
 	function validatePassword() {
-    var x = userInfo.password.value;
-    var y = userInfo.confirmpw.value;
-    if (x != y) {
-        alert("Please Reconfirm Password");
-        return false;
-    }
-}
+	    var x = userInfo.password.value;
+	    var y = userInfo.confirmpw.value;
+	    if (x != y) {
+	        alert("Please Reconfirm Password");
+	        return false;
+   		}
+	}
 	</script>
 	
 </head>
-<body onload="loginPrompt();">
+<body>
 	<header>
 	</header>
 	
@@ -41,10 +45,17 @@
 	<div class="centerText">
   <p>Welcome to ... Create your account to get started.</p>
   </div>		
-  
+  <p>
+  	<?php
+  		if(isset($_SESSION['message'])){
+  			echo $_SESSION['message'];
+  		}
+  		$_SESSION['message'] = "";
+  	?>
+  </p>
   <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
   
-  <form id="userInfo" action="login/signup.php" method="post">
+  <form id="userInfo" action="Vulcan_Signup.php" method="post">
 				Fill out all fields: <p>
 				Username: <input type="text" name="username" value= "" required><br>
 				Email Address: <input type="text" name="email" value="" required ><br>
@@ -54,8 +65,7 @@
 		</form>
 	</section>
 	
-	<footer>
-	<font size="2" color="white"> <a href="url">App Name</a>|<a href="url">By Team Vulcan</a>| Bentley University | CS460| Spring 2015 |</font>
-	</footer>
+		<footer id="footer">
+		</footer>
 </body>
 </html>

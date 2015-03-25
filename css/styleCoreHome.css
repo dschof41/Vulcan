@@ -1,31 +1,23 @@
-﻿body {
-	margin: 0px auto; 
-	width: 1280px;
-	border: 1px silver solid;
-	position: relative;
+﻿body#background {
+  /* background: url('http://s30.postimg.org/hgkp4trbj/buildings_high_rise_manhattan_2324.jpg') no-repeat 50% 50% fixed; 
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover; */
+}
+
+footer#footer {
+	
+	margin-top: 25%;
+	font-size: 15px;
+	color: white;
+	margin-left: 0%;
+	font-size: 14px;
+	font-weight:bold;
+	text-align:center;
 	font-family: Century Gothic;
 }
 
-	header{
-	width: 1272px;
-	background-image: url("http://s12.postimg.org/dyoghju6j/default_hero_hires.jpg");
-	padding: 8px 4px;
-}
-	
-	header {
-	height: 480px; 
-	border-bottom: 1px #4A708B groove;
-}
-
-	footer {
-	height: 25px;
-	border-top: 1px #4A708B solid;
-	clear: both;
-	background-color: #0D4F8B;
-	padding-bottom: 10px;
-	padding-top: 10px;
-
-}
 	aside {
 	float: left; 
 	width: 140px; 
@@ -45,19 +37,20 @@
 
 	nav 
 	{
+	font-family: Century Gothic;
 	float: none;
 	height: 28px;
-  	margin-bottom: 10px;
-	padding-bottom: 8px;
-	padding-left: 350px;
-	padding-top: 15px;
+  	padding-bottom: 15px;
+	padding-left: 450px;
+	padding-top: 20px;
     position: fixed;
-    top: -28px;
+    top: -18px;
     z-index: 1;
-    background: white;
-    opacity: 0.8;
-    width: 1000px;
-}
+    //background: gray;
+    //opacity: 0.8;
+    width: 100%;
+    
+ }
 	nav ul {
 	margin: 0px;
 	padding: 5px;
@@ -80,41 +73,44 @@
 	padding: 1px 25px;
 	text-decoration: none;
 	//background-color: #ffffff;
-	opacity:0.7;
-	//text-shadow: -1px 1px 10px white, 1px -1px 10px white;
+	//opacity:0.7;
+	text-shadow: -1px 1px 10px white, 1px -1px 10px white;
 
     }
 
 	nav li a:hover {
 	color: white;
-	background-color: white;
+	//background-color: none;
     text-shadow: -1px 1px 5px black, 1px -1px 5px black;
     font-family: Century Gothic;
+    transition: 0.10s; 
     }
             
     a
     { color: white; }
 
 #buttons {
-	position:fixed;
+	white-space: nowrap;
 	float: left;
-  	margin-bottom: 10px;
-	padding-left: 350px;
-    top: 290px;
+  	margin-bottom: 10%;
+	padding-left: 32.8%;
+    margin-top: 7%;
     opacity: 0.8;
+    font-family: Century Gothic;
 }
 
 #buttons ul li
 {	
+position: relative;
 display:inline;
 height:0.3in;
 width:1in;
 cursor:pointer;  
 background: #009cde; 
-border:1px solid #009cde;
--moz-border-radius: 10px;
--webkit-border-radius: 10px;
-border-radius: 5px;
+border: 2px solid #009cde;
+//-moz-border-radius: 10px;
+//-webkit-border-radius: 10px;
+//border-radius: 5px;
 -webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
 -moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
 box-shadow: 0 0 4px rgba(0,0,0, .75);
@@ -132,10 +128,12 @@ background-color: #0079ad;
 box-shadow: 0 0 1px rgba(0,0,0, .75);
 }
 
-#buttons ul li a {
+#buttons ul li a{
 	text-decoration:none;
 	padding:20px;
 }
+
+
 
 #primary_nav_wrap
 {
@@ -173,7 +171,7 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 
 #primary_nav_wrap ul li:hover
 {
-	background: white;
+	background: none;
 	opacity:0.9;
 }
 
@@ -183,7 +181,7 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 	position:absolute;
 	top:100%;
 	left:0;
-	background:white;
+	background:none;
 	padding:0
 }
 
@@ -210,3 +208,45 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 	display:block
 }
 
+#background_cycler{padding:0;margin:0;width:100%;position:absolute;top:0;left:0;z-index:-1;white-space: nowrap;min-height: 100%;
+  min-width: 1024px;}
+#background_cycler img{position:fixed;left:0;top:0;width:100%;z-index:1;white-space: nowrap;min-height: 100%;
+  min-width: 1024px;}
+#background_cycler img.active{z-index:3;white-space: nowrap;min-height: 100%;
+  min-width: 1024px;}
+
+a.tip {
+  position: relative;
+  text-decoration: none;
+}
+a.tip:hover:before {
+  display: block;
+  position: absolute; 
+  padding: .5em;
+  content: attr(title);
+  min-width: 120px;
+  text-align: center;
+  width: auto;
+  height: auto;
+  white-space: nowrap;
+  top: -32px;
+  background: white;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;    
+  color: black;
+  font-size: 15px;
+}
+a.tip:hover:after {
+  position: absolute;
+  display: block;
+  content: "";  
+  border-color: rgba(0,0,0,.8) transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px;
+  height:0;
+  width:0;
+  position:absolute;
+  top: -8px;
+  left:1em;
+}

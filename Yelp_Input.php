@@ -38,11 +38,21 @@
 
 	<div class="headerTitle">Search</div>
 	<div class="centerText">
-  <p>Enter a term and location here!</p>
+  <p>
+  <?php
+  	session_start();
+  	if(isset($_SESSION['message'])){
+  		echo $_SESSION['message'];
+  	}
+  	if(empty($_SESSION['message'])){
+  		echo "Enter a term and location here!";
+  	}
+  	$_SESSION['message'] = "";
+  	?>
+  </p>
   </div>		
   
   <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
-  
 	<form id="yelpIn" action="Yelp_Output.php" method="post">
 	
 				Fill out all fields: <p>
@@ -53,8 +63,7 @@
 	
 	</section>
 	
-	<footer>
-	<font size="2" color="white"> <a href="url">App Name</a>|<a href="url">By Team Vulcan</a>| Bentley University | CS460| Spring 2015 |</font>
-	</footer>
+		<footer id="footer">	
+		</footer>
 </body>
 </html>

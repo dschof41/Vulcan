@@ -1,6 +1,5 @@
 <?php 
-	
-	session_start();
+	//session_start();
 	include 'login/login.php';
 ?>	
 <!DOCTYPE html>
@@ -23,8 +22,6 @@
 	
 	<script type="text/javascript">
 	
-	var ref = <?php json_encode($_SERVER['HTTP_REFERER']); ?>
-	//alert(ref);
 	function validatePassword() {
     var x = userInfo.pw.value;
     var y = userInfo.confirmpw.value;
@@ -33,8 +30,7 @@
         return false;
     }
 }
-	</script>
-	
+	</script>	
 </head>
 <body>
 	<header>
@@ -47,15 +43,25 @@
 	<div class="headerTitle">Login</div>
 
 	<div class="centerText">
-  <p>Welcome to Vulcan... Please Login.</p>
+  <p>
+  <?php 
+  	if(isset($_SESSION['message'])){
+  		echo $_SESSION['message'];
+  	}
+  	if(empty($_SESSION['message'])){
+  		echo "Welcome to Vulcan... Please Login.";
+  	}
+  	$_SESSION['message'] = "";
+  	?>
+  </p>
   </div>		
-  <p><span class="error">
+  <p>
   <?php 
   	if($_SESSION['attempts'] < 4){
   	echo "You have: " . $_SESSION['attempts'] . " attempts remaining";
   	}
  ?>
- </span></p>
+ </p>
   <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
   
 	<form id="userInfo" action="Vulcan_Login.php" method="post">
@@ -66,8 +72,7 @@
 	
 	</section>
 	
-	<footer>
-	<font size="2" color="white"> <a href="url">App Name</a>|<a href="url">By Team Vulcan</a>| Bentley University | CS460| Spring 2015 |</font>
-	</footer>
+		<footer id="footer">
+			</footer>
 </body>
 </html>

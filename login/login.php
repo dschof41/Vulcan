@@ -1,10 +1,11 @@
 <?PHP
+session_start();
 if(!isset($_SESSION['attempts'])){
 		$_SESSION['attempts'] = 5;
 	}else if ($_SESSION['attempts'] === 0){
-		header ("Location: Vulcan_Signup.php");
+		$_SESSION['attempts'] = 5;
+		header ("Location: Vulcan_Signup.php");	
 	}
-		
 $uname = "";
 $pword = "";
 $errorMessage = "";
@@ -64,18 +65,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		if ($result) {
 			if ($num_rows > 0) {
-				session_start();
 				$_SESSION['login'] = "1";
-				header ("Location: ../Vulcan_Home.php");
+				$_SESSION['message'] = "Thanks for logging in!";
+				header ("Location: Yelp_Input.php");	
 			}
-			else if($_SESSION['attempts'] === 0)
-				{
-					header ("Location: Vulcan_Signup.php");
-					
-			}else {
+			else if($_SESSION['attempts'] === 0) {
+					header ("Location: Vulcan_Signup.php");		
+			}else{
 				$_SESSION['login'] = "";
-				$_SESSION['attempts']--;	
-				
+				$_SESSION['attempts']--;		
 			} 
 // ===========================================================================================	
 		}
@@ -90,8 +88,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	else {
 		$errorMessage = "Error logging on";
 	}
-
-//}
-
 
 ?>

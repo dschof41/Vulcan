@@ -49,8 +49,7 @@
   <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
   </section>
 	
-	<footer>
-	<font size="2" color="white"> <a href="url">App Name</a>|<a href="url">By Team Vulcan</a>| Bentley University | CS460| Spring 2015 |</font>
-	</footer>
+		<footer id="footer">
+			</footer>
 </body>
 </html>

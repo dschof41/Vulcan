@@ -99,7 +99,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$num_rows = mysql_num_rows($result);
 
 		if ($num_rows > 0) {
-			header ("Location: ../Vulcan_Signup_Taken.php");
+			$_SESSION['message'] = "That username is taken! Please try a different one!";
+			header ("Location: Vulcan_Signup.php");
 		}
 		
 		else {
@@ -115,10 +116,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		//	SEND USER TO A DIFFERENT PAGE AFTER SIGN UP
 		//=================================================================================
 
-			session_start();
 			$_SESSION['login'] = "1";
-
-			header ("Location: ../Vulcan_Signup_Login.php");
+			$_SESSION['message'] = "Thanks for registering! Please login now!";
+			header ("Location: Vulcan_Login.php");
 
 		}
 

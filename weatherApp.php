@@ -1,4 +1,3 @@
-<?PHP include 'login/check_session.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +24,22 @@
 	padding: 8px 4px;
 	clear: both;
 }
+	section 
+	{
+	background-color: #FFEBCD;
+	margin-bottom: 0%;
+	overflow: hidden;
+	}
+	
+	#submit 
+	{
+	top: 1px;
+	margin-left: 8px;
+	padding: 2px 4px;
+	position: relative;
+	font-family: "Century Gothic";
+	font-size: 15px;
+	}
 
 	</style>
 		
