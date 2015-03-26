@@ -2,6 +2,7 @@
 
 /*
 This script populates the card-holder div with business cards from the query of yelp's server based on user input
+
 */
 
 echo "<div id='card-holder'>";
@@ -25,6 +26,8 @@ for ($i = 0; $i < count($qry); $i++)
 	echo "</div>";	
 } 
 echo "</div>";
+
+
 
 
 ?>

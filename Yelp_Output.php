@@ -56,26 +56,46 @@ function initialize() {
 			},
 			zoom: 12
 		}
-
+	
+	//Instantiate map based on attributes set in MapOptions
 	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	
+	//Arrays for creating and naming markers, taken from yelp return in php
 	var coordinates = <?php echo json_encode($coords); ?>;
 	var names = <?php echo json_encode($names); ?>;
+	
+	//Geogcoder used to translate addresses into LatLng objects
 	var geocoder = new google.maps.Geocoder();
 	
+	//Array of info panes
+	var infoPanes =<?php echo json_encode($infoPanes); ?>;
+	
 	for (var i = 0; i<coordinates.length; i++){
-	var k = 0;
-	geocoder.geocode( { 'address': coordinates[i] }, function(results, status){
-		if(results[0].geometry.location){
-		var marker = new google.maps.Marker({
-			map: map,
-			position: results[0].geometry.location,
-			title: names[k]
-			});
-			k++;
-			}
+		var k = 0;
+		var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+		geocoder.geocode( { 'address': coordinates[i] }, function(results, status){
+			//if(results[0].geometry.location){
+				var marker = new google.maps.Marker({
+					map: map,
+					position: results[0].geometry.location,
+					title: names[k],
+					icon: "http://maps.google.com/mapfiles/marker" + letters[k] + ".png"
+				});	
+				var info = new google.maps.InfoWindow({
+					content: infoPanes[k]
+				});
+				google.maps.event.addListener(marker, 'click', function() {
+					info.open(map,marker);
+				});
+				k++;	
 		});
 	}
 	
+}	
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
 	/*if ((document.getElementById("card-selected"))){
 		
 			var objects = document.getElementById("card-selected").innerHTML;
@@ -90,8 +110,6 @@ function initialize() {
 		    	}
 			});	 	  		
 	}*/
- }
-google.maps.event.addDomListener(window, 'load', initialize);
 
 	/*function mapCenter(){
 			initialize();
