@@ -11,7 +11,7 @@
 	<style type="text/css">
 	header{
 	width: 1267px;
-	background-image: url("http://s18.postimg.org/cjg6chn2x/cityskylinenycheader.png");
+	background-image: url("http://s9.postimg.org/s4gq9ivct/cityskylinenycheader.png");
 	padding: 8px 4px;
 	clear: both;
 	}
@@ -28,28 +28,30 @@
   	}
 	</style>
 	<?php
+	//Pull variables from the Yelp_Input form
 	$t = $_POST["term"];
 	$l = $_POST["location"];
 	
-	include 'php/yelp_vulcan_query.php';
+	//Run query from pulled variables
+	include 'login\php\yelp_vulcan_query.php';
 	?>
 	
 	
 	<script type="text/javascript">
 
 	
-	//Pull latitude and longitude from PHP script and create javascript variables
+	//Pull latitude and longitude from the query script we just ran and create javascript variables
 	var latitude = <?php echo json_encode($latitude); ?>;
 	var longitude = <?php echo json_encode($longitude); ?>;
 	
 	//Using coordinates from yelp php query, create a google map object 
-	
 	var geocoder;
 	var map;
-	
+
+//Build out the map and populate it	
 function initialize() { 
 		document.hasFocus
-	var mapOptions = {
+	var mapOptions = { //set map properties
 		center: { 
 			lat: latitude,
 			lng: longitude
@@ -57,7 +59,7 @@ function initialize() {
 			zoom: 12
 		}
 	
-	//Instantiate map based on attributes set in MapOptions
+	//Instantiate map object based on attributes set in MapOptions
 	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 	
 	//Arrays for creating and naming markers, taken from yelp return in php
@@ -67,75 +69,48 @@ function initialize() {
 	//Geogcoder used to translate addresses into LatLng objects
 	var geocoder = new google.maps.Geocoder();
 	
-	//Array of info panes
+	//Array of info windows, calling it info panes for some reason
 	var infoPanes =<?php echo json_encode($infoPanes); ?>;
 	
+	//Loop through each business result from our query and add a labeled marker with a info window 
 	for (var i = 0; i<coordinates.length; i++){
-		var k = 0;
+		var k = 0;//counter for markers and window
 		var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 		geocoder.geocode( { 'address': coordinates[i] }, function(results, status){
-			//if(results[0].geometry.location){
-				var marker = new google.maps.Marker({
+				var marker = new google.maps.Marker({ //new marker wtih attributes
 					map: map,
 					position: results[0].geometry.location,
 					title: names[k],
 					icon: "http://maps.google.com/mapfiles/marker" + letters[k] + ".png"
 				});	
-				var info = new google.maps.InfoWindow({
+				var info = new google.maps.InfoWindow({ //new window still within loop
 					content: infoPanes[k]
 				});
-				google.maps.event.addListener(marker, 'click', function() {
+				google.maps.event.addListener(marker, 'click', function() {//adds listener to each marker
 					info.open(map,marker);
 				});
-				k++;	
-		});
-	}
-	
-}	
-	google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-	/*if ((document.getElementById("card-selected"))){
+				k++; //increment K counter	
+		});//close geocoder
 		
-			var objects = document.getElementById("card-selected").innerHTML;
-		    var start = objects.indexOf('address') + 9;
-		    var end = objects.indexOf('</span>');
-		    var selectedAddress = objects.substring(start, end);
-		
-			geocoder.geocode( { 'address': selectedAddress }, function(results, status){
-			
-				if(results[0].geometry.location){
-		    		map.setCenter(results[0].geometry.location);
-		    	}
-			});	 	  		
-	}*/
+	}// close for loop
+	
+}//close Initialize function
 
-	/*function mapCenter(){
-			initialize();
-		    var objects = document.getElementById("card-selected").innerHTML;
-		    var start = objects.indexOf('address') + 9;
-		    var end = objects.indexOf('</span>');
-		    var selectedAddress = objects.substring(start, end);		    
-		    var geo = new google.maps.Geocoder();
-		    geo.geocode( { 'address': selectedAddress }, function(results, status){
-		    	map.setCenter(results[0].geometry.location);
-			});	 	  	
-	}*/
-	
-	
+google.maps.event.addDomListener(window, 'load', initialize); //creates map on window load by running initialize
+
 /* 
 Select function that allows user to select a business card from given list, and removes previous selections if any
 
 Created by Dan Schofer 3/25/2015
 */
-	function select(e) {
-    if(e.id == 'card-selected') {
+	function select(e) { //function takes HTML object element
+    if(e.id == 'card-selected') { //check id of selected object, if its already selected, unselect it
         e.id = '';
     } else {
-    	var cards = document.getElementById("card-holder").children;
+    
+    	var cards = document.getElementById("card-holder").children; //check each business card HTML object
     	
-    	for(var i = 0; i < cards.length; i++){
+    	for(var i = 0; i < cards.length; i++){ 
     		if (cards[i].id == 'card-selected'){
     			cards[i].id = '';
     		}
@@ -155,7 +130,7 @@ Created by Dan Schofer 3/25/2015
 	</nav>
 <section>
 <div class="headerTitle">Search Results</div>
-<?php include 'php/yelp_query_output.php'; ?>
+<?php include 'login\php\yelp_query_output.php'; ?>
 <div id="map-canvas"></div>		
 </section>
 	

@@ -20,6 +20,7 @@ $uname = "";
 $pword = "";
 $errorMessage = "";
 $num_rows = 0;
+$email = "";
 
 function quote_smart($value, $handle) {
 
@@ -40,9 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	//====================================================================
 	$uname = $_POST['username'];
 	$pword = $_POST['password'];
+	$email = $_POST['email'];
 
 	$uname = htmlspecialchars($uname);
 	$pword = htmlspecialchars($pword);
+	$email = htmlspecialchars($email);
 
 	//====================================================================
 	//	CHECK TO SEE IF U AND P ARE OF THE CORRECT LENGTH
@@ -99,13 +102,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$num_rows = mysql_num_rows($result);
 
 		if ($num_rows > 0) {
-			$_SESSION['message'] = "That username is taken! Please try a different one!";
-			header ("Location: Vulcan_Signup.php");
+			$_SESSION['message'] = "That username is taken! Try again!";
+			//header ("Location: Vulcan_Signup.php");
 		}
 		
 		else {
 
-			$SQL = "INSERT INTO login (L1, L2) VALUES ($uname, md5($pword))";
+			$SQL = "INSERT INTO login (L1, L2, userEmail) VALUES ($uname, md5($pword), $email)";
 
 			$result = mysql_query($SQL);
 
@@ -118,8 +121,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 			$_SESSION['login'] = "1";
 			$_SESSION['message'] = "Thanks for registering! Please login now!";
-			header ("Location: Vulcan_Login.php");
-
+			header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Login.php");
+			exit();
 		}
 
 	}

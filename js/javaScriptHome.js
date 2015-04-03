@@ -8,7 +8,7 @@ window.onload = function () {
 	html += "<div id='_firstname'>TEAM VULCAN</div><br>";
 	html += "<div id='_headersubtext'>Welcome to our site!</div>";
 	
-	html+=	"<div id='buttons'><ul><li><a href='Yelp_Input.php'>Search</a></li><li><a href='Vulcan_Login.php'>Login</a></li><li><a href='Vulcan_Signup.php'>Sign Up</a></li></ul></div>";
+	html+=	"<div id='buttons'><ul><li><a href='Yelp_Input.php'>SEARCH</a></li><li><a href='Vulcan_Login.php'>LOGIN</a></li><li><a href='Vulcan_Signup.php'>SIGN UP</a></li></ul></div>";
 	html += "</div>";
 	
 	document.getElementById("background_cycler").innerHTML = 
@@ -16,8 +16,7 @@ window.onload = function () {
 	"<img class='active' + src='http://s29.postimg.org/rqp1kozdh/homeheaderpix1.png' alt=''/>" +
 	"<img src='http://s9.postimg.org/pbuop42jx/homeheaderpix1.png' alt=''/>" +
 	"<img src='http://s27.postimg.org/rt06zj7sh/homeheaderpix1.png' alt=''/>" +
-	"<img src='http://s23.postimg.org/wsij3jovt/cityskylinenycheader.png' alt=''/>" +
-	"<img src='http://s23.postimg.org/7a8ify55l/homeheaderpix1.png' alt=''/>" 
+	"<img src='http://s23.postimg.org/wsij3jovt/cityskylinenycheader.png' alt=''/>" 
 
 	document.getElementsByTagName("header")[0].innerHTML = html; // set header
 	html = ""

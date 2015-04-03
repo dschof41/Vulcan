@@ -31,8 +31,7 @@
 	border-right: 1px #0D4F8B dashed;
 }
 	section{
-	//float: left;
-	//width: 1200px;
+	background: whitesmoke;
 }
 	aside, section{
 	margin-bottom: 8px;
@@ -44,14 +43,14 @@
 	height: 28px;
   	margin-bottom: 10px;
 	padding-bottom: 8px;
-	padding-left: 340px;
+	padding-left: 270px;
 	padding-top: 15px;
     position: fixed;
     top: -28px;
     z-index: 1;
     background: white;
     opacity: 0.8;
-    width: 1000px;
+    width: 1100px;
     
 }
 	nav ul {
@@ -208,20 +207,20 @@
 	color:red;
 }
 .centerText {
-    margin-left: auto;
+      margin-left: auto;
     margin-right: auto;
-    width: 100%;
-    background-color: #0D4F8B;
-    color: white;
+    width: 50%;
+    color: #0D4F8B;
     float: inherit;
     font-family: Century Gothic;
     text-align: center;
-    padding-top: 1.2px;
+    margin-top: 40px;
+    padding-top: 10px;
     padding-bottom: 2px;
-    border-top: 18px white solid;
-    opacity:0.9;
     position: relative;
-    top: -80px;
+    top: -100px;
+    background-color: rgba(110, 150, 221, 0.2);
+    font-weight: bold;
  }
 
 .headerTitle {
@@ -273,32 +272,60 @@ a.tip:hover:after {
 
 .weatherItem { width: 450px; height: 200px; background-position: right center; margin-top: 50px;}
 .weatherForecastItem { margin-top: 1em; background-position: center center; font-size: 0.9em; }
-.weatherLink { margin-top: 1em; margin-bottom: 10px;}
+.weatherLink { margin-top: 1em; margin-bottom: 10px; padding-top: 20px;}
 
 .weatherForecast {}
-.weatherForecastItem { float: left; margin: 1em 2em 1em 0; padding-right: 4em; background-position: right; }
+.weatherForecastItem { float: left; margin: 1em 2em 1em 2; padding-right: 4em; background-position: right; }
 .weatherLink { clear: both; }
 
  #weatherReport
 	 {
-	position: relative;
- 	margin-left: 55%; 
- 	top: -250px;
- 	 	
+	position: absolute;
+ 	margin-left: 40%; 
+ 	margin-top: 4%;
+ 	top: 50%;
+ 	padding-top: -10%;
+	width: 34%;
+	height: 85%;
+	padding-left: 4%;
+	background: rgba(48, 121, 149, 0.4);
+	border: thin #778899 dashed;
+	-moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius:15px 15px 15px 15px; 	
+   
 	}
+
 	#weatherList
 	{
-	margin-left: 4%;
-		}
+	padding-left: 2%;
+	top: 450px;
+	position: absolute;
+	padding-top: 2.5%;
+	margin-left: 2.9%;
+	//border: thick green solid;
+	width: 32.8%;
+	height: 80%;
+	font-size: 15.2px;
+	border: thin #778899 dashed;
+	background:rgba(48, 121, 149, 0.4);	
+	-moz-border-radius: 15px 15px 15px 15px;
+	 -webkit-border-radius: 15px 15px 15px 15px;
 	
+		}
+		
 	#weatherList a 
 	{
 	color: #0D4F8B;;
 	}
-#weatherSearch{
 	
+#weatherSearch 
+	{
 	margin-left: 32%;
-	margin-top: -58px;
+	margin-top: -40px;
 	color: #0D4F8B;
 	padding-bottom: 25px;
-}
+	font-weight: bold;
+	}
+	#weatherLocation{
+	padding: 5px 8px 8px 9px;
+	}

@@ -7,16 +7,19 @@
 }
 
 footer#footer {
-	
-	margin-top: 25%;
+		
+	top: 729px;
 	font-size: 15px;
 	color: white;
-	margin-left: 0%;
+	margin-left: 29%;
 	font-size: 14px;
 	font-weight:bold;
 	text-align:center;
 	font-family: Century Gothic;
+	position: absolute;
+	
 }
+
 
 	aside {
 	float: left; 
@@ -41,7 +44,7 @@ footer#footer {
 	float: none;
 	height: 28px;
   	padding-bottom: 15px;
-	padding-left: 450px;
+	padding-left: 400px;
 	padding-top: 20px;
     position: fixed;
     top: -18px;
@@ -90,13 +93,15 @@ footer#footer {
     { color: white; }
 
 #buttons {
-	white-space: nowrap;
+    white-space: nowrap;
 	float: left;
   	margin-bottom: 10%;
-	padding-left: 32.8%;
+	padding-left: 31.5%;
     margin-top: 7%;
     opacity: 0.8;
     font-family: Century Gothic;
+    text-align:center;
+
 }
 
 #buttons ul li
@@ -107,10 +112,10 @@ height:0.3in;
 width:1in;
 cursor:pointer;  
 background: #009cde; 
-border: 2px solid #009cde;
-//-moz-border-radius: 10px;
-//-webkit-border-radius: 10px;
-//border-radius: 5px;
+border: 2px solid #00BFFF;
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
+border-radius: 5px;
 -webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
 -moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
 box-shadow: 0 0 4px rgba(0,0,0, .75);
@@ -119,6 +124,7 @@ font-size:19px;
 text-align:center;
 padding:15px;
 margin:10px;
+font-weight: bold;
 }
 
 #buttons ul li:hover {

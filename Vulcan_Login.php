@@ -14,7 +14,7 @@
 	<style type="text/css">
 	header{
 	width: 1267px;
-	background-image: url("http://s1.postimg.org/snl9ugl5r/cityskylinenycheader.png");
+	background-image: url("http://s12.postimg.org/yty0pd157/cityskylinenycheader.png");
 	padding: 8px 4px;
 	clear: both;
 }
@@ -55,14 +55,14 @@
   	?>
   </p>
   </div>		
-  <p>
+  <p class="error">
   <?php 
   	if($_SESSION['attempts'] < 4){
   	echo "You have: " . $_SESSION['attempts'] . " attempts remaining";
   	}
  ?>
  </p>
-  <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
+  <div style="padding-left: 550px; padding-right: 270px; padding-top: -10px; padding-bottom: 25px; margin-top: -41px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
   
 	<form id="userInfo" action="Vulcan_Login.php" method="post">
 				Username: <input type="text" name="username" value= "" required><br>

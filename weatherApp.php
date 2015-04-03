@@ -20,25 +20,24 @@
 
 	header{
 	width: 1267px;
-	background-image: url("http://s24.postimg.org/pf281yp05/cityskylinenycheader.png");
+	background-image: url("http://s17.postimg.org/6zkiipbcd/cityskylinenycheader.png");
 	padding: 8px 4px;
 	clear: both;
-}
-	section 
-	{
-	background-color: #FFEBCD;
-	margin-bottom: 0%;
-	overflow: hidden;
 	}
 	
+	section 
+	{
+	height: 850px;
+	}
+
 	#submit 
 	{
-	top: 1px;
+	top: 4px;
 	margin-left: 8px;
-	padding: 2px 4px;
+	padding: 4px 8px;
 	position: relative;
 	font-family: "Century Gothic";
-	font-size: 15px;
+	font-size: 17px;
 	}
 
 	</style>
@@ -57,9 +56,9 @@
 		<div class="headerTitle">Weather</div>
 		<div class="weather"></div>
 	<form id="weatherSearch">
-	<label>Enter a City <br></label>
+	<label>Enter a City or a Zip Code<br></label>
 	<input type="text" id="weatherLocation" name="weatherLocation" size="50" />
-	<input type="submit" name="submit" value="Search" />
+	<input type="submit" id="submit" name="submit" value="Search" />
 </form>
 <div id="weatherList"></div>
 <div id="weatherReport"></div>

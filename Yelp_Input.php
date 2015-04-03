@@ -10,7 +10,7 @@
 	<style type="text/css">
 	header{
 	width: 1267px;
-	background-image: url("http://s28.postimg.org/gq88l8vst/cityskylinenycheader.png");
+	background-image: url("http://s22.postimg.org/dyladtyv3/cityskylinenycheader.png");
 		padding: 8px 4px;
 	clear: both;
 	}
@@ -52,13 +52,13 @@
   </p>
   </div>		
   
-  <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
+  <div style="padding-left: 550px; padding-right: 270px; padding-top: -10px; padding-bottom: 25px; margin-top: -29px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
 	<form id="yelpIn" action="Yelp_Output.php" method="post">
 	
 				Fill out all fields: <p>
 				What are you looking for?<br><input type="text" name="term" value= "" required><br>
 				Where?<br> <input type="text" name="location" value="" required ><br>
-				<input id="submit" type="submit">
+				<input id="submit" type="submit" value ="Search">
 		</form>
 	
 	</section>

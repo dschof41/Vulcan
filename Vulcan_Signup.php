@@ -14,7 +14,7 @@ include 'login/signup.php';
 	<style type="text/css">
 	header{
 	width: 1267px;
-	background-image: url("http://s11.postimg.org/zcogdwd7n/cityskylinenycheader.png");
+	background-image: url("http://s9.postimg.org/gz0nx669p/cityskylinenycheader.png");
 	padding: 8px 4px;
 	clear: both;
 }
@@ -45,7 +45,7 @@ include 'login/signup.php';
 	<div class="centerText">
   <p>Welcome to ... Create your account to get started.</p>
   </div>		
-  <p>
+  <p class="error">
   	<?php
   		if(isset($_SESSION['message'])){
   			echo $_SESSION['message'];
@@ -53,7 +53,7 @@ include 'login/signup.php';
   		$_SESSION['message'] = "";
   	?>
   </p>
-  <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
+  <div style="padding-left: 550px; padding-right: 270px; padding-top: -10px; padding-bottom: 25px; margin-top: -40px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
   
   <form id="userInfo" action="Vulcan_Signup.php" method="post">
 				Fill out all fields: <p>
