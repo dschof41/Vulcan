@@ -162,9 +162,14 @@
 {
 	display:block
 }
+#filter{
+	margin-top:-75px;
+	float:left;
+}
+
 #card-holder{
 	width:6in;
-	margin-top:-70px;
+	margin-top:-45px;
 	float:left;
 }
 .card, .info-card{
@@ -180,6 +185,20 @@
 	background:#FFCCFF;
 	border:2px silver solid;
 	margin:5px;
+}
+.letter {
+	font-size:24pt;
+	color:black;
+	border:2px black solid;
+	width:70px;
+	padding-top:10px;
+	padding-bottom:10px;
+	background:#FF4747;
+	font-weight:bold;
+	text-align:center;
+	float:right;
+	margin-top:15px;
+	margin-right:25px;
 }
 .img {
 	display:inline-block;
@@ -288,7 +307,7 @@ a.tip:hover:after {
 	width: 34%;
 	height: 85%;
 	padding-left: 4%;
-	background: rgba(48, 121, 149, 0.4);
+	background-color: rgba(110, 150, 221, 0.2);
 	border: thin #778899 dashed;
 	-moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius:15px 15px 15px 15px; 	
@@ -307,7 +326,7 @@ a.tip:hover:after {
 	height: 80%;
 	font-size: 15.2px;
 	border: thin #778899 dashed;
-	background:rgba(48, 121, 149, 0.4);	
+	background-color: rgba(110, 150, 221, 0.2);	
 	-moz-border-radius: 15px 15px 15px 15px;
 	 -webkit-border-radius: 15px 15px 15px 15px;
 	

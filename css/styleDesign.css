@@ -159,6 +159,10 @@
 ._sizdim {
 	opacity: .3;
 }
+._hidden {
+	visibility:hidden;
+	display:none;
+}
 
 #submit
 {	

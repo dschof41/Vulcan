@@ -58,6 +58,7 @@
 				Fill out all fields: <p>
 				What are you looking for?<br><input type="text" name="term" value= "" required><br>
 				Where?<br> <input type="text" name="location" value="" required ><br>
+				<input class="_hidden" type="text" name="sort" value="0">
 				<input id="submit" type="submit" value ="Search">
 		</form>
 	

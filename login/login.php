@@ -4,7 +4,9 @@ if(!isset($_SESSION['attempts'])){
 		$_SESSION['attempts'] = 5;
 	}else if ($_SESSION['attempts'] === 0){
 		$_SESSION['attempts'] = 5;
-		header ("Location: Vulcan_Signup.php");	
+		header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Signup.php");
+		$_SESSION['message'] = "You've used all attempts! Register now or try again later!";
+		exit();	
 	}
 $uname = "";
 $pword = "";
@@ -67,10 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			if ($num_rows > 0) {
 				$_SESSION['login'] = "1";
 				$_SESSION['message'] = "Thanks for logging in!";
-				header ("Location: Yelp_Input.php");	
+				header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Yelp_Input.php");
+				exit();	
 			}
 			else if($_SESSION['attempts'] === 0) {
-					header ("Location: Vulcan_Signup.php");		
+				$_SESSION['message'] = "All login attempts used!"
+				header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Signup.php");	
+				exit();	
 			}else{
 				$_SESSION['login'] = "";
 				$_SESSION['attempts']--;		

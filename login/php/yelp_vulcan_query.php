@@ -2,7 +2,7 @@
 require 'yelp_query.php';
 
 //populate business cards from response by adding business data to html object
-$qry = populate_cards($t, $l);
+$qry = populate_cards($t, $l, $s);
 
 //Create arrays for google maps marker info
 $coords = array();

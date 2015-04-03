@@ -32,6 +32,7 @@ $TOKEN_SECRET = 'qxPnc6XC5_mI1i7-QLTlHGiCdr0';
 $API_HOST = 'api.yelp.com';
 $DEFAULT_TERM = 'bars';
 $DEFAULT_LOCATION = 'Waltham, MA';
+$DEFAULT_SORT = 0;
 $SEARCH_LIMIT = 7;
 $SEARCH_PATH = '/v2/search/';
 $BUSINESS_PATH = '/v2/business/';
@@ -86,14 +87,18 @@ function request($host, $path) {
  * @param    $location    The search location passed to the API
  * @return   The JSON response from the request
  */
-function search($term, $location) {
+function search($term, $location, $sort) {
     $url_params = array();
 
     $url_params['term'] = $term ?: $GLOBALS['DEFAULT_TERM'];
     $url_params['location'] = $location?: $GLOBALS['DEFAULT_LOCATION'];
     $url_params['limit'] = $GLOBALS['SEARCH_LIMIT'];
+    
+    //Additional parameters
+    $url_params['sort'] = $sort ?: $GLOBALS['DEFAULT_SORT'];//adds sort parameter
+    
+    
     $search_path = $GLOBALS['SEARCH_PATH'] . "?" . http_build_query($url_params);
-
     return request($GLOBALS['API_HOST'], $search_path);
 }
 

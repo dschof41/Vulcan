@@ -19,7 +19,7 @@
   	#map-canvas {
   	height: 6in;
   	margin: 10px;
-  	margin-top:-70px;
+  	margin-top:-40px;
   	padding: 0;
   	width:7in;
   	display:inline;	
@@ -31,7 +31,8 @@
 	//Pull variables from the Yelp_Input form
 	$t = $_POST["term"];
 	$l = $_POST["location"];
-	
+	$s = $_POST['sort'];
+
 	//Run query from pulled variables
 	include 'login\php\yelp_vulcan_query.php';
 	?>
@@ -130,6 +131,19 @@ Created by Dan Schofer 3/25/2015
 	</nav>
 <section>
 <div class="headerTitle">Search Results</div>
+<div id="filter">
+	<form method="post" action="Yelp_Output.php">
+		<label for="filter">Order:</label>
+		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
+		<input class="_hidden" name="location" type="text" value="<?php echo $l ?>">
+		<select name="sort" id="sort">
+			<option value="0">Best Match</option>
+			<option value="1">Distance</option>
+			<option value="2">Rating</option>
+		</select>
+		<input type="submit" value="Submit">
+	</form>
+	</div>
 <?php include 'login\php\yelp_query_output.php'; ?>
 <div id="map-canvas"></div>		
 </section>

@@ -25,9 +25,9 @@ class map_object {
 Created by Dan Schofer 3/17/2015
 Updated by Dan Schofer 3/25/2015
 */
-function populate_cards($term, $location) {
+function populate_cards($term, $location, $sort) {
 
-    $response =  json_decode(search($term, $location));
+    $response =  json_decode(search($term, $location, $sort));
     $display_businesses = array(); //array to hold card objects
     
     //loops each business, making a new object and setting variables
@@ -71,8 +71,9 @@ function populate_cards($term, $location) {
 Created by Dan Schofer 3/18/2015
 */
 function map_query($term, $location) {
-
-	$response =  json_decode(search($term, $location));
+	
+	$sort = 0;
+	$response =  json_decode(search($term, $location, $sort));
 	
 	$map_parameters = new map_object();//sets map params
     $map_parameters->lat = $response->region->center->latitude;

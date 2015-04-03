@@ -29,7 +29,7 @@ function quote_smart($value, $handle) {
    }
 
    if (!is_numeric($value)) {
-       $value = "'" . mysql_real_escape_string($value, $handle) . "'";
+       $value = "'" . mysqli_real_escape_string($value, $handle) . "'";
    }
    return $value;
 }
@@ -85,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$database = "vulcandb";
 	$server = "127.0.0.1";
 
+	/*
 	$db_handle = mysql_connect($server, $user_name, $pass_word);
 	$db_found = mysql_select_db($database, $db_handle);
 
@@ -92,27 +93,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 		$uname = quote_smart($uname, $db_handle);
 		$pword = quote_smart($pword, $db_handle);
+	*/
+	
+	$db_handle = mysqli_connect("localhost", "root", "vulcan123", "vulcandb");
+	
+	if(mysqli_connect_errno())
+	{
+		echo "Error with DB";
+	}
+	
+	$uname = quote_smart($db_handle, $uname);
+	$pword = quote_smart($db_handle, $pword);
+	$email = quote_smart($db_handle, $email);
+
 
 	//====================================================================
 	//	CHECK THAT THE USERNAME IS NOT TAKEN
 	//====================================================================
 
 		$SQL = "SELECT * FROM login WHERE L1 = $uname";
-		$result = mysql_query($SQL);
-		$num_rows = mysql_num_rows($result);
+		$result = mysqli_query($db_handle, $SQL);
+		$num_rows = mysqli_num_rows($result);
 
 		if ($num_rows > 0) {
 			$_SESSION['message'] = "That username is taken! Try again!";
-			//header ("Location: Vulcan_Signup.php");
 		}
 		
 		else {
 
 			$SQL = "INSERT INTO login (L1, L2, userEmail) VALUES ($uname, md5($pword), $email)";
 
-			$result = mysql_query($SQL);
+			$result = mysqli_query($db_handle, $SQL);
 
-			mysql_close($db_handle);
+			mysqli_close($db_handle);
 
 		//=================================================================================
 		//	START THE SESSION AND PUT SOMETHING INTO THE SESSION VARIABLE CALLED login
@@ -123,19 +136,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$_SESSION['message'] = "Thanks for registering! Please login now!";
 			header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Login.php");
 			exit();
-		}
-
-	}
-	else {
-		$errorMessage = "Database Not Found";
-	}
-
-
-
-
-	}
-
-}
+		} //Close the INSERT script
+	}//Close DB succesful connect
+}//Close if POST
 
 
 ?>
