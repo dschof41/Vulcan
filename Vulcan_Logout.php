@@ -18,15 +18,6 @@
 	</style>
 	<?php $USERNAME_ERROR = ""; ?>
 	<script type="text/javascript">
-		
-	function validatePassword() {
-    var x = userInfo.password.value;
-    var y = userInfo.confirmpw.value;
-    if (x != y) {
-        alert("Please Reconfirm Password");
-        return false;
-    }
-}
 	</script>
 	
 </head>
@@ -35,6 +26,9 @@
 	</header>
 	
 	<nav id="primary_nav_wrap">
+	<?php 
+		include 'login/php/navigation.php';
+	?>
 	</nav>	
 <section>
 

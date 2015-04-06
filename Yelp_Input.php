@@ -26,14 +26,6 @@
 	</style>
 	<script type="text/javascript">
 		
-	function validatePassword() {
-    var x = userInfo.pw.value;
-    var y = userInfo.confirmpw.value;
-    if (x != y) {
-        alert("Please Reconfirm Password");
-        return false;
-    }
-}
 	</script>
 	
 </head>
@@ -42,6 +34,10 @@
 	</header>
 	
 	<nav id="primary_nav_wrap">
+		<?php 
+		session_start();
+		include 'login/php/navigation.php';
+		?>
 	</nav>	
 <section>
 
@@ -50,7 +46,6 @@
   <p>
   <br>
   <?php
-  	session_start();
   	if(isset($_SESSION['message'])){
   		echo $_SESSION['message'];
   	}

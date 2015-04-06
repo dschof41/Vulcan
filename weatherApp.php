@@ -51,6 +51,11 @@
 	</header>
 	
 <nav id="primary_nav_wrap">
+	<?php 
+		session_start();
+		include 'login/php/navigation.php';
+	?>
+
 </nav>			
 	<section>
 		<div class="headerTitle">Weather</div>

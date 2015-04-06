@@ -47,6 +47,9 @@ include 'login/signup.php';
 	</header>
 	
 	<nav id="primary_nav_wrap">
+	<?php 
+		include 'login/php/navigation.php';
+	?>
 	</nav>	
 <section>
 

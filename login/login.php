@@ -69,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			if ($num_rows > 0) {
 				$_SESSION['login'] = "1";
 				$_SESSION['message'] = "Thanks for logging in!";
+				$_SESSION['user'] = $uname;
 				header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Yelp_Input.php");
 				exit();	
 			}

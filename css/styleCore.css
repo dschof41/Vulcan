@@ -162,6 +162,9 @@
 {
 	display:block
 }
+#userName{
+	float:right;
+}
 #filter{
 	margin-top:-75px;
 	float:left;

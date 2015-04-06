@@ -29,6 +29,7 @@
 	</style>
 	<?php
 	//Pull variables from the Yelp_Input form
+	session_start();
 	$t = $_POST["term"];
 	$l = $_POST["location"];
 	$s = $_POST['sort'];
@@ -128,6 +129,9 @@ Created by Dan Schofer 3/25/2015
 	</header>
 	
 	<nav id="primary_nav_wrap">
+	<?php 
+		include 'login/php/navigation.php';
+	?>
 	</nav>
 <section>
 <div class="headerTitle">Search Results</div>
