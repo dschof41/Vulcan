@@ -17,7 +17,17 @@ include 'login/signup.php';
 	background-image: url("http://s9.postimg.org/gz0nx669p/cityskylinenycheader.png");
 	padding: 8px 4px;
 	clear: both;
-}
+	}	
+	
+	section {
+	height: 680px;
+	}
+
+		hr {
+	margin-top: 40px;
+	border-width: 1px;
+	}
+
 	</style>
 	<script type="text/javascript">
 								 	
@@ -43,7 +53,9 @@ include 'login/signup.php';
 	<div class="headerTitle">Sign Up</div>
 
 	<div class="centerText">
-  <p>Welcome to ... Create your account to get started.</p>
+  <br><br>Welcome to ... Create your account to get started
+  <hr>
+
   </div>		
   <p class="error">
   	<?php
@@ -53,14 +65,13 @@ include 'login/signup.php';
   		$_SESSION['message'] = "";
   	?>
   </p>
-  <div style="padding-left: 550px; padding-right: 270px; padding-top: -10px; padding-bottom: 25px; margin-top: -40px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
-  
+   
   <form id="userInfo" action="Vulcan_Signup.php" method="post">
 				Fill out all fields: <p>
-				Username: <input type="text" name="username" value= "" required><br>
-				Email Address: <input type="text" name="email" value="" required ><br>
-				Password: <input type="password" name="password" value="" required><br>
-				Confirm Password: <input type="password" name="confirmpw" value="" required><br>
+				Username: <input type="text" name="username" value= "" id="inputSignUp" required><br>
+				Email Address: <input type="text" name="email" value="" id="inputSignUp" required><br>
+				Password: <input type="password" name="password" value="" id="inputSignUp" required><br>
+				Confirm Password: <input type="password" name="confirmpw" value="" id="inputSignUp" required><br>
 				<input id="submit" type="submit" value ="Create Account" onclick="return validatePassword();">
 		</form>
 	</section>

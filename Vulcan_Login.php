@@ -17,7 +17,17 @@
 	background-image: url("http://s12.postimg.org/yty0pd157/cityskylinenycheader.png");
 	padding: 8px 4px;
 	clear: both;
-}
+	}
+	section {
+	height: 680px;
+	}
+	
+	hr 
+	{
+	margin-top: 40px;
+	border-width: 1px;
+	}
+
 	</style>
 	
 	<script type="text/javascript">
@@ -44,6 +54,7 @@
 
 	<div class="centerText">
   <p>
+  <br>
   <?php 
   	if(isset($_SESSION['message'])){
   		echo $_SESSION['message'];
@@ -54,6 +65,7 @@
   	$_SESSION['message'] = "";
   	?>
   </p>
+ <hr>
   </div>		
   <p class="error">
   <?php 
@@ -62,7 +74,6 @@
   	}
  ?>
  </p>
-  <div style="padding-left: 550px; padding-right: 270px; padding-top: -10px; padding-bottom: 25px; margin-top: -41px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
   
 	<form id="userInfo" action="Vulcan_Login.php" method="post">
 				Username: <input type="text" name="username" value= "" required><br>

@@ -14,6 +14,15 @@
 		padding: 8px 4px;
 	clear: both;
 	}
+	section {
+	height: 680px;
+	}
+
+		hr {
+	margin-top: 40px;
+	border-width: 1px;
+	}
+
 	</style>
 	<script type="text/javascript">
 		
@@ -39,6 +48,7 @@
 	<div class="headerTitle">Search</div>
 	<div class="centerText">
   <p>
+  <br>
   <?php
   	session_start();
   	if(isset($_SESSION['message'])){
@@ -50,10 +60,10 @@
   	$_SESSION['message'] = "";
   	?>
   </p>
+  <hr>
   </div>		
-  
-  <div style="padding-left: 550px; padding-right: 270px; padding-top: -10px; padding-bottom: 25px; margin-top: -29px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
-	<form id="yelpIn" action="Yelp_Output.php" method="post">
+ 
+	<form id="userInfo" action="Yelp_Output.php" method="post">
 	
 				Fill out all fields: <p>
 				What are you looking for?<br><input type="text" name="term" value= "" required><br>

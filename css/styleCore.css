@@ -226,20 +226,22 @@
 	color:red;
 }
 .centerText {
-      margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 45%;
     color: #0D4F8B;
     float: inherit;
     font-family: Century Gothic;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 80px;
     padding-top: 10px;
     padding-bottom: 2px;
     position: relative;
     top: -100px;
     background-color: rgba(110, 150, 221, 0.2);
     font-weight: bold;
+    height: 500px;
+    border-radius: 15px;
  }
 
 .headerTitle {
@@ -307,11 +309,9 @@ a.tip:hover:after {
 	width: 34%;
 	height: 85%;
 	padding-left: 4%;
-	background-color: rgba(110, 150, 221, 0.2);
-	border: thin #778899 dashed;
-	-moz-border-radius: 15px 15px 15px 15px;
-    -webkit-border-radius:15px 15px 15px 15px; 	
-   
+	background-color: rgba(110, 150, 221, 0.2); 	
+   	-moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius:15px 15px 15px 15px; 
 	}
 
 	#weatherList
@@ -321,15 +321,12 @@ a.tip:hover:after {
 	position: absolute;
 	padding-top: 2.5%;
 	margin-left: 2.9%;
-	//border: thick green solid;
 	width: 32.8%;
 	height: 80%;
 	font-size: 15.2px;
-	border: thin #778899 dashed;
 	background-color: rgba(110, 150, 221, 0.2);	
 	-moz-border-radius: 15px 15px 15px 15px;
-	 -webkit-border-radius: 15px 15px 15px 15px;
-	
+    -webkit-border-radius:15px 15px 15px 15px; 
 		}
 		
 	#weatherList a 
@@ -337,7 +334,7 @@ a.tip:hover:after {
 	color: #0D4F8B;;
 	}
 	
-#weatherSearch 
+	#weatherSearch 
 	{
 	margin-left: 32%;
 	margin-top: -40px;
@@ -347,4 +344,19 @@ a.tip:hover:after {
 	}
 	#weatherLocation{
 	padding: 5px 8px 8px 9px;
+	}
+	
+	#userInfo 
+	{
+	color: white;
+	top: -470px;
+	position: relative;
+	margin-left: 42%;;
+	margin-top: 1%; 
+	height: 290px; width: 250px; color: #0D4F8B; text-align: left; z-index:1;
+	}
+
+	#inputSignUp{
+	
+	width: 190px;
 	}

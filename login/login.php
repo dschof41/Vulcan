@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 				exit();	
 			}
 			else if($_SESSION['attempts'] === 0) {
-				$_SESSION['message'] = "All login attempts used!"
+				$_SESSION['message'] = "All login attempts used!";
 				header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Signup.php");	
 				exit();	
 			}else{
