@@ -14,6 +14,8 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])){
 		echo "<li><a href='Vulcan_Logout.php'>LOGOUT</a></li>";
 		
 		echo "<li id='userName'><a href='Vulcan_Profile.php'>" . $_SESSION['user'] ."</a></li>";
+				
+		//hidden field with user ID
 		
 	}
 }else{

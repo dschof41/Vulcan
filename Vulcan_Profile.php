@@ -30,6 +30,24 @@ include 'login/load_profile.php';
 
 	</style>
 	<script type="text/javascript">
+	
+	function newGroup(){
+		if(document.getElementById('newGroupDiv').style.visibility === 'hidden'){
+			document.getElementById('newGroupDiv').style.visibility ='visible'
+		}else{
+			document.getElementById('newGroupDiv').style.visibility = 'hidden'
+		}
+	}
+	
+	function viewGroups(){
+		if(document.getElementById('viewGroupsDiv').style.visibility === 'hidden'){
+			document.getElementById('viewGroupsDiv').style.visibility ='visible'
+		}else{
+			document.getElementById('viewGroupsDiv').style.visibility = 'hidden'
+		}
+	}
+
+
 	</script>
 	
 </head>
@@ -51,12 +69,46 @@ include 'login/load_profile.php';
   <hr>
 
   </div>	
-  <span id="message"><?php echo $msg; ?></span>	   
-  <form id="userInfo" action="Vulcan_Profile.php" method="post">
-				Profile Info:<br>
-				Username: <input type="text" name="username" value= "<?php echo $userName; ?>" id="userName" readonly><br>
-				Email Address: <input type="text" name="email" value="<?php echo $userEmail; ?>" id="userEmail" readonly><br>
+  <span id="message">
+  	<?php 
+  		if (isset($_SESSION['message'])){
+  			echo $_SESSION['message'];
+  			$_SESSION['message'] = ""; 
+  		} 
+  	?>
+</span>
+  	<form id="userInfo" action="Vulcan_Profile.php" method="post">
+		Profile Info:<br>
+		<p>Username:</p>
+		<input type="text" name="username" value= "<?php echo $userName; ?>" id="userName" readonly><br>
+		<p>Email Address:</p>
+		<input type="text" name="email" value="<?php echo $userEmail; ?>" id="userEmail" readonly>
+		<p>Member ID:</p>
+		<input type="text" name="id" value="<?php echo $userId; ?>" id="userID" readonly>
+		<input type="button" class="button" value="Add a Business Group" onclick="newGroup();">
+		<input type="button" class="button" value="View Your Groups" onclick="viewGroups();">
+	</form>
+
+	<div id="newGroupDiv">		
+		<form id="userInfo" action="login/php/NewGroup.php" method="post">
+				Group Name:
+				<input type="text" name="groupName" value="" id="groupNameInput">
+				<input type="submit" class="button" value="Create Group">
 		</form>
+	</div>
+	<div id="viewGroupsDiv">
+		<form id="userInfo" action="login/php/ViewGroups.php" method="post">
+			<p>Your Groups: </p>
+			<select name="group" id="groupSelect">
+				<?php
+					for($i=0; $i<count($userGroups); $i++){
+						echo "<option>".$userGroups[$i]."</option>";
+					}
+				?>
+			</select>
+		
+		</form>
+	</div>			
 	</section>
 	
 		<footer id="footer">

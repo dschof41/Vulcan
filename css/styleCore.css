@@ -356,10 +356,31 @@ a.tip:hover:after {
 	position: relative;
 	margin-left: 42%;;
 	margin-top: 1%; 
-	height: 290px; width: 250px; color: #0D4F8B; text-align: left; z-index:1;
+	height: 290px;
+	width: 250px;
+	color: #0D4F8B;
+	text-align: left;
 	}
 
 	#inputSignUp{
 	
 	width: 190px;
 	}
+	.button{
+	margin:20px;
+	display:inline-block;
+	}
+	
+	#newGroupDiv{
+		visibility:hidden;
+		float:left;
+		display:inline-block;
+	}
+	#viewGroupsDiv{
+		visibility:hidden;
+		float:right;
+		display:inline-block;
+	
+	}
+}
+	
