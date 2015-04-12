@@ -16,7 +16,6 @@
 	clear: both;
 }
 	</style>
-	<?php $USERNAME_ERROR = ""; ?>
 	<script type="text/javascript">
 	</script>
 	

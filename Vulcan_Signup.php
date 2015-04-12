@@ -56,7 +56,7 @@ include 'login/signup.php';
 	<div class="headerTitle">Sign Up</div>
 
 	<div class="centerText">
-  <br><br>Welcome to ... Create your account to get started
+  <br><br>Welcome! Create your account to get started!
   <hr>
 
   </div>		
