@@ -21,9 +21,8 @@ for ($i = 0; $i < count($qry); $i++)
 	echo "<image src='" . $bus->rating ."'><br>";
 	echo $bus->name . "<br>";
 	echo $bus->phone . "<br>";
-	//echo "<div id='address'>"; //open address
 	echo $bus->address;
-	//echo "</div>";
+	echo "<span class='_hidden' id='cat'>" . $bus->bus_id . "</span>";
 	echo "</div>";
 	echo "<div class='letter'>". $alphas[$i] . "</div>";
 

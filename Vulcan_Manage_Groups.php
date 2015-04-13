@@ -2,6 +2,7 @@
 session_start();
 include 'login/load_profile.php';
 include 'login/load_groups.php';
+include 'login/php/view_group.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,12 +32,6 @@ include 'login/load_groups.php';
 
 	</style>
 	<script type="text/javascript">
-	
-	function manageGroups(){
-	document.getElementById('manageGroups').onclick=
-		location.href= "http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Profile.php";		
-	}
-
 	</script>
 	
 </head>
@@ -54,7 +49,7 @@ include 'login/load_groups.php';
 	<div class="headerTitle">Sign Up</div>
 
 	<div class="centerText">
-  <br><br>Profile for <?php echo $_SESSION['user']; ?>
+  <br><br>Groups for <?php echo $_SESSION['user']; ?>
   <hr>
 
   </div>	
@@ -65,23 +60,41 @@ include 'login/load_groups.php';
   			$_SESSION['message'] = ""; 
   		} 
   	?>
-</span>
-  	<form id="userInfo" action="Vulcan_Profile.php" method="post">
-		Profile Info:<br>
-		<p>Username:</p>
-		<input type="text" name="username" value= "<?php echo $userName; ?>" id="userName" readonly><br>
-		<p>Email Address:</p>
-		<input type="text" name="email" value="<?php echo $userEmail; ?>" id="userEmail" readonly>
-		<p>Member ID:</p>
-		<input type="text" name="id" value="<?php echo $userId; ?>" id="userID" readonly>
-		<div id="manageGroups" onclick="manageGroups();">
-			<a href="Vulcan_Manage_Groups.php">
-				Manage Groups
-			</a>
-		</div>
-	</form>
+	</span>
+	<div id="groupActions">
+  	<div id="newGroupDiv">		
+		<form id="userInfo" action="login/php/new_group.php" method="post">
+				Group Name:
+				<input type="text" name="groupName" value="" id="groupNameInput" required>
+				<input type="submit" class="button" value="Create Group">
+		</form>
+	</div>
+	<div id="viewGroupsDiv">
+		<form id="userInfo" action="Vulcan_Manage_Groups.php" method="post">
+			<p>Your Groups: </p>
+			<select name="groupSelect" id="groupSelect" style="width:1.25in">
+				<?php
+					for($i=0; $i<count($userGroups); $i++){
+						echo "<option value='".$userGroups[$i]."'>".$userGroups[$i]."</option>";
+					}
+				?>
+			</select>
+		<input type="submit" value="View Cards">
+		</form>
+	</div>
+	<div id="card-holder">
+	<?php
+	if (isset($userCards)){
+		for ($i=0; $i < count($userCards); $i++){
+				echo $userCards[$i];
+		}	
+	}else{
+		echo "No cards yet!";
+	}
+	?>
 	
-	
+	</div>	
+	</div>		
 	</section>
 	
 		<footer id="footer">

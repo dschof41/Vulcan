@@ -13,8 +13,11 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])){
 		
 		echo "<li><a href='Vulcan_Logout.php'>LOGOUT</a></li>";
 		
+		if (isset($_SESSION['user']) && !empty($_SESSION['user'])){
+		
 		echo "<li id='userName'><a href='Vulcan_Profile.php'>" . $_SESSION['user'] ."</a></li>";
 				
+		}
 		//hidden field with user ID
 		
 	}

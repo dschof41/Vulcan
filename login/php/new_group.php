@@ -7,6 +7,16 @@ require 'connect.php';
 
 session_start();
 $groupName = $_POST['groupName'];
+
+if(!isset($groupName)){
+	$_SESSION['message'] = "Please set group name";
+	header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Manage_Groups.php");
+	exit();
+}
+	
+	
+
+
 $groupUser = $_SESSION['id'];
 $user = $_SESSION['user'];
 
@@ -20,7 +30,7 @@ if($result){
 
 mysqli_close($con);
 
-header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Profile.php");
+header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Manage_Groups.php");
 exit();	
 
 

@@ -169,6 +169,11 @@
 	margin-top:-75px;
 	float:left;
 }
+#groupSelector{
+	margin-top:-75px;
+	float:right;
+	
+}
 
 #card-holder{
 	width:6in;
@@ -372,15 +377,31 @@ a.tip:hover:after {
 	}
 	
 	#newGroupDiv{
-		visibility:hidden;
-		float:left;
 		display:inline-block;
 	}
 	#viewGroupsDiv{
-		visibility:hidden;
-		float:right;
 		display:inline-block;
-	
 	}
+	#manageGroups {
+		text-align:center;
+		position:relative;
+		border:2px blue solid;
+		background:aqua;
+		margin-top:10%;
+		width:2in;
 }
-	
+	#manageGroups:hover{
+		background:fuchsia;
+}
+
+	#manageGroups a{
+		padding:10px;
+		font-size:16px;
+		text-decoration:none;
+		font-weight:bold;
+		color:black;
+}
+	#groupActions{
+	margin-left:35%;
+	margin-right:30%;
+}

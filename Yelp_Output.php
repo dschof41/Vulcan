@@ -36,6 +36,7 @@
 
 	//Run query from pulled variables
 	include 'login\php\yelp_vulcan_query.php';
+	include 'login/load_groups.php';
 	?>
 	
 	
@@ -106,20 +107,30 @@ Select function that allows user to select a business card from given list, and 
 Created by Dan Schofer 3/25/2015
 */
 	function select(e) { //function takes HTML object element
-    if(e.id == 'card-selected') { //check id of selected object, if its already selected, unselect it
-        e.id = '';
-    } else {
-    
-    	var cards = document.getElementById("card-holder").children; //check each business card HTML object
-    	
-    	for(var i = 0; i < cards.length; i++){ 
-    		if (cards[i].id == 'card-selected'){
-    			cards[i].id = '';
-    		}
-        	e.id = 'card-selected';
-        }
-    }
-}	
+		    if(e.id == 'card-selected') { //check id of selected object, if its already selected, unselect it
+	        e.id = '';
+	        document.getElementById('businessID').value = "";
+
+	    } else {
+	    
+	    	var cards = document.getElementById("card-holder").children; //check each business card HTML object
+	    	
+	    	for(var i = 0; i < cards.length; i++){  //check all cards and unselect them if they are selected
+	    		if (cards[i].id == 'card-selected'){
+	    			cards[i].id = '';
+	    			document.getElementById('businessID').value = "";
+	    			
+	    		} //close if
+	        	e.id = 'card-selected'; //select only the clicked card
+	        	elementString = e.innerHTML;
+	        	var start = elementString.indexOf("cat") + 5;
+	        	var finish = elementString.indexOf("</span>");
+	        	var busID = elementString.substring(start, finish);
+	        	document.getElementById('businessID').value = busID.trim();
+
+        	}//close for
+    	}//close else
+	}//close function	
 
 	</script>
 	
@@ -147,7 +158,23 @@ Created by Dan Schofer 3/25/2015
 		</select>
 		<input type="submit" value="Submit">
 	</form>
-	</div>
+</div>
+<div id="groupSelector">
+	<form action="login/php/save_business.php" method="post">
+		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
+		<input class="_hidden" name="location" type="text" value="<?php echo $l ?>">
+		<input id="businessID" type="text" name="businessID" value="" readonly="true">
+		<label for="groupSelect">Your Groups:</label>
+		<select name="groupSelect" id="groupSelect">
+			<?php
+				for($i=0; $i<count($userGroups); $i++){
+					echo "<option value='".$userGroups[$i]."'>".$userGroups[$i]."</option>";
+				}
+			?>
+		</select>
+		<input type="submit" value="Save">
+	</form>
+</div>
 <?php include 'login\php\yelp_query_output.php'; ?>
 <div id="map-canvas"></div>		
 </section>

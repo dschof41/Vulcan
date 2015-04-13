@@ -4,6 +4,7 @@ require 'yelp.php';
 
 // pieces of relevant business data for our search results display
 class business_card {
+	public $bus_id;
 	public $name;
 	public $phone;
 	public $address;
@@ -35,6 +36,7 @@ function populate_cards($term, $location, $sort) {
 	{
 		$card = new business_card();
 	   	$busInfo = $response->businesses[$i]; //shortcut to current business
+	   	$card->bus_id = $busInfo->id;
 	   	$card->name = $busInfo->name;
 	   	
 	   	if (isset($busInfo->display_phone)){
