@@ -9,18 +9,11 @@
 	<script src="js/javascript.js" type="text/javascript"></script>
 	<style type="text/css">
 	header{
-	width: 1267px;
-	background-image: url("http://s22.postimg.org/dyladtyv3/cityskylinenycheader.png");
-		padding: 8px 4px;
+	background-image: url("http://s8.postimg.org/yrvywlrur/D9_D2_DC90_AD.jpg");
 	clear: both;
 	}
 	section {
 	height: 680px;
-	}
-
-		hr {
-	margin-top: 40px;
-	border-width: 1px;
 	}
 
 	</style>
@@ -44,27 +37,26 @@
 	<div class="headerTitle">Search</div>
 	<div class="centerText">
   <p>
-  <br>
+  <p>--------------------------------------------------------------- </p>
   <?php
   	if(isset($_SESSION['message'])){
   		echo $_SESSION['message'];
   	}
   	if(empty($_SESSION['message'])){
-  		echo "Enter a term and location here!";
+  		echo "Start your search now!";
   	}
   	$_SESSION['message'] = "";
   	?>
-  </p>
-  <hr>
-  </div>		
+  <p> -------------------------------------------------------------- </p>
+
+   </div>		
  
 	<form id="userInfo" action="Yelp_Output.php" method="post">
-	
-				Fill out all fields: <p>
-				What are you looking for?<br><input type="text" name="term" value= "" required><br>
-				Where?<br> <input type="text" name="location" value="" required ><br>
-				<input class="_hidden" type="text" name="sort" value="0">
-				<input id="submit" type="submit" value ="Search">
+				<br><br>What are you looking for:<input type="text" name="term" value= "" id="inputSearch" placeholder="restaurants, hotels, etc." required><br>
+				<br>Where:<input type="text" name="location" value="" id="inputSearch" placeholder="Boston, Waltham, etc." required ><br>
+				<input class="_hidden" type="text" name="sort" value="0"><br>
+				<input id="submit" type="submit" value ="Search  🔍"><br><br>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by Yelp<P>
 		</form>
 	
 	</section>

@@ -13,21 +13,13 @@
 	<script src="js/javascript.js" type="text/javascript"></script>
 	<style type="text/css">
 	header{
-	width: 1267px;
-	background-image: url("http://s12.postimg.org/yty0pd157/cityskylinenycheader.png");
-	padding: 8px 4px;
+	background-image: url("http://s14.postimg.org/4emkkhwv3/JZ76_N0_N5_ZH.jpg");
 	clear: both;
 	}
 	section {
 	height: 680px;
 	}
 	
-	hr 
-	{
-	margin-top: 40px;
-	border-width: 1px;
-	}
-
 	</style>
 	
 	<script type="text/javascript">
@@ -57,7 +49,8 @@
 
 	<div class="centerText">
   <p>
-  <br>
+  <p>-------------------------------------------------------------- </p>
+
   <?php 
   	if(isset($_SESSION['message'])){
   		echo $_SESSION['message'];
@@ -67,20 +60,19 @@
   	}
   	$_SESSION['message'] = "";
   	?>
-  </p>
- <hr>
-  </div>		
-  <p class="error">
+  	 <p> ------------------------------------------------------------- </p>
+  	<div class="error">
   <?php 
   	if($_SESSION['attempts'] < 4){
   	echo "You have: " . $_SESSION['attempts'] . " attempts remaining";
   	}
  ?>
- </p>
-  
-	<form id="userInfo" action="Vulcan_Login.php" method="post">
-				Username: <input type="text" name="username" value= "" required><br>
-				Password: <input type="password" name="password" value="" required><br>
+ </div>
+
+  </div>		
+  	<form id="userInfo" action="Vulcan_Login.php" method="post"> <br><br>
+				Username: <input type="text" name="username" value= "" id="inputLogin" required><br><br>
+				Password: <input type="password" name="password" value="" id="inputLogin" required><br><br>
 				<input id="submit" type="submit" value ="Login">
 		</form>
 	

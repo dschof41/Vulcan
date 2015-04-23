@@ -6,7 +6,7 @@ echo "<li class='current-menu-item'><a href='index.html'>HOME</a></li>";
 echo "<li><a href='Yelp_Input.php'>SEARCH</a></li>";
 
 // zDisplay menu items based on logged in status
-if (isset($_SESSION['login']) && !empty($_SESSION['login'])){
+if (isset($_SESSION['login']) && !empty($_SESSION['login']) && !isset($out)){
 	if($_SESSION['login'] > 0){
 	
 		echo "<li><a href='weatherApp.php'>WEATHER</a></li>";

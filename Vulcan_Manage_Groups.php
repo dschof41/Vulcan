@@ -15,14 +15,11 @@ include 'login/php/view_group.php';
 	<script src="js/javascript.js" type="text/javascript"></script>
 	<style type="text/css">
 	header{
-	width: 1267px;
 	background-image: url("http://s9.postimg.org/gz0nx669p/cityskylinenycheader.png");
-	padding: 8px 4px;
-	clear: both;
 	}	
 	
 	section {
-	height: 680px;
+	height: 1500px;
 	}
 
 		hr {
@@ -32,6 +29,39 @@ include 'login/php/view_group.php';
 
 	</style>
 	<script type="text/javascript">
+	/* 
+Select function that allows user to select a business card from given list, and removes previous selections if any
+
+Created by Dan Schofer 3/25/2015
+*/
+	function select(e) { //function takes HTML object element
+		    if(e.id == 'card-selected') { //check id of selected object, if its already selected, unselect it
+	        e.id = '';
+	        document.getElementById('businessID').value = "";
+
+	    } else {
+	    
+	    	var cards = document.getElementById("card-holder").children; //check each business card HTML object
+	    	
+	    	for(var i = 0; i < cards.length; i++){  //check all cards and unselect them if they are selected
+	    		if (cards[i].id == 'card-selected'){
+	    			cards[i].id = '';
+	    			document.getElementById('businessID').value = "";
+	    			
+	    		} //close if
+	        	e.id = 'card-selected'; //select only the clicked card
+	        	elementString = e.innerHTML;
+	        	var start = elementString.indexOf("cat") + 5;
+	        	var finish = elementString.indexOf("</span>", start);
+	        	var busID = elementString.substring(start, finish);
+	        	document.getElementById('businessID').value = busID.trim();
+	        	document.getElementById('group').value = document.getElementById('groupSelect').value;
+
+        	}//close for
+    	}//close else
+	}//close function	
+
+	
 	</script>
 	
 </head>
@@ -57,8 +87,9 @@ include 'login/php/view_group.php';
   	<?php 
   		if (isset($_SESSION['message'])){
   			echo $_SESSION['message'];
+  		}
   			$_SESSION['message'] = ""; 
-  		} 
+  		
   	?>
 	</span>
 	<div id="groupActions">
@@ -80,6 +111,11 @@ include 'login/php/view_group.php';
 				?>
 			</select>
 		<input type="submit" value="View Cards">
+		</form>
+		<form action="login/php/delete_card.php" method="post">
+			<input type="text" id="businessID" readonly="true">
+			<input type="text" id="group" readonly="true">
+			<input type="submit" value="Delete Card">
 		</form>
 	</div>
 	<div id="card-holder">

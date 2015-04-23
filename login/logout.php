@@ -1,6 +1,5 @@
 <?PHP
-	//session_start();
 	session_destroy();
-	
-	echo "Successfully logged out! Come back soon!";
+	$out = 1;
+	$logout = "Successfully logged out!";
 ?>

@@ -8,22 +8,21 @@ window.onload = function () {
 	html += "<div id='_firstname'>TEAM VULCAN</div><br>";
 	html += "<div id='_headersubtext'>Welcome to our site!</div>";
 	
-	html+=	"<div id='buttons'><ul><li><a href='Yelp_Input.php'>SEARCH</a></li><li><a href='Vulcan_Login.php'>LOGIN</a></li><li><a href='Vulcan_Signup.php'>SIGN UP</a></li></ul></div>";
+	html+=	"<div id='buttons'><ul><li><a href='Yelp_Input.php'>SEARCH &nbsp;🔍</a></li><li><a href='Vulcan_Login.php'>LOGIN &nbsp;⇨</a></li><li><a href='Vulcan_Signup.php'>SIGN UP &nbsp;⇧</a></li></ul></div>";
 	html += "</div>";
 	
 	document.getElementById("background_cycler").innerHTML = 
 	
-	"<img class='active' + src='http://s29.postimg.org/rqp1kozdh/homeheaderpix1.png' alt=''/>" +
-	"<img src='http://s9.postimg.org/pbuop42jx/homeheaderpix1.png' alt=''/>" +
-	"<img src='http://s27.postimg.org/rt06zj7sh/homeheaderpix1.png' alt=''/>" +
-	"<img src='http://s23.postimg.org/wsij3jovt/cityskylinenycheader.png' alt=''/>" 
+	"<img class='active' + src='http://s8.postimg.org/ikmbkbu5v/backgroundimage1.jpg' alt=''/>" +
+	"<img src='http://s17.postimg.org/8e2k68q9p/backgroundimage4.png' alt=''/>" +
+	"<img src='http://s10.postimg.org/a0yqz2riv/backgroundimage3.png' alt =''/>" +
+	"<img src='http://s4.postimg.org/kqfx5p0uj/backgroundimage2.jpg' alt=''/>" 
 
 	document.getElementsByTagName("header")[0].innerHTML = html; // set header
 	html = ""
-	
 	document.getElementById("footer").innerHTML =
 	
-	"<a href='#'>App Name</a>" + " | <a href='#'> By Team Vulcan</a>" + " | Bentley University | CS460 | Spring 2015 | " + "<a href='#' class='tip' title='All images used on this site are from Pexels.com and are licensed under Creative Commons Zero (CC0) license. '>Image Disclaimer</a>";
+	"<a href='#'>App Name</a>" + " | <a href='#'> By Team Vulcan</a>" + " | Bentley University | CS460 | Spring 2015 | " + "<a href='#' class='tip' title='All images used on this site are licensed under Creative Commons Zero (CC0) license. '>Image Disclaimer</a>";
 
 	
 	/*

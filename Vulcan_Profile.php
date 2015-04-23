@@ -7,26 +7,18 @@ include 'login/load_groups.php';
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Register</title>
+	<title>Profile</title>
 	<link href="images/avatar.png" rel="shortcut icon" type="image/png">
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
 	<script src="js/javascript.js" type="text/javascript"></script>
 	<style type="text/css">
 	header{
-	width: 1267px;
-	background-image: url("http://s9.postimg.org/gz0nx669p/cityskylinenycheader.png");
-	padding: 8px 4px;
-	clear: both;
+	background-image: url("http://s14.postimg.org/cimf0i2e7/EE8_A129965.jpg");
 	}	
 	
 	section {
 	height: 680px;
-	}
-
-		hr {
-	margin-top: 40px;
-	border-width: 1px;
 	}
 
 	</style>
@@ -51,7 +43,7 @@ include 'login/load_groups.php';
 	</nav>	
 <section>
 
-	<div class="headerTitle">Sign Up</div>
+	<div class="headerTitle">Profile</div>
 
 	<div class="centerText">
   <br><br>Profile for <?php echo $_SESSION['user']; ?>

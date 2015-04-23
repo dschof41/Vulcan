@@ -1,20 +1,33 @@
-<?php include 'login/check_session.php'; ?>
+<?php
+include 'login/check_session.php'; 
+include 'login/logout.php';
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Sign Up</title>
+	<title>Logged Out</title>
 	<link href="images/avatar.png" rel="shortcut icon" type="image/png">
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
 	<script src="js/javascript.js" type="text/javascript"></script>
 	<style type="text/css">
 	header{
-	width: 1267px;
-	background-image: url("http://s11.postimg.org/zcogdwd7n/cityskylinenycheader.png");
-	padding: 8px 4px;
-	clear: both;
-}
+		background-image: url("http://s27.postimg.org/nb7omvgep/EC00_B0769_E.jpg");
+	}
+
+	.error{
+		font-size: medium;
+		font-family: Century Gothic;
+		color: #0D4F8B;
+		text-align: center;
+		
+	}
+	.centerText {
+     	height: 150px;
+   	}
+
 	</style>
 	<script type="text/javascript">
 	</script>
@@ -31,15 +44,14 @@
 	</nav>	
 <section>
 
-	<div class="headerTitle">Sign Up</div>
+	<div class="headerTitle">Logged Out</div>
 
 	<div class="centerText">
-  <p>Logged out</p>
+	<br><br>
+	 <p class="error"><?php echo $logout ?></p>
   </div>
-  
-	<p class="error"><?php include 'login/logout.php'; ?></p>		
-  
-  <div style="padding-left: 520px; padding-right: 270px; padding-top: 28px; padding-bottom: 25px; height: 290px; width: 250px; color: #0D4F8B; text-align: left;"/>
+  	
+ 
   </section>
 	
 		<footer id="footer">

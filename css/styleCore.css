@@ -1,22 +1,23 @@
 ﻿body {
 	margin: 0px auto; 
-	width: 1275px;
-	border: 1px silver solid;
+	width: 92%;
 	position: static;
 	font-family: Century Gothic;
+	background: whitesmoke;
+	border: thin silver solid;
 }
 	header {
-	height: 280px; 
-	border-bottom: 1px #4A708B groove;
+	height: 290px; 
+	border-bottom: thin silver solid;
 }
 
 	footer {
-	height: 25px;
+	height: 40px;
 	border-top: 1px #4A708B solid;
 	clear: both;
 	background-color: #0D4F8B;
 	padding-bottom: 10px;
-	padding-top: 10px; 
+	padding-top: 28px; 
 	color: white;
 	text-align: center;
 	font-size:15px;
@@ -30,9 +31,6 @@
 	display: inline; 
 	border-right: 1px #0D4F8B dashed;
 }
-	section{
-	background: whitesmoke;
-}
 	aside, section{
 	margin-bottom: 8px;
 	
@@ -40,18 +38,19 @@
 
 	nav {
 	float: none;
-	height: 28px;
+	height: 40px;
   	margin-bottom: 10px;
 	padding-bottom: 8px;
-	padding-left: 270px;
-	padding-top: 15px;
+	padding-left: 500px;
+	padding-top: 28px;
     position: fixed;
     top: -28px;
     z-index: 1;
     background: white;
     opacity: 0.8;
-    width: 1100px;
-    
+    width: 957px;
+    text-align: center;
+    border-bottom: thin silver solid;
 }
 	nav ul {
 	margin: 0px;
@@ -166,11 +165,11 @@
 	float:right;
 }
 #filter{
-	margin-top:-75px;
+	margin-top:-70px;
 	float:left;
 }
 #groupSelector{
-	margin-top:-75px;
+	margin-top:-70px;
 	float:right;
 	
 }
@@ -226,12 +225,11 @@
 }
 
 .error {
-	text-align:left;
-	margin-left:25%;
-	margin-right:20%;
-	font-weight:bold;
-	font-size:24pt;
-	color:red;
+		font-size: medium;
+		font-family: Century Gothic;
+		color: #B22222;
+		left: 50px;
+		
 }
 .centerText {
     margin-left: auto;
@@ -245,23 +243,24 @@
     padding-top: 10px;
     padding-bottom: 2px;
     position: relative;
-    top: -100px;
-    background-color: rgba(110, 150, 221, 0.2);
+    top: -80px;
+    background-color: rgba(48, 121, 149, 0.2);
     font-weight: bold;
     height: 500px;
     border-radius: 15px;
+   
  }
 
 .headerTitle {
     position: relative;
 	font-family: Century Gothic;
-	font-size: 50pt;
-	top: -170px;
+	font-size: 45pt;
+	top: -155px;
 	left: 50px;
 	color: white;
-	font-weight: bold;
-	text-shadow: -1px 1px 10px black, 1px -1px 10px black;
-}
+	text-shadow: -1px 1px 5px black, 1px -1px 5px black;
+
+	}
 
 a.tip {
   position: relative;
@@ -310,14 +309,14 @@ a.tip:hover:after {
  #weatherReport
 	 {
 	position: absolute;
- 	margin-left: 40%; 
+ 	margin-left: 45%; 
  	margin-top: 4%;
- 	top: 50%;
+ 	top: 51%;
  	padding-top: -10%;
 	width: 34%;
 	height: 85%;
 	padding-left: 4%;
-	background-color: rgba(110, 150, 221, 0.2); 	
+	background-color: rgba(48, 121, 149, 0.2); 	
    	-moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius:15px 15px 15px 15px; 
 	}
@@ -328,11 +327,11 @@ a.tip:hover:after {
 	top: 450px;
 	position: absolute;
 	padding-top: 2.5%;
-	margin-left: 2.9%;
+	margin-left: 5%;
 	width: 32.8%;
 	height: 80%;
 	font-size: 15.2px;
-	background-color: rgba(110, 150, 221, 0.2);	
+	background-color: rgba(48, 121, 149, 0.2);
 	-moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius:15px 15px 15px 15px; 
 		}
@@ -352,6 +351,7 @@ a.tip:hover:after {
 	}
 	#weatherLocation{
 	padding: 5px 8px 8px 9px;
+	font-family: Century Gothic;	
 	}
 	
 	#userInfo 
@@ -367,10 +367,20 @@ a.tip:hover:after {
 	text-align: left;
 	}
 
-	#inputSignUp{
-	
+	#inputSearch, #inputLogin, #inputSignUp
+	{
 	width: 190px;
-	}
+	height: 29px;
+	display: block;
+	float: left;
+	font-family: Century Gothic;	
+	font-size: 17px;
+	font-weight: 400;
+	height: 29px;
+	margin: 0;
+	padding: 0 10px;
+		}
+	
 	.button{
 	margin:20px;
 	display:inline-block;
@@ -404,4 +414,14 @@ a.tip:hover:after {
 	#groupActions{
 	margin-left:35%;
 	margin-right:30%;
+}
+
+ #userInfo input:focus, #weatherSearch input:focus {
+	-webkit-animation: glow 1000ms ease-out infinite alternate;
+	-moz-animation: glow 1000ms ease-out infinite alternate;
+	-o-animation: glow 1000ms ease-out infinite alternate;
+	-ms-animation: glow 1000ms ease-out infinite alternate;
+	animation: glow 1000ms ease-out infinite alternate;
+	border-color: #0079ad;
+	outline: none;
 }

@@ -96,7 +96,7 @@ footer#footer {
     white-space: nowrap;
 	float: left;
   	margin-bottom: 10%;
-	padding-left: 31.5%;
+	padding-left: 29%;
     margin-top: 7%;
     opacity: 0.8;
     font-family: Century Gothic;
@@ -108,7 +108,7 @@ footer#footer {
 {	
 position: relative;
 display:inline;
-height:0.3in;
+height:0.28in;
 width:1in;
 cursor:pointer;  
 background: #009cde; 
@@ -124,7 +124,6 @@ font-size:19px;
 text-align:center;
 padding:15px;
 margin:10px;
-font-weight: bold;
 }
 
 #buttons ul li:hover {

@@ -9,7 +9,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="js/javaScript.js" type="text/javascript"></script>
 	<script src="js/weather.js" type="text/javascript"></script>
-	<script src="js/snowflakes.js" type="text/javascript"></script>
 	
 	<style type="text/css">
 	body {
@@ -19,10 +18,7 @@
 	}
 
 	header{
-	width: 1267px;
-	background-image: url("http://s17.postimg.org/6zkiipbcd/cityskylinenycheader.png");
-	padding: 8px 4px;
-	clear: both;
+	background-image: url("http://s17.postimg.org/gwvjbriy5/cityskylinenycheader.png");
 	}
 	
 	section 
@@ -33,7 +29,7 @@
 	#submit 
 	{
 	top: 4px;
-	margin-left: 8px;
+	margin-left: -40px;
 	padding: 4px 8px;
 	position: relative;
 	font-family: "Century Gothic";

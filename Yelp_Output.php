@@ -10,9 +10,7 @@
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9Rt9jw2Sr2Rdz3Q00L-4XeG8wSJz9JxY"></script>
 	<style type="text/css">
 	header{
-	width: 1267px;
-	background-image: url("http://s9.postimg.org/s4gq9ivct/cityskylinenycheader.png");
-	padding: 8px 4px;
+	background-image: url("http://s2.postimg.org/a51ch03wn/tv460banner7.png");
 	clear: both;
 	}
 
