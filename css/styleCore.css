@@ -167,11 +167,25 @@
 #filter{
 	margin-top:-70px;
 	float:left;
+	display:inline;
 }
 #groupSelector{
 	margin-top:-70px;
 	float:right;
-	
+	display:inline;	
+}
+#share{
+	margin-top:-70px;
+	float:left;
+	margin-left:3in;
+	display:inline;
+	background:blue;
+	color:white;
+	padding:2px 5px;
+}
+#share:hover{
+	cursor:pointer;
+	font-weight:bold;
 }
 
 #card-holder{

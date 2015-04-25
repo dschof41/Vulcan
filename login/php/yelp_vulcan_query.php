@@ -46,4 +46,36 @@ for ($i = 0; $i < count($qry); $i++)
 } 
 
 
+//Creatse a string of html tags for business cards
+$alphas = range('A', 'Z');
+
+$busCards = "<div id='card-holder'>";
+
+for ($i = 0; $i < count($qry); $i++)
+{
+	$bus = $qry[$i]; //string for ease of use
+	$busCards .= "<div class='card' onclick='select(this);'>";
+	$busCards .= "<div class='img'>"; //open image
+	$busCards .= "<a href='". $bus->url . "' target='_blank'>"; //set link
+	$busCards .= "<image src='" . $bus->image . "'>"; //set image source
+	$busCards .= "</a>"; //close link
+	$busCards .= "</div>"; //close image div
+	$busCards .= "<div class='info'>"; //open info div
+	$busCards .= "<image src='" . $bus->rating ."'><br>";
+	$busCards .= $bus->name . "<br>";
+	$busCards .= $bus->phone . "<br>";
+	$busCards .= $bus->address;
+	$busCards .= "<span class='_hidden' id='cat'>" . $bus->bus_id . "</span>";
+	$busCards .= "</div>";
+	$busCards .= "<div class='letter'>". $alphas[$i] . "</div>";
+	//$busCards .= "<div class='fb-share-button' data-href='".$bus->url."' data-layout='button_count'></div>";
+
+	$busCards .= "</div>";
+	
+} 
+$busCards .= "</div>";
+
+
+
+
 ?>
