@@ -182,6 +182,7 @@
 	background:blue;
 	color:white;
 	padding:2px 5px;
+	z-index:999;
 }
 #share:hover{
 	cursor:pointer;

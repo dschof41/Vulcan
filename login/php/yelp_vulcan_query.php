@@ -68,8 +68,7 @@ for ($i = 0; $i < count($qry); $i++)
 	$busCards .= "<span class='_hidden' id='cat'>" . $bus->bus_id . "</span>";
 	$busCards .= "</div>";
 	$busCards .= "<div class='letter'>". $alphas[$i] . "</div>";
-	//$busCards .= "<div class='fb-share-button' data-href='".$bus->url."' data-layout='button_count'></div>";
-
+	//$busCards .= "<div id='share' onclick='share(".$bus->url.");'>Share</div>";
 	$busCards .= "</div>";
 	
 } 

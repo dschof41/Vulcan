@@ -134,6 +134,34 @@ Created by Dan Schofer 3/25/2015
 	
 </head>
 <body>
+<script>
+      window.fbAsyncInit = function() { //initialize fb api
+        FB.init({
+          appId      : '1413731082267493',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+      };
+		//code here
+		
+	function share(){ //a function to share a link, called on click
+	FB.ui({
+		  method: 'share_open_graph',
+		  action_type: 'og.likes',
+		  action_properties: JSON.stringify({
+		  object:"http://ec2-52-0-130-98.compute-1.amazonaws.com/index.html",
+		  })
+		}, function(response){});
+	}
+		
+      (function(d, s, id){ //load API asynchronously
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
 	<header>
 	</header>
 	
@@ -157,6 +185,7 @@ Created by Dan Schofer 3/25/2015
 		<input type="submit" value="Submit">
 	</form>
 </div>
+<div id='share' onclick='share();'>Share</div>
 <div id="groupSelector">
 	<form action="login/php/save_business.php" method="post">
 		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
@@ -173,7 +202,7 @@ Created by Dan Schofer 3/25/2015
 		<input type="submit" value="Save">
 	</form>
 </div>
-<?php include 'login\php\yelp_query_output.php'; ?>
+<?php echo $busCards; ?>
 <div id="map-canvas"></div>		
 </section>
 	
