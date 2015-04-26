@@ -177,10 +177,8 @@
 #share{
 	margin-top:-70px;
 	float:left;
-	margin-left:3in;
+	margin-left:2.5in;
 	display:inline;
-	background:blue;
-	color:white;
 	padding:2px 5px;
 	z-index:999;
 }
@@ -188,7 +186,9 @@
 	cursor:pointer;
 	font-weight:bold;
 }
-
+#address{
+	display:inline-block;
+}
 #card-holder{
 	width:6in;
 	margin-top:-45px;

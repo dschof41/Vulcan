@@ -6,8 +6,13 @@
 	<link href="images/avatar.png" rel="shortcut icon" type="image/png">
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
+	<link href="css/social.css" rel="stylesheet" type="text/css">
 	<script src="js/javaScript.js" type="text/javascript"></script>
+	<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9Rt9jw2Sr2Rdz3Q00L-4XeG8wSJz9JxY"></script>
+	
 	<style type="text/css">
 	header{
 	background-image: url("http://s2.postimg.org/a51ch03wn/tv460banner7.png");
@@ -24,6 +29,7 @@
   	float:right;
   	border:2px silver solid;
   	}
+  	
 	</style>
 	<?php
 	//Pull variables from the Yelp_Input form
@@ -134,6 +140,7 @@ Created by Dan Schofer 3/25/2015
 	
 </head>
 <body>
+<div id="fb-root"></div>
 <script>
       window.fbAsyncInit = function() { //initialize fb api
         FB.init({
@@ -185,7 +192,7 @@ Created by Dan Schofer 3/25/2015
 		<input type="submit" value="Submit">
 	</form>
 </div>
-<div id='share' onclick='share();'>Share</div>
+<div id="share" class="fb-share-button" data-href="http://ec2-52-0-130-98.compute-1.amazonaws.com/index.html" data-layout="button"></div>
 <div id="groupSelector">
 	<form action="login/php/save_business.php" method="post">
 		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
@@ -209,4 +216,9 @@ Created by Dan Schofer 3/25/2015
 	<footer id="footer">
 	</footer>
 </body>
+<script type="text/javascript">stLight.options({publisher: "d34a1c0e-427a-4c53-8fd4-5b7dcee0768b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<script>
+var options={ "publisher": "d34a1c0e-427a-4c53-8fd4-5b7dcee0768b", "logo": { "visible": true, "url": "http://ec2-52-0-130-98.compute-1.amazonaws.com/", "img": "http://dailydropcap.com/images/V-12.jpg", "height": 50}, "ad": { "visible": false, "openDelay": "5", "closeDelay": "0"}, "livestream": { "domain": "", "type": "sharethis"}, "ticker": { "visible": false, "domain": "", "title": "", "type": "sharethis"}, "facebook": { "visible": false, "profile": "sharethis"}, "fblike": { "visible": false, "url": ""}, "twitter": { "visible": false, "user": "sharethis"}, "twfollow": { "visible": false}, "custom": [{ "visible": false, "title": "Custom 1", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}, { "visible": false, "title": "Custom 2", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}, { "visible": false, "title": "Custom 3", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}], "chicklets": { "items": ["facebook", "twitter", "pinterest", "googleplus"]}};
+var st_bar_widget = new sharethis.widgets.sharebar(options);
+</script>
 </html>
