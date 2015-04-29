@@ -16,36 +16,56 @@
 	<style type="text/css">
 	header{
 	background-image: url("http://s2.postimg.org/a51ch03wn/tv460banner7.png");
-	clear: both;
 	}
+	
+	section{
+	height: 1000px;
+}
 
   	#map-canvas {
-  	height: 6in;
+  	height: 9.15in;
   	margin: 10px;
-  	margin-top:-40px;
+  	margin-top: -20px;
   	padding: 0;
-  	width:7in;
+  	width:7.5in;
   	display:inline;	
   	float:right;
-  	border:2px silver solid;
+  	border:1px silver solid;
+  	margin-right: 20px;
   	}
   	
+  	#yelpImage{
+		display:inline;
+		margin-left:225px;
+		margin-top:-200px;
+}
 	</style>
 	<?php
 	//Pull variables from the Yelp_Input form
 	session_start();
-	$t = $_POST["term"];
-	$l = $_POST["location"];
-	$s = $_POST['sort'];
-
+	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+		$t = $_POST["term"];
+		$l = $_POST["location"];
+		$s = $_POST['sort'];
+	}else if (isset($_GET['businessID']) && !empty($_GET['businessID'])){
+		include 'login/php/save_business.php';
+	
+	}else{
+		$t = $_GET['term'];
+		$l = $_GET['location'];
+		$s = $_GET['sort'];
+		include 'login\php\yelp_vulcan_query.php';
+	}
 	//Run query from pulled variables
-	include 'login\php\yelp_vulcan_query.php';
+	
 	include 'login/load_groups.php';
 	?>
 	
 	
 	<script type="text/javascript">
-
+	function clearID(){
+		document.getElementById(businessID).value ="";
+	}
 	
 	//Pull latitude and longitude from the query script we just ran and create javascript variables
 	var latitude = <?php echo json_encode($latitude); ?>;
@@ -106,9 +126,9 @@ function initialize() {
 google.maps.event.addDomListener(window, 'load', initialize); //creates map on window load by running initialize
 
 /* 
-Select function that allows user to select a business card from given list, and removes previous selections if any
-
-Created by Dan Schofer 3/25/2015
+	Select function that allows user to select a business card from given list, and removes previous selections if any
+	Also populates hidden fields for saving business card to database
+	Created by Dan Schofer 3/25/2015
 */
 	function select(e) { //function takes HTML object element
 		    if(e.id == 'card-selected') { //check id of selected object, if its already selected, unselect it
@@ -169,18 +189,19 @@ Created by Dan Schofer 3/25/2015
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
-	<header>
-	</header>
-	
-	<nav id="primary_nav_wrap">
+    <nav id="primary_nav_wrap">
 	<?php 
 		include 'login/php/navigation.php';
 	?>
 	</nav>
-<section>
+
+	<header>
+	</header>
+	
+	<section>
 <div class="headerTitle">Search Results</div>
 <div id="filter">
-	<form method="post" action="Yelp_Output.php">
+	<form method="get" action="Yelp_Output.php">
 		<label for="filter">Order:</label>
 		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
 		<input class="_hidden" name="location" type="text" value="<?php echo $l ?>">
@@ -189,12 +210,12 @@ Created by Dan Schofer 3/25/2015
 			<option value="1">Distance</option>
 			<option value="2">Rating</option>
 		</select>
-		<input type="submit" value="Submit">
+		<input type="submit" value="Submit" onclick="clearID();">
 	</form>
 </div>
-<div id="share" class="fb-share-button" data-href="http://ec2-52-0-130-98.compute-1.amazonaws.com/index.html" data-layout="button"></div>
+<!--<div id="share" class="fb-share-button" data-href="http://ec2-52-0-130-98.compute-1.amazonaws.com/index.html" data-layout="button"></div> -->
 <div id="groupSelector">
-	<form action="login/php/save_business.php" method="post">
+	<form action="Yelp_Output.php" method="get">
 		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
 		<input class="_hidden" name="location" type="text" value="<?php echo $l ?>">
 		<input id="businessID" type="text" name="businessID" value="" readonly="true">

@@ -22,6 +22,7 @@ if (mysqli_num_rows($result) > 0) {
 
 	    while($row = mysqli_fetch_assoc($result)) {
 	    	
+	    	$save_id = $row['business_save_id'];
 	    	$id = $row['bus_id'];
 			$name = $row['bus_name'];
 			$phone = $row['bus_phone'];
@@ -45,7 +46,7 @@ if (mysqli_num_rows($result) > 0) {
 			$cardHTML .= "<span id='address'>";
 			$cardHTML .= $address;
 			$cardHTML .= "</span>";
-			$cardHTML .= "<span class='_hidden' id='cat'>".$id. "</span>";
+			$cardHTML .= "<span class='_hidden' id='cat'>".$save_id. "</span>";
 			$cardHTML .= "</div>";
 			$cardHTML .= "</div>";
 			

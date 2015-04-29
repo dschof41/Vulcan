@@ -11,20 +11,21 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login']) && !isset($out)){
 	
 		echo "<li><a href='weatherApp.php'>WEATHER</a></li>";
 		
-		echo "<li><a href='Vulcan_Logout.php'>LOGOUT</a></li>";
 		
 		if (isset($_SESSION['user']) && !empty($_SESSION['user'])){
 		
-		echo "<li id='userName'><a href='Vulcan_Profile.php'>" . $_SESSION['user'] ."</a></li>";
+		echo "<li id='userName'><a href='Vulcan_Profile.php'>MY ACCOUNT</a></li>";
+		
+		echo "<li><a href='Vulcan_Logout.php'>LOGOUT</a></li>";
 				
 		}
 		//hidden field with user ID
 		
 	}
 }else{
-	echo "<li><a href='Vulcan_Login.php'>LOGIN</a></li>";
+	echo "<li><a href='Vulcan_Login.php'>LOG IN</a></li>";
 	
-	echo "<li><a href='Vulcan_Signup.php'>REGISTER</a></li>";
+	echo "<li><a href='Vulcan_Signup.php'>SIGN UP</a></li>";
 	
 }
 

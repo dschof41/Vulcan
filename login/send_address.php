@@ -1,4 +1,15 @@
 <?php
+/*
+	This script emails the user the address of the selected business.
+*/
+session_start();
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+$address = $_POST['address'];
+$urlAddress = str_replace(" ", "+", $address);
+$to = $_POST['userMail'];
+
+$message = "<p>Here is the address you wanted!: <a href=https://www.google.com/#q=".$urlAddress.">".$address."</a></p><p>Thanks for using Venturify!!</p>"; ;
 /**
  * This example shows settings to use when sending via Google's Gmail servers.
  */
@@ -7,7 +18,7 @@
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
 date_default_timezone_set('Etc/UTC');
 
-require '../PHPMailerAutoload.php';
+require 'PHPMailer-master/PHPMailerAutoload.php';
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
@@ -25,7 +36,7 @@ $mail->SMTPDebug = 2;
 $mail->Debugoutput = 'html';
 
 //Set the hostname of the mail server
-$mail->Host = 'smtp.gmail.com';
+$mail->Host = 'smtp.mail.yahoo.com';
 
 //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
 $mail->Port = 587;
@@ -37,36 +48,44 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "teamvulcan123@gmail.com";
+$mail->Username = "schofdaddy@yahoo.com";
 
 //Password to use for SMTP authentication
-$mail->Password = "vulcan123";
+$mail->Password = "surfing124";
 
 //Set who the message is to be sent from
-$mail->setFrom('teamvulcan123@gmail.com', 'Admin');
+$mail->setFrom('schofdaddy@yahoo.com', 'Admin');
 
 //Set an alternative reply-to address
 $mail->addReplyTo('replyto@example.com', 'First Last');
 
 //Set who the message is to be sent to
-$mail->addAddress('whoto@example.com', 'John Doe');
+$mail->addAddress($to);//, 'John Doe');
 
 //Set the subject line
-$mail->Subject = 'PHPMailer GMail SMTP test';
+$mail->Subject = 'Venturify Address Request';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+$mail->msgHTML($message, dirname(__FILE__), true);
 
 //Replace the plain text body with one created manually
-$mail->AltBody = 'This is a plain-text message body';
+//$mail->Body = 'Here is the address you wanted!: ' . $address;
+$mail->AltBody ="Here is the address you wanted: ".$address."\nThanks for using Venturify!";
 
 //Attach an image file
-$mail->addAttachment('images/phpmailer_mini.png');
+//$mail->addAttachment('images/phpmailer_mini.png');
 
 //send the message, check for errors
 if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
+    $_SESSION['message'] = "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Message sent!";
+    //echo "Message sent!";
+    $_SESSION['message'] = "Success! Address has been emailed to you!";
 }
+
+header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Manage_Groups.php");
+exit();
+
+}
+?>

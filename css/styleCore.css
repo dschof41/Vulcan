@@ -7,8 +7,9 @@
 	border: thin silver solid;
 }
 	header {
-	height: 290px; 
-	border-bottom: thin silver solid;
+	height: 270px; 
+	border-bottom: thin black solid;
+	
 }
 
 	footer {
@@ -16,7 +17,7 @@
 	border-top: 1px #4A708B solid;
 	clear: both;
 	background-color: #0D4F8B;
-	padding-bottom: 10px;
+	padding-bottom: 21px;
 	padding-top: 28px; 
 	color: white;
 	text-align: center;
@@ -35,53 +36,6 @@
 	margin-bottom: 8px;
 	
 }
-
-	nav {
-	float: none;
-	height: 40px;
-  	margin-bottom: 10px;
-	padding-bottom: 8px;
-	padding-left: 500px;
-	padding-top: 28px;
-    position: fixed;
-    top: -28px;
-    z-index: 1;
-    background: white;
-    opacity: 0.8;
-    width: 957px;
-    text-align: center;
-    border-bottom: thin silver solid;
-}
-	nav ul {
-	margin: 0px;
-	padding: 5px;
-}
-
-	nav ul li {
- 	list-style-type: none;
- 	display: inline-block;
- 	margin: 0px;
-   	}
-
-	nav li a {
-	color:  black;
-	font-weight:bold;
-	font-size: 18px;
-    transition: 0.2s;   
-    display: block;
-	float: left;	
-	padding: 1px 25px;
-	text-decoration: none;
-	opacity:0.7;
-	    }
-
-	nav li a:hover {
-	color: white;
-	background-color: white;
-    text-shadow: -1px 1px 5px black, 1px -1px 5px black;
-    font-family: Century Gothic;
-    opacity:0.7;
-    }
         
     footer a
     { 
@@ -91,7 +45,8 @@
 
     #primary_nav_wrap
 {
-	margin-top:15px
+	width: 100%;
+
 }
 
 #primary_nav_wrap ul
@@ -100,7 +55,20 @@
 	position:relative;
 	float:left;
 	margin:0;
-	padding:0
+	padding-left: 459px;
+	height: 70px;
+	margin-top: 10px;
+	text-shadow: 0 0 8px white;
+	 -webkit-stroke-width: 15px;
+   -webkit-stroke-color: white;
+   -webkit-fill-color: white;
+   text-shadow: 1px 1px 20px white;
+   -webkit-transition: width 0.2s; /*Safari & Chrome*/
+   transition: width 0.2s;
+   -moz-transition: width 0.2s; /* Firefox 4 */
+   -o-transition: width 0.2s; /* Opera */
+	
+	
 }
 
 #primary_nav_wrap ul a
@@ -112,8 +80,8 @@
 	line-height:32px;
 	padding:0 15px;
 	font-family: Century Gothic;
-	opacity:0.8;
-}
+	color: black;
+	}
 
 #primary_nav_wrap ul li
 {
@@ -126,43 +94,11 @@
 #primary_nav_wrap ul li:hover
 {
 	background: white;
-	opacity:0.9;
+	opacity: .7;
 }
 
-#primary_nav_wrap ul ul
-{
-	display:none;
-	position:absolute;
-	top:100%;
-	left:0;
-	background: white;
-	padding:0
-}
-
-#primary_nav_wrap ul ul li
-{
-	float:none;
-	width:140px;
-}
-
-#primary_nav_wrap ul ul a
-{
-	line-height:120%;
-	padding:10px 15px
-}
-
-#primary_nav_wrap ul ul ul
-{
-	top:0;
-	left:100%
-}
-
-#primary_nav_wrap ul li:hover > ul
-{
-	display:block
-}
 #userName{
-	float:right;
+	float:left;
 }
 #filter{
 	margin-top:-70px;
@@ -190,47 +126,64 @@
 	display:inline-block;
 }
 #card-holder{
-	width:6in;
+	width:7in;
 	margin-top:-45px;
 	float:left;
 }
-.card, .info-card{
-	border:2px silver solid;
-	margin:5px;
-	background:#CCFFFF;
+
+#card-holderGroups{
+	width:5.8in;
+	margin-top:-600px;
+	float:left;
+	margin-left: 790px;
+
 }
+.card, .info-card{
+	border:1px silver solid;
+	margin: 18px;
+	background:white;
+	font-family: Century Gothic;
+	color: #0D4F8B;
+	border-radius: 5px;	
+	margin-left: 25px;
+	}
 .card:hover{
-	background-color:#FFCCFF;
+	background-color:#E0EEEE;
 	cursor:pointer;
 }
 #card-selected {
-	background:#FFCCFF;
+	background:#7AC5CD;
 	border:2px silver solid;
-	margin:5px;
+	margin:10px;
 }
 .letter {
-	font-size:24pt;
-	color:black;
-	border:2px black solid;
+	border-radius: 10px;
+	font-size:12pt;
+	color:#0D4F8B;
 	width:70px;
 	padding-top:10px;
 	padding-bottom:10px;
-	background:#FF4747;
 	font-weight:bold;
 	text-align:center;
 	float:right;
-	margin-top:15px;
+	margin-top:35px;
 	margin-right:25px;
+	border: thin silver solid;
+	background: white;
 }
-.img {
+
+	.img {
 	display:inline-block;
-	border-right:2px silver solid;
+	border:1px silver solid;
+	border-radius: 10px;
+	padding-top: 5px;
 }
 .info {
 	display:inline-block;
 	height:50%;
-	padding-left:5px;
-	font-weight:bold;
+	padding-left:15px;
+	font-size: 18px;
+
 }
 .rating {
 	display:inline;
@@ -249,7 +202,7 @@
 .centerText {
     margin-left: auto;
     margin-right: auto;
-    width: 45%;
+    width: 40%;
     color: #0D4F8B;
     float: inherit;
     font-family: Century Gothic;
@@ -259,10 +212,12 @@
     padding-bottom: 2px;
     position: relative;
     top: -80px;
-    background-color: rgba(48, 121, 149, 0.2);
     font-weight: bold;
     height: 500px;
-    border-radius: 15px;
+    border-radius: 10px; 
+    border: thin silver solid;
+  	background: white;
+
    
  }
 
@@ -326,14 +281,14 @@ a.tip:hover:after {
 	position: absolute;
  	margin-left: 45%; 
  	margin-top: 4%;
- 	top: 51%;
+ 	top: 50.5%;
  	padding-top: -10%;
 	width: 34%;
 	height: 85%;
 	padding-left: 4%;
-	background-color: rgba(48, 121, 149, 0.2); 	
    	-moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius:15px 15px 15px 15px; 
+    border: thin silver solid;
 	}
 
 	#weatherList
@@ -346,9 +301,9 @@ a.tip:hover:after {
 	width: 32.8%;
 	height: 80%;
 	font-size: 15.2px;
-	background-color: rgba(48, 121, 149, 0.2);
 	-moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius:15px 15px 15px 15px; 
+    border: thin silver solid;
 		}
 		
 	#weatherList a 
@@ -364,6 +319,7 @@ a.tip:hover:after {
 	padding-bottom: 25px;
 	font-weight: bold;
 	}
+		
 	#weatherLocation{
 	padding: 5px 8px 8px 9px;
 	font-family: Century Gothic;	
@@ -382,9 +338,9 @@ a.tip:hover:after {
 	text-align: left;
 	}
 
-	#inputSearch, #inputLogin, #inputSignUp
-	{
-	width: 190px;
+	#inputSearch
+		{
+	width: 410px;
 	height: 29px;
 	display: block;
 	float: left;
@@ -394,7 +350,38 @@ a.tip:hover:after {
 	height: 29px;
 	margin: 0;
 	padding: 0 10px;
+	margin-left: -100px;
 		}
+		
+	#inputLogin, #inputSignUp{
+	width: 195px;
+	height: 29px;
+	display: block;
+	float: left;
+	font-family: Century Gothic;	
+	font-size: 17px;
+	font-weight: 400;
+	height: 29px;
+	margin: 0;
+	padding: 0 10px;
+	}
+
+	#userNameForm, #userEmailForm, #userIDForm  {
+	border: none;
+	background-color: rgba(48, 121, 149, 0.0);
+	width: 190px;
+	height: 29px;
+	display: block;
+	font-family: Century Gothic;	
+	font-size: 17px;
+	font-weight: 400;
+	height: 29px;
+	margin: 0;
+	padding: 0 10px;
+	margin-left: 120px;
+	margin-top: -40px;
+	}
+		
 	
 	.button{
 	margin:20px;
@@ -408,30 +395,38 @@ a.tip:hover:after {
 		display:inline-block;
 	}
 	#manageGroups {
-		text-align:center;
-		position:relative;
-		border:2px blue solid;
-		background:aqua;
-		margin-top:10%;
-		width:2in;
+	position: relative;
+	top: 28px;
+	left: 2px;
+	cursor:pointer; 
+	padding:5px 25px;
+	background: #1874CD; 
+	border:1px solid #009cde; 
+	border-radius: 5px;
+	color: white;
+	font-size:1.1em;
+	font-family: "Century Gothic";
+	text-decoration: none;
+	text-align: center;
 }
 	#manageGroups:hover{
-		background:fuchsia;
+	background-color:#009cde;
+	-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+	-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+	box-shadow: 0 0 1px rgba(0,0,0, .75);
+	color: #0079ad;
 }
-
-	#manageGroups a{
+	#manageGroups a {
 		padding:10px;
-		font-size:16px;
 		text-decoration:none;
-		font-weight:bold;
-		color:black;
-}
-	#groupActions{
-	margin-left:35%;
-	margin-right:30%;
+		color: white;
 }
 
- #userInfo input:focus, #weatherSearch input:focus {
+	#groupActions{
+	left: 250px;
+	}
+
+ #userInfo input:focus, #weatherSearch input:focus, #userInfoGroups input:focus{
 	-webkit-animation: glow 1000ms ease-out infinite alternate;
 	-moz-animation: glow 1000ms ease-out infinite alternate;
 	-o-animation: glow 1000ms ease-out infinite alternate;
@@ -440,3 +435,104 @@ a.tip:hover:after {
 	border-color: #0079ad;
 	outline: none;
 }
+
+hr{
+       border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;   
+    width: 80%;
+     }
+     
+     .centerTextGroups {
+    margin-left: auto;
+    margin-right: auto;
+    width: 42%;
+    color: #0D4F8B;
+    float: inherit;
+    font-family: Century Gothic;
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    position: relative;
+    top: -80px;
+    font-weight: bold;
+    height: 580px;
+    border-radius: 10px; 
+    border: thin silver solid;
+  	background: white;
+  	left: -380px;
+ }
+ 
+	#userInfoGroups
+	{
+	
+	color: white;
+	position: absolute;
+	left: 170px;
+	top: 500px;
+	color: #0D4F8B;
+	text-align: left;
+	 display: inline;
+	}
+	
+	#userInfoGroups2
+	{
+	
+	color: white;
+	position: absolute;
+	left: 170px;
+	top: 600px;
+	color: #0D4F8B;
+	text-align: left;
+	 display: inline;
+	}
+		
+	#emailGroup{
+	color: white;
+	position: absolute;
+	left: 170px;
+	top: 700px;
+	color: #0D4F8B;
+	text-align: left;
+	 display: inline;
+
+}	
+	
+	 #SavedCardsGroups
+	 {
+	position: absolute;
+	height: 1200px;
+	padding-left: 4%;
+   	-moz-border-radius: 15px 15px 15px 15px;
+    -webkit-border-radius:15px 15px 15px 15px; 
+    border: thin silver solid;
+	margin-top:-695px;
+	float:left;
+	margin-left: 680px;
+	z-index: -1;
+	width: 670px;
+	background: whitesmoke;
+	color: #0D4F8B;
+}
+
+	#DeleteGroups{
+	color: white;
+	position: absolute;
+	left: 170px;
+	top: 800px;
+	color: #0D4F8B;
+	text-align: left;
+	 display: inline;
+
+}
+
+	#message{
+	margin-top:-500px;
+	float:left;
+	margin-left: 900px;
+	color: #0D4F8B;
+	font-weight: bold;
+
+}
+

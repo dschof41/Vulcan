@@ -39,22 +39,22 @@ include 'login/load_groups.php';
 	
 </head>
 <body>
-	<header>
-	</header>
-	
-	<nav id="primary_nav_wrap">
+<nav id="primary_nav_wrap">
 	<?php 
 		include 'login/php/navigation.php';
 	?>
 	</nav>	
-<section>
 
-	<div class="headerTitle">Profile</div>
+	<header>
+	</header>
+	
+	<section>
+
+	<div class="headerTitle">Profile: <?php echo $_SESSION['user']; ?> </div>
 
 	<div class="centerText">
-  <br><br>Profile for <?php echo $_SESSION['user']; ?>
-  <hr>
-
+  <br><br><font size="5"> Hello <font color="#0198E1"> <?php echo $_SESSION['user']; ?>. </font> Welcome to your profile! </font><br><br>
+<hr>
   </div>	
   <span id="message">
   	<?php 
@@ -65,16 +65,16 @@ include 'login/load_groups.php';
   	?>
 </span>
   	<form id="userInfo" action="Vulcan_Profile.php" method="post">
-		Profile Info:<br>
-		<p>Username:</p>
-		<input type="text" name="username" value= "<?php echo $userName; ?>" id="userName" readonly><br>
+		<b><center>Your Account Information:</center> </b> <br> <p>Username:</p>
+		<input type="text" name="username" value= "<?php echo $userName; ?>" id="userNameForm" readonly><br>
 		<p>Email Address:</p>
-		<input type="text" name="email" value="<?php echo $userEmail; ?>" id="userEmail" readonly>
-		<p>Member ID:</p>
-		<input type="text" name="id" value="<?php echo $userId; ?>" id="userID" readonly>
+		<input type="text" name="email" value="<?php echo $userEmail; ?>" id="userEmailForm" readonly>
+		<br><p>Member ID:</p>
+		<input type="text" name="id" value="<?php echo $userId; ?>" id="userIDForm" readonly> <br>
+		<hr>
 		<div id="manageGroups" onclick="manageGroups();">
-			<a href="Vulcan_Manage_Groups.php">
-				Manage Groups
+			<a href="Vulcan_Manage_Groups.php"  style="text-decoration:none;">
+				Manage Your Groups
 			</a>
 		</div>
 	</form>

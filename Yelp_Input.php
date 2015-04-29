@@ -16,12 +16,17 @@
 	<style type="text/css">
 	header{
 	background-image: url("http://s8.postimg.org/yrvywlrur/D9_D2_DC90_AD.jpg");
-	clear: both;
 	}
 	section {
 	height: 680px;
 	}
-
+	#submit{
+	width: 429px;
+	left:-94px;
+	}
+	.centerText{
+	height: 500px;
+}
 	</style>
 	<script type="text/javascript">
 		
@@ -29,40 +34,42 @@
 	
 </head>
 <body>
-	<header>
-	</header>
-	
+
 	<nav id="primary_nav_wrap">
 		<?php 
 		session_start();
 		include 'login/php/navigation.php';
 		?>
-	</nav>	
-<section>
+	</nav>
+	
+	<header>
+	</header>
+	<section>
 
 	<div class="headerTitle">Search</div>
 	<div class="centerText">
-  <p>
-  <p>--------------------------------------------------------------- </p>
-  <?php
+  <br><br>
+ <center> <?php
   	if(isset($_SESSION['message'])){
   		echo $_SESSION['message'];
   	}
+  	//"Start your search here" should be visible no matter what! The message should be below it and conditional
   	if(empty($_SESSION['message'])){
-  		echo "Start your search now!";
+  		echo "<font size='5pt'> Start Your Search </font>";  
   	}
   	$_SESSION['message'] = "";
-  	?>
-  <p> -------------------------------------------------------------- </p>
-
+  	?> 
+  	</center><br>
+ <hr>
+ <font size=""></font>
    </div>		
  
-	<form id="userInfo" action="Yelp_Output.php" method="post">
-				<br><br>What are you looking for:<input type="text" name="term" value= "" id="inputSearch" placeholder="restaurants, hotels, etc." required><br>
-				<br>Where:<input type="text" name="location" value="" id="inputSearch" placeholder="Boston, Waltham, etc." required ><br>
-				<input class="_hidden" type="text" name="sort" value="0"><br>
-				<input id="submit" type="submit" value ="Search  🔍"><br><br>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Powered by Yelp<P>
+	<form id="userInfo" action="Yelp_Output.php" method="get">
+			<br><br><center><b>What are you looking for:</b></center><input type="text" name="term" value= "" id="inputSearch" placeholder="restaurants, hotels, sushi bars, coffee & tea, etc." required><br><br>
+				<center><b>Where:</b></center><input type="text" name="location" value="" id="inputSearch" placeholder="city or zip code (e.g., Boston, 02112)" required ><br>
+				<input class="_hidden" type="text" name="sort" value="0"><br><br>
+				<input id="submit" type="submit" value ="Search  🔍"><br><br><br>
+				<p><center>Powered by <img src="https://s3-media3.fl.yelpassets.com/assets/2/www/img/2d7ab232224f/developers/yelp_logo_100x50.png"></center><P>
 		</form>
 	
 	</section>

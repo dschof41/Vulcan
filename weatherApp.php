@@ -23,12 +23,12 @@
 	}
 
 	header{
-	background-image: url("http://s17.postimg.org/gwvjbriy5/cityskylinenycheader.png");
+	background-image: url("http://s2.postimg.org/it9c30a2f/AF8_F2_A3409.jpg");
 	}
 	
 	section 
 	{
-	height: 850px;
+	height: 880px;
 	}
 
 	#submit 
@@ -48,23 +48,26 @@
 	
 </head>
 <body>
-	<header>
-	</header>
-	
-<nav id="primary_nav_wrap">
-	<?php 
+	<nav id="primary_nav_wrap">
+		<?php 
 		session_start();
 		include 'login/php/navigation.php';
-	?>
+		?>
+	</nav>
 
-</nav>			
+	<header>
+	</header>
+			
 	<section>
 		<div class="headerTitle">Weather</div>
 		<div class="weather"></div>
 	<form id="weatherSearch">
-	<label>Enter a City or a Zip Code<br></label>
-	<input type="text" id="weatherLocation" name="weatherLocation" size="50" />
-	<input type="submit" id="submit" name="submit" value="Search" />
+	<br>
+	<label>Five-Day Forecast <br></label>
+	<input type="text" id="weatherLocation" name="weatherLocation" size="50" placeholder ="Enter a City or a Zip Code"/>
+	<input type="submit" id="submit" name="submit" value="Search" /><br>
+	<font size="2">Powered by Yahoo Weather</font>
+	
 </form>
 <div id="weatherList"></div>
 <div id="weatherReport"></div>

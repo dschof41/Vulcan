@@ -5,20 +5,19 @@
 session_start();
 include 'connect.php';
 
-$group = $_POST['group'];
-$card_id = $_POST['businessID'];
-$user = $_SESSION['user'];
+$saveID = mysqli_escape_string($con, $_POST['businessID']);
 
-$sql = "DELETE FROM businesses WHERE user = $user AND group_name = '$group' AND bus_id = '$card_id'";
+$sql = "DELETE FROM businesses WHERE business_save_id ='$saveID'";
+//$sql = "DELETE FROM `vulcandb`.`businesses` WHERE `businesses`.`business_save_id` =$saveID";
+
 $result = mysqli_query($con, $sql);
 
 if ($result){
-	$_SESSION['message'] = "Successful deletion";
+	$_SESSION['message'] = "Group deleted";
 }else{
-	$_SESSION['message'] = mysqli_error($con);
+	$_SESSION['message'] = "Group NOT deleted ". mysqli_error($con);
 }
 mysqli_close($con);
 header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/VUlcan_Manage_Groups.php");
 exit();	
-
 ?>

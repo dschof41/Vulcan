@@ -101,6 +101,7 @@ footer#footer {
     opacity: 0.8;
     font-family: Century Gothic;
     text-align:center;
+    font-weight: bold;
 
 }
 
@@ -111,15 +112,13 @@ display:inline;
 height:0.28in;
 width:1in;
 cursor:pointer;  
-background: #009cde; 
-border: 2px solid #00BFFF;
+background: #1874CD; 
 -moz-border-radius: 20px;
 -webkit-border-radius: 20px;
 border-radius: 5px;
 -webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
 -moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
 box-shadow: 0 0 4px rgba(0,0,0, .75);
-color:#f3f3f3;
 font-size:19px;
 text-align:center;
 padding:15px;
@@ -127,7 +126,7 @@ margin:10px;
 }
 
 #buttons ul li:hover {
-background-color: #0079ad; 
+background-color: #236B8E; 
 -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
 -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
 box-shadow: 0 0 1px rgba(0,0,0, .75);

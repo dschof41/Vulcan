@@ -30,7 +30,7 @@ white-space: nowrap;
 	font-variant: small-caps;
 	position: relative;
 	margin-right:auto;	
-	margin-left:auto;
+	margin-left: 0px;
 	margin-top: 2%;
 	display:inline-block;
 	z-index: 1;

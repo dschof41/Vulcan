@@ -39,9 +39,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	//====================================================================
 	//	GET THE CHOSEN U AND P, AND CHECK IT FOR DANGEROUS CHARCTERS
 	//====================================================================
+	//Grab posted variables from form
 	$uname = $_POST['username'];
 	$pword = $_POST['password'];
 	$email = $_POST['email'];
+	
+	//Validate email using php
+	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$_SESSION['message'] = "Please enter valid email!";
+		header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Signup.php");
+		exit();
+	}
 
 	$uname = htmlspecialchars($uname);
 	$pword = htmlspecialchars($pword);

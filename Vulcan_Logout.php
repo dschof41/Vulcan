@@ -40,15 +40,16 @@ include 'login/logout.php';
 	
 </head>
 <body>
+<nav id="primary_nav_wrap">
+		<?php 
+		session_start();
+		include 'login/php/navigation.php';
+		?>
+	</nav>
+
 	<header>
 	</header>
-	
-	<nav id="primary_nav_wrap">
-	<?php 
-		include 'login/php/navigation.php';
-	?>
-	</nav>	
-<section>
+	<section>
 
 	<div class="headerTitle">Logged Out</div>
 
