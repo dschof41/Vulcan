@@ -6,10 +6,10 @@ include 'yelp_query.php';
 $busID = $_GET['businessID'];//hidden field
 $group = $_GET['groupSelect'];//value from selection box
 
-if ($group === NULL){
-	$_SESSION['message'] = "Please select a group before saving!";
+if ($group === NULL || $group === "No groups yet!"){
+	$_SESSION['message'] = "Please make a group first!!!";
 	echo "id box empty";
-	header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Yelp_Input.php");
+	header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Profile.php");
 	exit();
 } 
 

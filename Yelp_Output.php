@@ -214,11 +214,17 @@ google.maps.event.addDomListener(window, 'load', initialize); //creates map on w
 	</form>
 </div>
 <!--<div id="share" class="fb-share-button" data-href="http://ec2-52-0-130-98.compute-1.amazonaws.com/index.html" data-layout="button"></div> -->
-<div id="groupSelector">
+<?php
+	if(isset($_SESSION['login']) && !empty($_SESSION['login'])) {
+		echo "<div id='groupSelector'>";
+	}else{
+		echo "<div id='groupSelector' class='_hidden'>";
+	}
+?>
 	<form action="Yelp_Output.php" method="get">
 		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
 		<input class="_hidden" name="location" type="text" value="<?php echo $l ?>">
-		<input id="businessID" type="text" name="businessID" value="" readonly="true">
+		<input id="businessID" class="_hidden" type="text" name="businessID" value="" readonly="true">
 		<label for="groupSelect">Your Groups:</label>
 		<select name="groupSelect" id="groupSelect">
 			<?php
@@ -229,7 +235,7 @@ google.maps.event.addDomListener(window, 'load', initialize); //creates map on w
 		</select>
 		<input type="submit" value="Save">
 	</form>
-</div>
+<?php echo "</div>"; ?>
 <?php echo $busCards; ?>
 <div id="map-canvas"></div>		
 </section>
