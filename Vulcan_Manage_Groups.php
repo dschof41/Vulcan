@@ -63,6 +63,11 @@ Created by Dan Schofer 3/25/2015
 	        	var addressEnd = elementString.indexOf('<', addressStart);
 	        	var businessAddress = elementString.substring(addressStart, addressEnd);
 	        	document.getElementById('address').value = businessAddress.trim();
+	        	//Pull name of business and put into hidden form
+	        	var nameStart = elementString.indexOf("name") + 6;
+	        	var nameEnd = elementString.indexOf("<", nameStart);
+	        	var businessName = elementString.substring(nameStart, nameEnd);
+	        	document.getElementById("name").value = businessName.trim();
 				}
         	//}//close for
     	}//close else
@@ -126,8 +131,9 @@ Created by Dan Schofer 3/25/2015
 	<div id="emailGroup">
 		<form action="login/send_address.php" method="post">
 		<p><b>Send Selected Card's Address to Your Email</b></p>
-			<input type="text" class="_hidden" readonly="true" id="userMail" name="userMail" value="<?php echo $userEmail; ?>" style ="width:170px; height: 20px;" required>
-			<input id="address" class="_hidden" name="address" type="text" readonly="true" value="" style ="width:170px; height: 20px;" required>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" class="_hidden" readonly="true" id="userEmail" name="userMail" value="<?php echo $userEmail; ?>" style ="width:170px; height: 20px;" required>
+			<input type="text" id="name" name="name" class="_hidden" value="" required>
+			<input type="text" id="address" name="address" class="_hidden" value="" required>&nbsp;&nbsp;&nbsp;&nbsp;
 			<input id="submitSmall" type="submit" value="Send Address">
 		</form>
 	</div>

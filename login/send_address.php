@@ -6,19 +6,16 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 $address = $_POST['address'];
-
+$name = $_POST['name'];
 if(!isset($address) || empty($address)){
 	$_SESSION['message'] = "Select a card to receive address!";
 	header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Manage_Groups.php");
 	exit();
-
-	
-
 }
-$urlAddress = str_replace(" ", "+", $address);
+$urlAddress = str_replace(" ", "+", $address);//format the google search properly
 $to = $_POST['userMail'];
 
-$message = "<p>Here is the address you wanted!: <a href=https://www.google.com/#q=".$urlAddress.">".$address."</a></p><p>Thanks for using Venturify!!</p>"; ;
+$message = "<p>Here is the address you wanted!<p>Business :".$name."</p><p>Location: <a href=https://www.google.com/#q=".$urlAddress.">".$address."</a><p>Thanks for using Venturify!!</p>"; ;
 /**
  * This example shows settings to use when sending via Google's Gmail servers.
  */

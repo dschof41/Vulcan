@@ -41,7 +41,7 @@ if (mysqli_num_rows($result) > 0) {
 			$cardHTML .= "</div>";
 			$cardHTML .= "<div class='info'>";
 			$cardHTML .= "<image src='" . $rating ."'><br>";
-			$cardHTML .= $name . "<br>";
+			$cardHTML .= "<span id='name'>".$name."</span>" . "<br>";
 			$cardHTML .= $phone . "<br>";
 			$cardHTML .= "<span id='address'>";
 			$cardHTML .= $address;

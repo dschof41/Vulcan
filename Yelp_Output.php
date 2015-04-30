@@ -16,29 +16,20 @@
 	<style type="text/css">
 	header{
 	background-image: url("http://s2.postimg.org/a51ch03wn/tv460banner7.png");
+	clear: both;
 	}
-	
-	section{
-	height: 1000px;
-}
 
   	#map-canvas {
-  	height: 9.15in;
+  	height: 6in;
   	margin: 10px;
-  	margin-top: -20px;
+  	margin-top:-40px;
   	padding: 0;
-  	width:7.5in;
+  	width:7in;
   	display:inline;	
   	float:right;
-  	border:1px silver solid;
-  	margin-right: 20px;
+  	border:2px silver solid;
   	}
   	
-  	#yelpImage{
-		display:inline;
-		margin-left:225px;
-		margin-top:-200px;
-}
 	</style>
 	<?php
 	//Pull variables from the Yelp_Input form
@@ -47,8 +38,10 @@
 		$t = $_GET["term"];
 		$l = $_GET["location"];
 		$s = $_GET['sort'];
+		$mesg = "";
 		include 'login\php\yelp_vulcan_query.php';
 	}else if (isset($_GET['businessID']) && !empty($_GET['businessID'])){
+		$mesg = "";
 		include 'login/php/save_business.php';
 	}else{
 		$t = $_GET['term'];
@@ -57,19 +50,14 @@
 		$mesg = "Select card before saving";
 		include 'login\php\yelp_vulcan_query.php';
 	}
-	//Load the groups for current user;
+	//Run query from pulled variables
 	include 'login/load_groups.php';
 	?>
 	
 	
+	
 	<script type="text/javascript">
-	var msg = <?php echo json_encode($mesg); ?>;
-	if(msg){
-		alert(msg);
-	}
-	function clearID(){
-		document.getElementById(businessID).value ="";
-	}
+	//Alert if tried to save without selecting card
 	
 	//Pull latitude and longitude from the query script we just ran and create javascript variables
 	var latitude = <?php echo json_encode($latitude); ?>;
@@ -117,13 +105,12 @@ function initialize() {
 				var info = new google.maps.InfoWindow({ //new window still within loop
 					content: infoPanes[k]
 				});
-				google.maps.event.addListener(marker, 'click', function() {//adds listener to each marker
+				google.maps.event.addListener(marker, 'mouseover', function() {//adds listener to each marker
 					info.open(map,marker);
 				});
-				/*google.maps.event.addListener(marker, 'mouseout', function() {
+				google.maps.event.addListener(marker, 'mouseout', function() {
     				info.close();
-				});*/
-				
+				});
 				k++; //increment K counter	
 		});//close geocoder
 		
@@ -134,9 +121,9 @@ function initialize() {
 google.maps.event.addDomListener(window, 'load', initialize); //creates map on window load by running initialize
 
 /* 
-	Select function that allows user to select a business card from given list, and removes previous selections if any
-	Also populates hidden fields for saving business card to database
-	Created by Dan Schofer 3/25/2015
+Select function that allows user to select a business card from given list, and removes previous selections if any
+
+Created by Dan Schofer 3/25/2015
 */
 	function select(e) { //function takes HTML object element
 		    if(e.id == 'card-selected') { //check id of selected object, if its already selected, unselect it
@@ -168,45 +155,14 @@ google.maps.event.addDomListener(window, 'load', initialize); //creates map on w
 	
 </head>
 <body>
-<div id="fb-root"></div>
-<script>
-      window.fbAsyncInit = function() { //initialize fb api
-        FB.init({
-          appId      : '1413731082267493',
-          xfbml      : true,
-          version    : 'v2.3'
-        });
-      };
-		//code here
-		
-	function share(){ //a function to share a link, called on click
-	FB.ui({
-		  method: 'share_open_graph',
-		  action_type: 'og.likes',
-		  action_properties: JSON.stringify({
-		  object:"http://ec2-52-0-130-98.compute-1.amazonaws.com/index.html",
-		  })
-		}, function(response){});
-	}
-		
-      (function(d, s, id){ //load API asynchronously
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <nav id="primary_nav_wrap">
+	<nav id="primary_nav_wrap">
 	<?php 
 		include 'login/php/navigation.php';
 	?>
 	</nav>
-
 	<header>
 	</header>
-	
-	<section>
+<section>
 <div class="headerTitle">Search Results</div>
 <div id="filter">
 	<form method="get" action="Yelp_Output.php">
@@ -218,10 +174,9 @@ google.maps.event.addDomListener(window, 'load', initialize); //creates map on w
 			<option value="1">Distance</option>
 			<option value="2">Rating</option>
 		</select>
-		<input type="submit" value="Submit" onclick="clearID();">
+		<input type="submit" value="Submit">
 	</form>
 </div>
-<!--<div id="share" class="fb-share-button" data-href="http://ec2-52-0-130-98.compute-1.amazonaws.com/index.html" data-layout="button"></div> -->
 <?php
 	if(isset($_SESSION['login']) && !empty($_SESSION['login'])) {
 		echo "<div id='groupSelector'>";
@@ -232,8 +187,8 @@ google.maps.event.addDomListener(window, 'load', initialize); //creates map on w
 	<form action="Yelp_Output.php" method="get">
 		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
 		<input class="_hidden" name="location" type="text" value="<?php echo $l ?>">
-		<input id="businessID" class="_hidden" type="text" name="businessID" value="" readonly="true">
-		<label for="groupSelect">Your Groups:</label>
+		<input id="businessID" class="_hidden" type="text" name="businessID" required>
+		<label for="groupSelect">Save to your group here:</label>
 		<select name="groupSelect" id="groupSelect">
 			<?php
 				for($i=0; $i<count($userGroups); $i++){
