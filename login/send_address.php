@@ -6,6 +6,15 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 $address = $_POST['address'];
+
+if(!isset($address) || empty($address)){
+	$_SESSION['message'] = "Select a card to receive address!";
+	header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Manage_Groups.php");
+	exit();
+
+	
+
+}
 $urlAddress = str_replace(" ", "+", $address);
 $to = $_POST['userMail'];
 

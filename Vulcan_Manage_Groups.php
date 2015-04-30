@@ -126,8 +126,8 @@ Created by Dan Schofer 3/25/2015
 	<div id="emailGroup">
 		<form action="login/send_address.php" method="post">
 		<p><b>Send Selected Card's Address to Your Email</b></p>
-			<input type="text" readonly="true" id="userMail" name="userMail" value="<?php echo $userEmail; ?>" style ="width:170px; height: 20px;" required>
-			<input id="address" name="address" type="text" readonly="true" value="" style ="width:170px; height: 20px;" required>&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" class="_hidden" readonly="true" id="userMail" name="userMail" value="<?php echo $userEmail; ?>" style ="width:170px; height: 20px;" required>
+			<input id="address" class="_hidden" name="address" type="text" readonly="true" value="" style ="width:170px; height: 20px;" required>&nbsp;&nbsp;&nbsp;&nbsp;
 			<input id="submitSmall" type="submit" value="Send Address">
 		</form>
 	</div>

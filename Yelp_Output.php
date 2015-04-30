@@ -43,26 +43,30 @@
 	<?php
 	//Pull variables from the Yelp_Input form
 	session_start();
-	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$t = $_POST["term"];
-		$l = $_POST["location"];
-		$s = $_POST['sort'];
+	if (!isset($_GET['businessID'])){
+		$t = $_GET["term"];
+		$l = $_GET["location"];
+		$s = $_GET['sort'];
+		include 'login\php\yelp_vulcan_query.php';
 	}else if (isset($_GET['businessID']) && !empty($_GET['businessID'])){
 		include 'login/php/save_business.php';
-	
 	}else{
 		$t = $_GET['term'];
 		$l = $_GET['location'];
-		$s = $_GET['sort'];
+		$s = 0;
+		$mesg = "Select card before saving";
 		include 'login\php\yelp_vulcan_query.php';
 	}
-	//Run query from pulled variables
-	
+	//Load the groups for current user;
 	include 'login/load_groups.php';
 	?>
 	
 	
 	<script type="text/javascript">
+	var msg = <?php echo json_encode($mesg); ?>;
+	if(msg){
+		alert(msg);
+	}
 	function clearID(){
 		document.getElementById(businessID).value ="";
 	}
@@ -116,6 +120,10 @@ function initialize() {
 				google.maps.event.addListener(marker, 'click', function() {//adds listener to each marker
 					info.open(map,marker);
 				});
+				/*google.maps.event.addListener(marker, 'mouseout', function() {
+    				info.close();
+				});*/
+				
 				k++; //increment K counter	
 		});//close geocoder
 		
