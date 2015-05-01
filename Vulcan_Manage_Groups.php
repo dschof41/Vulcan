@@ -1,4 +1,5 @@
 <?php
+//This page lets the user manage their custome groups
 session_start();
 include 'login/load_profile.php';
 include 'login/load_groups.php';

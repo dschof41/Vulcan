@@ -1,6 +1,6 @@
 <?php
 	/*
-		This script builds an array of business group names for a dropdown menu for an individual user from the groups table 
+		This script populates the Group selector dropdown with user specific groups for saving business cards to a user created group
 	*/
 	
 	include 'php/connect.php'; //connection script

@@ -1,6 +1,6 @@
 <?php
 /*
-	This script deletes a business card recrod based on hidden from fields containing group and user info
+	This script deletes a selected business card record from database based 
 */
 session_start();
 include 'connect.php';

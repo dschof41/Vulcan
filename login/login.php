@@ -1,4 +1,8 @@
 <?PHP
+/*
+	This script handles login attempts, failures, and login success redirection
+*/
+
 session_start();
 //Here we track login attempts in a session variable and redirect users as necessary
 if(!isset($_SESSION['attempts'])){

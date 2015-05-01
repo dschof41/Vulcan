@@ -1,21 +1,7 @@
 <?PHP
-//session_start();
-//if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-	//header ("Location: login.php");
-//}
-
-//set the session variable to 1, if the user signs up. That way, they can use the site straight away
-//do you want to send the user a confirmation email?
-//does the user need to validate an email address, before they can use the site?
-//do you want to display a message for the user that a particular username is already taken?
-//test to see if the u and p are long enough
-//you might also want to test if the users is already logged in. That way, they can't sign up repeatedly without closing down the browser
-//other login methods - set a cookie, and read that back for every page
-//collect other information: date and time of login, ip address, etc
-//don't store passwords without encrypting them
-
-//$USERNAME_ERROR = "";
-
+/*
+	This script handles checking sign up info against existing accounts, and creating new users in the database
+*/
 $uname = "";
 $pword = "";
 $errorMessage = "";

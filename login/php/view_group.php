@@ -1,5 +1,7 @@
 <?php
-
+/*
+	This script retrieves saved business cards for a specific group based on a dropdown selection in the users group management page
+*/
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 

@@ -1,5 +1,5 @@
 <?php 
-	//session_start();
+	//This page lets the user login to their account
 	include 'login/login.php';
 ?>	
 <!DOCTYPE html>

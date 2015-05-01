@@ -86,6 +86,7 @@ function request($host, $path) {
  * @param    $term        The search term passed to the API
  * @param    $location    The search location passed to the API
  * @return   The JSON response from the request
+ edited by Dan Schofer March 2015
  */
 function search($term, $location, $sort) {
     $url_params = array();
@@ -114,47 +115,4 @@ function get_business($business_id) {
     return request($GLOBALS['API_HOST'], $business_path);
 }
 
-/**
- * Queries the API by the input values from the user
- *
- * @param    $term        The search term to query
- * @param    $location    The location of the business to query
- 
- 	Edited by Dan Schofer 3/16/2015
- */
- //----------------------------------------------------------
-/* function query_api($term, $location) {
-    $response = json_decode(search($term, $location));
-    
-    for ($i = 0; $i < $SEARCH_LIMIT; $i++) 
-{
-    $business_id = $response->businesses[i]->id;
-   	$bus = $response->businesses[i];
-   	$name = $bus->name;
-    $phone = $bus->phone;
-    $loc = $bus->location->display_address;
-    $street = $loc[0];
-    $state = $loc[1];  
-}
-    //$response = get_business($business_id);
-    $out = array($name, $phone, $street, $state);
-    
-    return $out;
-}
-//----------------------------------------------------------------
-/**
- * User input is handled here
- */ /*
-$longopts  = array(
-    "term::Bars",
-    "location::Boston",
-);
-
-$options = getopt("", $longopts);
-
-$term = $options['term'] ?: '';
-$location = $options['location'] ?: '';
-
-query_api($term, $location);
-*/
 ?>

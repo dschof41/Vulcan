@@ -1,3 +1,4 @@
+<!-- This page displays yelp query results, allows filtering of results, and users can save businesses to custome groups -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,24 +8,30 @@
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
 	<link href="css/social.css" rel="stylesheet" type="text/css">
-	<script src="js/javaScript.js" type="text/javascript"></script>
+	<!----------------------------JQUERY Library--------------------------------->
+	<link href="js/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css"> 
+	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+	<script src="js/jquery-ui/jquery-ui.js" type="text/javascript"></script>
+	<!--------------------------------------------------------------------------->
+	<!----------------------------Social Bar------------------------------------->
 	<script type="text/javascript">var switchTo5x=true;</script>
 	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 	<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+	<!--------------------------------------------------------------------------->
+	<!-----------------------------Google Map------------------------------------>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9Rt9jw2Sr2Rdz3Q00L-4XeG8wSJz9JxY"></script>
-	
+	<!--------------------------------------------------------------------------->
 	<style type="text/css">
 	header{
-	background-image: url("http://s2.postimg.org/a51ch03wn/tv460banner7.png");
-	clear: both;
+	background-image: url("http://s2.postimg.org/a51ch03wn/tv460banner7.png")
 	}
 
   	#map-canvas {
-  	height: 6in;
-  	margin: 10px;
-  	margin-top:-40px;
+  	height: 890px;
+  	width: 720px;
+  	margin: 20px;
+  	margin-top:-20px;
   	padding: 0;
-  	width:7in;
   	display:inline;	
   	float:right;
   	border:2px silver solid;
@@ -150,7 +157,11 @@ Created by Dan Schofer 3/25/2015
         	}//close for
     	}//close else
 	}//close function	
-
+	
+//JQuery to allow dynamic tooltips
+$(function() {
+    $( document ).tooltip();
+  });
 	</script>
 	
 </head>
@@ -166,7 +177,7 @@ Created by Dan Schofer 3/25/2015
 <div class="headerTitle">Search Results</div>
 <div id="filter">
 	<form method="get" action="Yelp_Output.php">
-		<label for="filter">Order:</label>
+		<label for="filter">Card Filter:</label>
 		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
 		<input class="_hidden" name="location" type="text" value="<?php echo $l ?>">
 		<select name="sort" id="sort">
@@ -174,7 +185,7 @@ Created by Dan Schofer 3/25/2015
 			<option value="1">Distance</option>
 			<option value="2">Rating</option>
 		</select>
-		<input type="submit" value="Submit">
+		<input type="submit" value="Submit" title="Reorganizes cards!">
 	</form>
 </div>
 <?php
@@ -189,26 +200,28 @@ Created by Dan Schofer 3/25/2015
 		<input class="_hidden" name="location" type="text" value="<?php echo $l ?>">
 		<input id="businessID" class="_hidden" type="text" name="businessID" required>
 		<label for="groupSelect">Save to your group here:</label>
-		<select name="groupSelect" id="groupSelect">
+		<select name="groupSelect" id="groupSelect" title="Make custom groups in your profile!" >
 			<?php
 				for($i=0; $i<count($userGroups); $i++){
 					echo "<option value='".$userGroups[$i]."'>".$userGroups[$i]."</option>";
 				}
 			?>
 		</select>
-		<input type="submit" value="Save">
+		<input type="submit" value="Save" title="Make sure a card is selected to save!">
 	</form>
 <?php echo "</div>"; ?>
 <?php echo $busCards; ?>
 <div id="map-canvas"></div>		
 </section>
 	
+	
 	<footer id="footer">
 	</footer>
+
 </body>
 <script type="text/javascript">stLight.options({publisher: "d34a1c0e-427a-4c53-8fd4-5b7dcee0768b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-<script>
-var options={ "publisher": "d34a1c0e-427a-4c53-8fd4-5b7dcee0768b", "logo": { "visible": true, "url": "http://ec2-52-0-130-98.compute-1.amazonaws.com/", "img": "http://dailydropcap.com/images/V-12.jpg", "height": 50}, "ad": { "visible": false, "openDelay": "5", "closeDelay": "0"}, "livestream": { "domain": "", "type": "sharethis"}, "ticker": { "visible": false, "domain": "", "title": "", "type": "sharethis"}, "facebook": { "visible": false, "profile": "sharethis"}, "fblike": { "visible": false, "url": ""}, "twitter": { "visible": false, "user": "sharethis"}, "twfollow": { "visible": false}, "custom": [{ "visible": false, "title": "Custom 1", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}, { "visible": false, "title": "Custom 2", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}, { "visible": false, "title": "Custom 3", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}], "chicklets": { "items": ["facebook", "twitter", "pinterest", "googleplus"]}};
+<script type="text/javascript">
+var options={ "publisher": "d34a1c0e-427a-4c53-8fd4-5b7dcee0768b", "logo": { "visible": true, "url": "http://ec2-52-0-130-98.compute-1.amazonaws.com/", "img": "", "height": 50}, "ad": { "visible": false, "openDelay": "5", "closeDelay": "0"}, "livestream": { "domain": "", "type": "sharethis"}, "ticker": { "visible": false, "domain": "", "title": "", "type": "sharethis"}, "facebook": { "visible": false, "profile": "sharethis"}, "fblike": { "visible": false, "url": ""}, "twitter": { "visible": false, "user": "sharethis"}, "twfollow": { "visible": false}, "custom": [{ "visible": false, "title": "Custom 1", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}, { "visible": false, "title": "Custom 2", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}, { "visible": false, "title": "Custom 3", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}], "chicklets": { "items": ["facebook", "twitter", "pinterest", "googleplus"]}};
 var st_bar_widget = new sharethis.widgets.sharebar(options);
 </script>
 </html>

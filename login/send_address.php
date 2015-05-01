@@ -1,6 +1,6 @@
 <?php
 /*
-	This script emails the user the address of the selected business.
+	This script emails the user the name and address of the selected business.
 */
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){

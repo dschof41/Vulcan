@@ -1,5 +1,7 @@
 <?php
-
+/*
+	This script saves a selected business card to a user specific business group, then it rebuilds the search results
+*/
 include 'connect.php';
 include 'yelp_query.php';
 //Receive query info from hidden fields
@@ -57,8 +59,8 @@ mysqli_close($con);
 
 /*
 	Since this wasn't diagrammed well from the start, my scripts got pretty cluttered and messy. I ended up copy pasting this here because I was running
-	into issues with redefining yelp results. This should be a simple include, but it works how it is and I'm past the point of doing any major rewrites
-	
+	into issues with redefining yelp results. This should be a simple include, but it works for now so it stays.
+		
 	Essentially this repopulates the business cards into the results page, after a card is saved. It provides the same results as seen before so that the
 	user can continue adding the group quickly instead of having to start a new search. Its messy because there are three different forms that POST or GET
 	to the Yelp Output page and I didn't understand how to handle multiple posts/gets until late in the process.

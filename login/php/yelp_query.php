@@ -1,5 +1,10 @@
 <?php
-
+/*
+	This script defines business cards and google map classes.
+	It also builds a custom Yelp query method, that returns an array of business cards
+	Also, a function that returns map parameters
+	
+*/
 require 'yelp.php';
 
 // pieces of relevant business data for our search results display

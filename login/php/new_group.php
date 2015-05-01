@@ -1,7 +1,7 @@
 <?php
 /*
-Create script that generates a new SQL insert statement into Groups table using username as foreign key for now, since I can't pull userID from login table.
-They will then be able to select the group and create new entries of business card objects associated with ids and groups
+	Create script that generates a new SQL insert statement into Groups table using username as foreign key for now, since I can't pull userID from login table.
+	They will then be able to select the group and create new entries of business card objects associated with ids and groups
 */
 require 'connect.php';
 

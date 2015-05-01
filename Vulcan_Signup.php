@@ -1,4 +1,5 @@
 <?php
+//This page lets a user sign up for an account
 session_start();
 include 'login/signup.php';
 ?>

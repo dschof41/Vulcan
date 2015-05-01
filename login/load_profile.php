@@ -1,6 +1,6 @@
 <?php
 	/*
-	This script populates user data into a readonly form
+		This script populates user data into a readonly form, in the future this form will allow users to edit their email/username/password
 	*/
 	include 'php/connect.php'; //connection script
 	

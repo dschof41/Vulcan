@@ -1,4 +1,8 @@
 <?PHP
+/*
+	This query builds the HTML strings for displaying business cards from the custom query
+	It also builds the HTML strings for infowindows for the google map
+*/
 require 'yelp_query.php';
 
 //populate business cards from response by adding business data to html object
@@ -28,14 +32,14 @@ for ($i = 0; $i < count($qry); $i++)
 	$infoPane = "<div class='info-card'>";
 	$infoPane .= "<div class='img'>";
 	$infoPane .= "<a href='". $bus->url . "' target='_blank'>";
-	$infoPane .= "<image src='" . $bus->image . "'>";
+	$infoPane .= "<image class='window-img' src='" . $bus->image . "'>";
 	$infoPane .= "</a>";
 	$infoPane .= "</div>";
 	$infoPane .= "<div class='info'>";
-	$infoPane .= "<image src='" . $bus->rating ."'><br>";
-	$infoPane .= $bus->name . "<br>";
-	$infoPane .= $bus->phone . "<br>";
-	$infoPane .= "<span id='address'>";
+	$infoPane .= "<image class='window-rating' src='" . $bus->rating ."'><br>";
+	$infoPane .= "<span class='window-text'>".$bus->name ."</span><br>";
+	$infoPane .= "<span class='window-text'>".$bus->phone . "</span><br>";
+	$infoPane .= "<span class='window-text' id='address'>";
 	$infoPane .= $bus->address;
 	$infoPane .= "</span>";
 	$infoPane .= "</div>";
