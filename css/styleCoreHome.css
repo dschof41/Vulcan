@@ -95,6 +95,7 @@ footer#footer {
     white-space: nowrap;
 	float: left;
   	margin-bottom: 10%;
+  	margin-left:12%;
 	padding-left: 270px;
     margin-top: 7%;
     opacity: 0.8;
@@ -140,7 +141,7 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 
 #primary_nav_wrap
 {
-	margin-top:15px
+	margin-top:15px;
 }
 
 #primary_nav_wrap ul
@@ -148,7 +149,6 @@ box-shadow: 0 0 1px rgba(0,0,0, .75);
 	list-style:none;
 	position:relative;
 	float:left;
-	margin:0;
 	padding:0
 }
 
