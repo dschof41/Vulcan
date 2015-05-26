@@ -4,6 +4,8 @@ session_start();
 include 'login/load_profile.php';
 include 'login/load_groups.php';
 include 'login/php/view_group.php';
+//include 'login/send_address.php';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,6 +16,12 @@ include 'login/php/view_group.php';
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
 	<script src="js/javascript.js" type="text/javascript"></script>
+	<!----------------------------JQUERY Library--------------------------------->
+	<link href="js/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css"> 
+	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+	<script src="js/jquery-ui/jquery-ui.js" type="text/javascript"></script>
+	<!--------------------------------------------------------------------------->
+
 	<style type="text/css">
 	header{
 	background-image: url("http://s14.postimg.org/cimf0i2e7/EE8_A129965.jpg");
@@ -22,6 +30,13 @@ include 'login/php/view_group.php';
 	section {
 	height: 1500px;
 	}
+	
+	#yourCardHeading {
+	padding-left: 180px;
+	font-size:  x-large;
+	font-weight: bold;
+}
+
 	
 	</style>
 	<script type="text/javascript">
@@ -74,7 +89,10 @@ Created by Dan Schofer 3/25/2015
     	}//close else
 	}//close select(e) function	
 
-	
+	$(function() {//add jquery tooltips
+    $( document ).tooltip();
+  });
+
 	</script>
 	
 </head>
@@ -97,7 +115,7 @@ Created by Dan Schofer 3/25/2015
   <hr>
 
   </div>	
-  <span id="message">
+  <center><span id="message">
   	<?php 
   		if (isset($_SESSION['message'])){
   			echo $_SESSION['message'];
@@ -106,18 +124,18 @@ Created by Dan Schofer 3/25/2015
   		
   	?>
   	<br><br>
-	</span>
+	</span></center>
 	<div id="groupActions">
   	<div id="newGroupDiv">		
 		<form id="userInfoGroups" action="login/php/new_group.php" method="post"><br>
 				<b>Create a Group to Save Searches (Cards)</b><br>
-				<input type="text" name="groupName" value="" id="groupNameInput" style ="width: 350px; height: 25px;" placeholder="Enter a Group Name" required>
-				<input id="submitSmall" type="submit" class="button" value="Create Group">
+				<input type="text" name="groupName" value="" id="groupNameInput" style ="width: 350px; height: 25px;" placeholder="ie: 'Boston Places' or ' Favorite Coffee'" required>
+				<input id="submitSmall" type="submit" class="button" value="Create Group" title="Creates a new custom group for you! Use the search function to add businesses to it.">
 		</form>
 	</div>
 	<div id="viewGroupsDiv">
-		<form id="userInfoGroups2" action="Vulcan_Manage_Groups.php" method="post">
-			<p><b>Your Existing Groups </b></p>
+		<form id="userInfoGroups2" action="Vulcan_Manage_Groups.php" method="get">
+			<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Existing Groups </b></p>
 			<select name="groupSelect" id="groupSelect" style ="width: 352px; height: 30px;">
 				<?php
 					for($i=0; $i<count($userGroups); $i++){
@@ -126,7 +144,9 @@ Created by Dan Schofer 3/25/2015
 				?>
 			</select>
 			&nbsp;&nbsp;&nbsp;&nbsp;
-		<input id="submitSmall" type="submit" value="View Cards">
+		<input id="submitSmall" type="submit" value="View Group" name="view-cards" title="Shows you the cards saved to this group!"><br>
+		<input id="submitSmallGroup" type="submit" value="Delete Group" name="delete-group">
+
 		</form>
 	
 	<div id="emailGroup">
@@ -134,16 +154,16 @@ Created by Dan Schofer 3/25/2015
 		<p><b>Send Selected Card's Address to Your Email</b></p>
 			<input type="text" class="_hidden" readonly="true" id="userEmail" name="userMail" value="<?php echo $userEmail; ?>" style ="width:170px; height: 20px;" required>
 			<input type="text" id="name" name="name" class="_hidden" value="" required>
-			<input type="text" id="address" name="address" class="_hidden" value="" required>&nbsp;&nbsp;&nbsp;&nbsp;
-			<input id="submitSmall" type="submit" value="Send Address">
+			<input type="text" id="address" name="address" class="_hidden" value="" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input id="submitSmallAddress" type="submit" value="Receive Address" title="Emails you the address of the selected card for navigation!">
 		</form>
 	</div>
 	<div id="DeleteGroups">
 		<form action="login/php/delete_card.php" method="post">
 		<p><b>Delete Selected Saved Result</b></p>
-			<input type="text" id="businessID" readonly="true" style ="width:170px; height: 20px;">
-			<input type="text" id="group" readonly="true" style ="width:170px; height: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;
-			<input id="submitSmall" type="submit" value="Delete Card">
+			<input type="text" class="_hidden" id="businessID" name="businessID" style ="width:170px; height: 20px;" required="required">
+			<input type="text" class="_hidden" id="group" readonly="true" style ="width:170px; height: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;
+			<input id="submitSmall" type="submit" value="Delete Card" name="delete-card">
 		</form>
 	</div>
 	</div>
@@ -155,14 +175,15 @@ Created by Dan Schofer 3/25/2015
 				echo $userCards[$i];
 		}	
 	}else{
-		echo "<font size='3pt'>&nbsp;&nbsp;&nbsp;&nbsp; <br> <br>Select a group to view your cards or create a group to store your cards. </font>";
+		echo "<font size='2pt'><br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select a group to view your cards or create a group to store your cards. </font>";
 	}
 	?>
 	
 	</div>	
 	</div>	
-		<div id="SavedCardsGroups"><br>
-		<center> <b><font size="5"> Your Cards </font> </b></center><br>
+		<div id="SavedCardsGroups"><br><br><br>
+		<div id="yourCardHeading"> Your Cards</div><br>
+		<center>select a card below then click on an option to the left</center>
 		<hr>
 		</div>	
 	</section>

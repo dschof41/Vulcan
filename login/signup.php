@@ -21,7 +21,7 @@ function quote_smart($value, $handle) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
+	session_start();
 	//====================================================================
 	//	GET THE CHOSEN U AND P, AND CHECK IT FOR DANGEROUS CHARCTERS
 	//====================================================================
@@ -51,17 +51,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$pLength = strlen($pword);
 
 	if ($uLength >= 10 && $uLength <= 20) {
-		$errorMessage = "";
+		$_SESSION['message'] = "";
 	}
 	else {
-		$errorMessage = $errorMessage . "Username must be between 10 and 20 characters" . "<BR>";
+		$_SESSION['message'] = "Username must be between 10 and 20 characters";
+		header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Signup.php");
+		exit();
+
 	}
 
 	if ($pLength >= 8 && $pLength <= 16) {
-		$errorMessage = "";
+		$_SESSION['message'] = "";
 	}
 	else {
-		$errorMessage = $errorMessage . "Password must be between 8 and 16 characters" . "<BR>";
+		$$_SESSION['message'] = "Password must be between 8 and 16 characters";
+		header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Signup.php");
+		exit();
+
 	}
 
 
@@ -72,23 +78,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	//====================================================================
 	//	Write to the database
 	//====================================================================
-	if ($errorMessage == "") {
+	if (empty($_SESSION['message'])) {
 
 	$user_name = "root";
 	$pass_word = "vulcan123";
 	$database = "vulcandb";
 	$server = "127.0.0.1";
 
-	/*
-	$db_handle = mysql_connect($server, $user_name, $pass_word);
-	$db_found = mysql_select_db($database, $db_handle);
-
-	if ($db_found) {
-
-		$uname = quote_smart($uname, $db_handle);
-		$pword = quote_smart($pword, $db_handle);
-	*/
-	
 	$db_handle = mysqli_connect("localhost", "root", "vulcan123", "vulcandb");
 	
 	if(mysqli_connect_errno())
@@ -120,6 +116,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$result = mysqli_query($db_handle, $SQL);
 
 			mysqli_close($db_handle);
+			
+			echo "HERE";
 
 		//=================================================================================
 		//	START THE SESSION AND PUT SOMETHING INTO THE SESSION VARIABLE CALLED login

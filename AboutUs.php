@@ -13,35 +13,34 @@
 	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 	<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
 	<!-- ------------------------------------------------------------------------------------->
-	<!----------------------------JQUERY Library--------------------------------->
-	<link href="js/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css"> 
-	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
-	<script src="js/jquery-ui/jquery-ui.js" type="text/javascript"></script>
-	<!--------------------------------------------------------------------------->
-
 
 	<style type="text/css">
 	header{
-	background-image: url("http://s8.postimg.org/yrvywlrur/D9_D2_DC90_AD.jpg");
+	background-image: url("http://s22.postimg.org/qlpka5mdb/campus_v2_1.jpg");
 
 	}
 	section {
-	height: 680px;
+	height: 900px;
 	}
 	#submit{
 	width: 429px;
 	left:-94px;
 	}
-	.centerText{
-	height: 500px;
+	body{
+	color: #0D4F8B;
+	font-size: 18px;
+}
+
+	.centerText {
+	height: 700px;
+	width: 700px;
+	font-weight: normal;	
+	padding-left: 29px;
+	padding-right: 29px;
 }
 	</style>
 	<script type="text/javascript">
-		//JQuery to allow dynamic tooltips
-			$(function() {
-    			$( document ).tooltip();
-  			});
-
+		
 	</script>
 	
 </head>
@@ -58,33 +57,29 @@
 	</header>
 	<section>
 
-	<div class="headerTitle">Search</div>
-	<div class="centerText">
-  <br><br>
- <center> <?php
-  	if(isset($_SESSION['message'])){
-  		echo $_SESSION['message'];
-  	}
-  	//"Start your search here" should be visible no matter what! The message should be below it and conditional
-  	if(empty($_SESSION['message'])){
-  		echo "<font size='5pt'> Start Your Search </font>";  
-  	}
-  	$_SESSION['message'] = "";
-  	?> 
-  	</center><br>
- <hr>
- <font size=""></font>
-   </div>		
- 
-	<form id="userInfo" action="Yelp_Output.php" method="get">
-			<br><br><center><b>What are you looking for:</b></center><input type="text" name="term" value= "" id="inputSearch" placeholder="restaurants, hotels, sushi bars, coffee & tea, etc." title="Look for entertainment, food, or whatever!" required><br><br>
-				<center><b>Where:</b></center><input type="text" name="location" value="" id="inputSearch" placeholder="city or zip code (e.g., Boston, 02112)" title="Accepts exact addresses, or general locations!" required><br>
-				<input class="_hidden" type="text" name="sort" value="0"><br><br>
-				<input id="submit" type="submit" value ="Search  🔍"><br><br><br>
-				<p><center>Powered by <img src="https://s3-media3.fl.yelpassets.com/assets/2/www/img/2d7ab232224f/developers/yelp_logo_100x50.png"></center><P>
-		</form>
+	<div class="headerTitle">About Us</div>
+		<div class="centerText"><br>
+	<center> <img src="http://i59.tinypic.com/2gx0cw3.jpg" style=""><br><br><hr><br>
+	 
+	<b>What is Venturify?</b><br><br>
 	
-	</section>
+Venturify is a web application that allows you to search for attractions near a certain location and save the search results (called “cards”) to groups that you have created. These groups can act as lists or itineraries as well. Create a group with your favorite sushi restaurants or even a group filled with your bucket list! The possibilities are limitless. 
+	<br><br>
+	<p>
+	<b>Team Vulcan | Bentley University | CS 460 | Spring 2015</b><br><br>
+	Trinh Mai - Project Manager<br><br>
+	Dan Schofer - Lead Analyst (Web & Database)<br><br>
+	Jamie Brown - Quality Assurance Manager & Web Analyst<br><br>
+	Jake Barosin - Document Manager & Database Analyst<br><br>
+	Huang Lu - Web Analyst (User Interface)<br><br>
+	Jose Castillo - Web Analyst <br><br>
+	Andres Escobar - Database Analyst
+	
+	</p>
+	
+	</center>
+</div>
+		</section>
 	
 		<footer id="footer">	
 		</footer>

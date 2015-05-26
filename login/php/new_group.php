@@ -25,7 +25,7 @@ $sql = "INSERT INTO groups (user, group_name) VALUES ($user, '$groupName')";
 $result = mysqli_query($con, $sql);
 
 if($result){
-	$_SESSION['message'] = "Success";
+	$_SESSION['message'] = "Group created!!";
 }else { $_SESSION['message'] = "Error: ". mysqli_error($con); }
 
 mysqli_close($con);

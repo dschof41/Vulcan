@@ -211,3 +211,29 @@ background-color:white;
 box-shadow: 0 0 1px rgba(0,0,0, .75);
 color: #0079ad;
 }
+
+#submitSmallAddress
+{	
+position: relative;
+width: 120px;
+top: 0px;
+left: 1px;
+cursor:pointer; 
+padding:4px 1px;
+background: #1874CD; 
+border:1px solid #009cde; 
+border-radius: 0px;
+color: white;
+font-size: small;
+font-family: "Century Gothic";
+text-align: center;
+}
+
+#submitSmallAddress:hover {
+background-color:white;
+-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+box-shadow: 0 0 1px rgba(0,0,0, .75);
+color: #0079ad;
+}
+

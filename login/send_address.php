@@ -2,7 +2,6 @@
 /*
 	This script emails the user the name and address of the selected business.
 */
-session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 $address = $_POST['address'];
@@ -15,7 +14,8 @@ if(!isset($address) || empty($address)){
 $urlAddress = str_replace(" ", "+", $address);//format the google search properly
 $to = $_POST['userMail'];
 
-$message = "<p>Here is the address you wanted!<p>Business :".$name."</p><p>Location: <a href=https://www.google.com/#q=".$urlAddress.">".$address."</a><p>Thanks for using Venturify!!</p>"; ;
+include 'email_body.php';
+//$message = "<p>Here is the address you wanted!<p>Business :".$name."</p><p>Location: <a href=https://www.google.com/#q=".$urlAddress.">".$address."</a><p>Thanks for using Venturify!!</p>"; ;
 /**
  * This example shows settings to use when sending via Google's Gmail servers.
  */
@@ -36,10 +36,10 @@ $mail->isSMTP();
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-$mail->SMTPDebug = 2;
+//$mail->SMTPDebug = 2;
 
 //Ask for HTML-friendly debug output
-$mail->Debugoutput = 'html';
+//$mail->Debugoutput = 'html';
 
 //Set the hostname of the mail server
 $mail->Host = 'smtp.mail.yahoo.com';
@@ -77,7 +77,7 @@ $mail->msgHTML($message, dirname(__FILE__), true);
 
 //Replace the plain text body with one created manually
 //$mail->Body = 'Here is the address you wanted!: ' . $address;
-$mail->AltBody ="Here is the address you wanted: ".$address."\nThanks for using Venturify!";
+$mail->AltBody =$name. ": ".$address."\nThanks for using Venturify!";
 
 //Attach an image file
 //$mail->addAttachment('images/phpmailer_mini.png');
@@ -89,9 +89,10 @@ if (!$mail->send()) {
     //echo "Message sent!";
     $_SESSION['message'] = "Success! Address has been emailed to you!";
 }
-
+$_SESSION['message'] = "Address has been sent!";
 header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Manage_Groups.php");
 exit();
 
 }
+
 ?>

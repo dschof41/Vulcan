@@ -18,6 +18,7 @@ include 'login/load_groups.php';
 	<style type="text/css">
 	header{
 	background-image: url("http://s14.postimg.org/cimf0i2e7/EE8_A129965.jpg");
+
 	}	
 	
 	section {
@@ -54,13 +55,7 @@ include 'login/load_groups.php';
 <hr>
   </div>	
   <span id="message">
-  	<?php 
-  		if (isset($_SESSION['message'])){
-  			echo $_SESSION['message'];
-  			$_SESSION['message'] = ""; 
-  		} 
-  	?>
-</span>
+  	</span>
   	<form id="userInfo" action="Vulcan_Profile.php" method="post">
 		<b><center>Your Account Information:</center> </b> <br> <p>Username:</p>
 		<input type="text" name="username" value= "<?php echo $userName; ?>" id="userNameForm" readonly><br>

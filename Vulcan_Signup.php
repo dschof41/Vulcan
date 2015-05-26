@@ -1,7 +1,8 @@
 <?php
 //This page lets a user sign up for an account
 session_start();
-include 'login/signup.php';
+//session_destroy();
+//include 'login/signup.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,14 +13,19 @@ include 'login/signup.php';
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
 	<script src="js/javascript.js" type="text/javascript"></script>
+	<!----------------------------JQUERY Library--------------------------------->
+	<link href="js/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css"> 
+	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+	<script src="js/jquery-ui/jquery-ui.js" type="text/javascript"></script>
+	<!--------------------------------------------------------------------------->
 
 	<style type="text/css">
 	header{
-	background-image: url("http://s2.postimg.org/iy4m2djqf/GXN82_BXGVD.jpg");
+	background-image: url("http://s17.postimg.org/69yqo2ybh/GXN82_BXGVD.jpg");
 	}	
 	
 	section {
-	height: 680px;
+	height: 500px;
 	}
 
 	#submit
@@ -29,8 +35,9 @@ include 'login/signup.php';
 	
 	.centerText{
 	height: 550px;
-}
+	}
 	</style>
+	
 	<script type="text/javascript">
 								 	
 	function validatePassword() {
@@ -41,6 +48,10 @@ include 'login/signup.php';
 	        return false;
    		}
 	}
+	$(function() {//add jquery tooltips
+  	 	 $( document ).tooltip();
+  	});
+
 	</script>
 	
 </head>
@@ -74,10 +85,10 @@ include 'login/signup.php';
 
   </div>		
      
-  <form id="userInfo" action="Vulcan_Signup.php" method="post">
-				Username: <input type="text" name="username" value= "" id="inputSignUp" required><br><br><br>
-				Email Address: <input type="text" name="email" value="" id="inputSignUp" required><br><br><br>
-				Password: <input type="password" name="password" value="" id="inputSignUp" required><br><br><br>
+  <form id="userInfo" action="login/signup.php" method="post">
+				Username: <input type="text" name="username" value= "" id="inputSignUp" title="Must be between 10 and 20 characters!" required><br><br><br>
+				Email Address: <input type="text" name="email" value="" id="inputSignUp" title="Must be a valid email" required><br><br><br>
+				Password: <input type="password" name="password" value="" id="inputSignUp" title="Must be between 8 and 16 characters" required><br><br><br>
 				Confirm Password: <input type="password" name="confirmpw" value="" id="inputSignUp" required><br><br><br>
 				<input id="submit" type="submit" value ="Create Account" onclick="return validatePassword();"><br><br><br>
 				<font size="2">Already have an account? <a href="http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Login.php">Sign In!</a></font>
@@ -87,8 +98,5 @@ include 'login/signup.php';
 		<footer id="footer">
 		</footer>
 </body>
-<script type="text/javascript">stLight.options({publisher: "d34a1c0e-427a-4c53-8fd4-5b7dcee0768b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-<script>
-</script>
 
 </html>

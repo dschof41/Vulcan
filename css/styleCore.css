@@ -1,14 +1,15 @@
 ﻿body {
 	margin: 0px auto; 
-	width: 92%;
+	width: 1320px;
 	position: static;
 	font-family: Century Gothic;
 	background: whitesmoke;
 	border: thin silver solid;
 }
 	header {
-	height: 270px; 
+	height: 250px; 
 	border-bottom: thin black solid;
+	border-top: thin black solid;
 	
 }
 
@@ -36,16 +37,56 @@
 	margin-bottom: 8px;
 	
 }
+nav {
+	float: left;
+	height: 29px;
+  	margin-bottom: 10px;
+	padding-bottom: 8px;
+	padding-left: 400px;
+	padding-top: -12px;
+    top: -14px;
+    z-index: 1;   
+    position: relative;
+}
+	nav ul {
+	margin: 0px;
+	padding: 5px;
+	
+}
+
+	nav ul li {
+ 	list-style-type: none;
+ 	display: inline-block;
+ 	margin: 0px;
+   	}
+
+	nav li a {
+	color:  white;
+	font-weight:bold;
+	font-size: 18px;
+    transition: 0.2s;   
+    display: block;
+	float: left;	
+	padding: 1px 25px;
+	text-decoration: none;
+	text-shadow: -1px 1px 5px black, 1px -1px 5px black;
+	 }
+
+	nav li a:hover {
+	color: white;
+	background-color: white;
+    font-family: Century Gothic;
+    }
+    
         
     footer a
     { 
     color: white; 
     }
 
-
-    #primary_nav_wrap
+#primary_nav_wrap
 {
-	width: 100%;
+	margin-top:28px;
 
 }
 
@@ -55,49 +96,82 @@
 	position:relative;
 	float:left;
 	margin:0;
-	padding-left: 450px;
-	height: 70px;
-	margin-top: 10px;
+	padding:0;
 	
-	}
+}
 
 #primary_nav_wrap ul a
-{	
-	margin-top: 10px;
+{
 	display:block;
 	text-decoration:none;
-	font-size: 20px;
-	line-height:32px;
+	font-weight:700;
+	font-size:18px;
+	line-height:29px;
 	padding:0 15px;
 	font-family: Century Gothic;
-	color: white;
-	text-shadow: -1px 1px 7px black, 1px -1px 7px black;
-
-	}
+	opacity:0.8;
 	
+}
+
 #primary_nav_wrap ul li
 {
 	position:relative;
 	float:left;
 	margin:0;
-	padding:0
+	padding:0;
 	
 }
 
 #primary_nav_wrap ul li:hover
 {
 	background: white;
-	opacity: .7;
-    text-shadow: -1px 1px 5px black, 1px -1px 5px black;
+	opacity:0.9;
+}
+
+#primary_nav_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background: white;
+	padding:0;
+	
+	
+}
+
+#primary_nav_wrap ul ul li
+{
+	float:none;
+	width:140px;
+}
+
+#primary_nav_wrap ul ul a
+{
+	line-height:120%;
+	padding:10px 15px
+}
+
+#primary_nav_wrap ul ul ul
+{
+	top:0;
+	left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+	display:block
 }
 
 #userName{
 	float:left;
 }
+
 #filter{
-	margin-top:-70px;
+	margin-top:-50px;
 	float:left;
 	display:inline;
+	margin-left: 29px;
 }
 #groupSelector{
 	margin-top:-70px;
@@ -133,14 +207,14 @@
 }
 #card-holder{
 	width:7in;
-	margin-top:-45px;
+	margin-top:-22px;
 	float:left;
 }
 #card-holderGroups{
 	width:5.8in;
-	margin-top:-600px;
+	margin-top:-800px;
 	float:left;
-	margin-left: 790px;
+	margin-left: 720px;
 
 }
 .card, .info-card {
@@ -149,15 +223,17 @@
 	background:white;
 	font-family: Century Gothic;
 	color: #0D4F8B;
-	border-radius: 5px;	
-	margin-left: 25px;
+	border-radius: 7px;	
+	margin-left: 20px;
+	marign-top: 20px;
 	}
 .card:hover{
-	background-color:#E0EEEE;
+
 	cursor:pointer;
+	border: 2px #5CACEE solid;
 }
 #card-selected {
-	background:#9BC4E2;
+background: #CAE1FF;
 	border:2px #5CACEE solid;
 	margin:10px;
 	
@@ -165,8 +241,8 @@
 .letter {
 	border-radius: 10px;
 	font-size:12pt;
-	color:#0D4F8B;
-	width:70px;
+	color: black;
+	width:50px;
 	padding-top:10px;
 	padding-bottom:10px;
 	font-weight:bold;
@@ -175,12 +251,13 @@
 	margin-top:35px;
 	margin-right:25px;
 	border: thin silver solid;
-	background: white;
+	background: #FF4040;
+	opacity: .8;
 }
 
 	.img {
 	display:inline-block;
-	border:1px silver solid;
+	border:1px silver ssolid;
 	border-radius: 10px;
 	padding-top: 5px;
 }
@@ -284,14 +361,14 @@ a.tip:hover:after {
 
  #weatherReport
 	 {
-	position: absolute;
- 	margin-left: 45%; 
- 	margin-top: 4%;
+	position: relative;
+ 	margin-left: 680px; 
+ 	margin-top: -1050px;
  	top: 50.5%;
  	padding-top: -10%;
 	width: 34%;
-	height: 85%;
-	padding-left: 4%;
+	height: 640px;
+	padding-left: 5%;
    	-moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius:15px 15px 15px 15px; 
     border: thin silver solid;
@@ -300,12 +377,12 @@ a.tip:hover:after {
 	#weatherList
 	{
 	padding-left: 2%;
-	top: 450px;
-	position: absolute;
+	top: 28px;
+	position: relative;
 	padding-top: 2.5%;
-	margin-left: 5%;
+	margin-left: 8%;
 	width: 32.8%;
-	height: 80%;
+	height: 600px;
 	font-size: 15.2px;
 	-moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius:15px 15px 15px 15px; 
@@ -467,66 +544,64 @@ hr{
     border-radius: 10px; 
     border: thin silver solid;
   	background: white;
-  	left: -380px;
+  	left: -350px;
  }
  
 	#userInfoGroups
 	{
 	
 	color: white;
-	position: absolute;
-	left: 170px;
-	top: 500px;
+	position: relative;
+	left: 110px;
+	top:-720px;
 	color: #0D4F8B;
 	text-align: left;
 	 display: inline;
+	 left: 70px;
 	}
 	
 	#userInfoGroups2
 	{
 	
 	color: white;
-	position: absolute;
-	left: 170px;
-	top: 600px;
+	position: relative;
+	left: -475px;
+	top: -440px;
 	color: #0D4F8B;
 	text-align: left;
 	 display: inline;
 	}
 		
 	#emailGroup{
-	color: white;
-	position: absolute;
-	left: 170px;
-	top: 700px;
+	position: relative;
+	left: -450px;
+	top: -435px;
 	color: #0D4F8B;
 	text-align: left;
-	 display: inline;
-
 }	
 	
 	 #SavedCardsGroups
 	 {
-	position: absolute;
+	position: relative;
 	height: 1200px;
-	padding-left: 4%;
+	padding-left: 8%;
    	-moz-border-radius: 15px 15px 15px 15px;
     -webkit-border-radius:15px 15px 15px 15px; 
     border: thin silver solid;
-	margin-top:-695px;
+	margin-top:-958px;
 	float:left;
-	margin-left: 680px;
+	margin-left: 635px;
 	z-index: -1;
-	width: 670px;
+	width: 550px;
 	background: whitesmoke;
 	color: #0D4F8B;
 }
 
 	#DeleteGroups{
 	color: white;
-	position: absolute;
-	left: 170px;
-	top: 800px;
+	position: relative;
+	left: -450px;
+	top: -440px;
 	color: #0D4F8B;
 	text-align: left;
 	 display: inline;
@@ -539,6 +614,56 @@ hr{
 	margin-left: 900px;
 	color: #0D4F8B;
 	font-weight: bold;
-
+	font-size:18pt;
+	color:red;
 }
 
+	#msg{
+		float:right;
+		display:inline;
+}
+	#sort{
+	height: 28px;
+	width: 120px;
+}
+	#groupSelect{
+	margin-left: 20px;
+	width: 150px;
+	height: 28px;
+}
+
+#groupselectDiv{
+	
+margin-top: 20px;
+margin-right: 20px;
+}
+
+#submitSmallAddress{
+	margin-left: 170px;
+}
+
+#submitSmallGroup
+{	
+margin-right: 150px;
+margin-left: 398px;
+position: relative;
+width: 120px;
+top: 0px;
+left: 1px;
+cursor:pointer; 
+padding:4px 1px;
+background: #1874CD; 
+border:1px solid #009cde; 
+border-radius: 0px;
+color: white;
+font-size: small;
+font-family: "Century Gothic";
+text-align: center;
+}
+#submitSmallGroup:hover {
+background-color:white;
+-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+box-shadow: 0 0 1px rgba(0,0,0, .75);
+color: #0079ad;
+}

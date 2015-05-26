@@ -62,7 +62,7 @@
   	<br>
   	<div class="error">
   <?php 
-  	if($_SESSION['attempts'] < 4){
+  	if($_SESSION['attempts'] < 5){
   	echo "You have: " . $_SESSION['attempts'] . " attempts remaining";
   	}
  ?>

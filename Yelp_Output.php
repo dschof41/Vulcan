@@ -8,6 +8,7 @@
 	<link href="css/styleCore.css" rel="stylesheet" type="text/css">
 	<link href="css/styleDesign.css" rel="stylesheet" type="text/css">
 	<link href="css/social.css" rel="stylesheet" type="text/css">
+	<script src="js/javascript.js" type="text/javascript"></script>
 	<!----------------------------JQUERY Library--------------------------------->
 	<link href="js/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css"> 
 	<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
@@ -23,19 +24,19 @@
 	<!--------------------------------------------------------------------------->
 	<style type="text/css">
 	header{
-	background-image: url("http://s2.postimg.org/a51ch03wn/tv460banner7.png")
+	background-image: url("http://s2.postimg.org/a51ch03wn/tv460banner7.png");
 	}
 
   	#map-canvas {
-  	height: 890px;
-  	width: 720px;
+  	height: 885px;
+  	width: 590px;
   	margin: 20px;
-  	margin-top:-20px;
+  	margin-top:-2px;
   	padding: 0;
   	display:inline;	
   	float:right;
   	border:2px silver solid;
-  	}
+  	  	}
   	
 	</style>
 	<?php
@@ -166,6 +167,7 @@ $(function() {
 	
 </head>
 <body>
+<?php if(isset($_SESSION['message']) && !empty($_SESSION['message'])){ echo "<script type=text/javascript>alert('".$_SESSION['message']."');</script>";}$_SESSION['message']=""; ?>
 	<nav id="primary_nav_wrap">
 	<?php 
 		include 'login/php/navigation.php';
@@ -177,7 +179,7 @@ $(function() {
 <div class="headerTitle">Search Results</div>
 <div id="filter">
 	<form method="get" action="Yelp_Output.php">
-		<label for="filter">Card Filter:</label>
+		<label for="filter"><b>Sort By:</b> </label>
 		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
 		<input class="_hidden" name="location" type="text" value="<?php echo $l ?>">
 		<select name="sort" id="sort">
@@ -185,7 +187,7 @@ $(function() {
 			<option value="1">Distance</option>
 			<option value="2">Rating</option>
 		</select>
-		<input type="submit" value="Submit" title="Reorganizes cards!">
+		<input type="submit"  id="submitSmall" value="Sort" title="Reorganizes cards!">
 	</form>
 </div>
 <?php
@@ -195,22 +197,25 @@ $(function() {
 		echo "<div id='groupSelector' class='_hidden'>";
 	}
 ?>
+	<div id="groupselectDiv">
 	<form action="Yelp_Output.php" method="get">
 		<input class="_hidden" name="term" type="text" value="<?php echo $t ?>">
 		<input class="_hidden" name="location" type="text" value="<?php echo $l ?>">
 		<input id="businessID" class="_hidden" type="text" name="businessID" required>
-		<label for="groupSelect">Save to your group here:</label>
-		<select name="groupSelect" id="groupSelect" title="Make custom groups in your profile!" >
+		<label for="groupSelect"><b>Save to your group here:</b></label>
+		<select name="groupSelect" id="groupSelect" title="Click on a card on the left to save to your group!" >
 			<?php
 				for($i=0; $i<count($userGroups); $i++){
 					echo "<option value='".$userGroups[$i]."'>".$userGroups[$i]."</option>";
 				}
 			?>
 		</select>
-		<input type="submit" value="Save" title="Make sure a card is selected to save!">
-	</form>
+		<input type="submit" value="Save" id="submitSmall" title="Make sure a card is selected to save!">
+	</form></div>
 <?php echo "</div>"; ?>
 <?php echo $busCards; ?>
+
+
 <div id="map-canvas"></div>		
 </section>
 	
@@ -221,7 +226,7 @@ $(function() {
 </body>
 <script type="text/javascript">stLight.options({publisher: "d34a1c0e-427a-4c53-8fd4-5b7dcee0768b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 <script type="text/javascript">
-var options={ "publisher": "d34a1c0e-427a-4c53-8fd4-5b7dcee0768b", "logo": { "visible": true, "url": "http://ec2-52-0-130-98.compute-1.amazonaws.com/", "img": "", "height": 50}, "ad": { "visible": false, "openDelay": "5", "closeDelay": "0"}, "livestream": { "domain": "", "type": "sharethis"}, "ticker": { "visible": false, "domain": "", "title": "", "type": "sharethis"}, "facebook": { "visible": false, "profile": "sharethis"}, "fblike": { "visible": false, "url": ""}, "twitter": { "visible": false, "user": "sharethis"}, "twfollow": { "visible": false}, "custom": [{ "visible": false, "title": "Custom 1", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}, { "visible": false, "title": "Custom 2", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}, { "visible": false, "title": "Custom 3", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}], "chicklets": { "items": ["facebook", "twitter", "pinterest", "googleplus"]}};
+var options={ "publisher": "d34a1c0e-427a-4c53-8fd4-5b7dcee0768b", "logo": { "visible": true, "url": "http://ec2-52-0-130-98.compute-1.amazonaws.com/", "img": "http://s2.postimg.org/ihlmt3p0l/Venturify_Transparent_New.png", "height": 21}, "ad": { "visible": false, "openDelay": "5", "closeDelay": "0"}, "livestream": { "domain": "", "type": "sharethis"}, "ticker": { "visible": false, "domain": "", "title": "", "type": "sharethis"}, "facebook": { "visible": false, "profile": "sharethis"}, "fblike": { "visible": false, "url": ""}, "twitter": { "visible": false, "user": "sharethis"}, "twfollow": { "visible": false}, "custom": [{ "visible": false, "title": "Custom 1", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}, { "visible": false, "title": "Custom 2", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}, { "visible": false, "title": "Custom 3", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250}}], "chicklets": { "items": ["facebook", "twitter", "pinterest", "googleplus"]}};
 var st_bar_widget = new sharethis.widgets.sharebar(options);
 </script>
 </html>
