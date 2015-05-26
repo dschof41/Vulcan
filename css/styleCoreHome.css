@@ -6,17 +6,18 @@
   -webkit-background-size: cover; */
 }
 
-footer#footer {
+footer, #footer {
 		
-	top: 729px;
 	font-size: 15px;
 	color: white;
-	margin-left: 29%;
 	font-size: 14px;
 	font-weight:bold;
 	text-align:center;
 	font-family: Century Gothic;
-	position: absolute;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	
 	
 }
 
@@ -93,10 +94,9 @@ footer#footer {
 #buttons {
 	position: relative;
     white-space: nowrap;
-	float: left;
   	margin-bottom: 10%;
-  	margin-left:12%;
-	padding-left: 270px;
+  	margin-left:auto;
+  	margin-right:auto;
     margin-top: 7%;
     opacity: 0.8;
     font-family: Century Gothic;
