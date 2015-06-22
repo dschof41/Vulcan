@@ -1,12 +1,4 @@
-﻿body#background {
-  /* background: url('http://s30.postimg.org/hgkp4trbj/buildings_high_rise_manhattan_2324.jpg') no-repeat 50% 50% fixed; 
-  background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover; */
-}
-
-footer, #footer {
+﻿footer, #footer {
 		
 	font-size: 15px;
 	color: white;
@@ -17,8 +9,6 @@ footer, #footer {
 	position:relative;
 	margin-left:auto;
 	margin-right:auto;
-	
-	
 }
 
 

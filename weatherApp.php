@@ -23,7 +23,7 @@
 	}
 
 	header{
-	background-image: url("http://s2.postimg.org/it9c30a2f/AF8_F2_A3409.jpg");
+	background-image: url("images/banner5.jpg");
 
 	}
 	

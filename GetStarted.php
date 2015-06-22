@@ -16,7 +16,7 @@
 
 	<style type="text/css">
 	header{
-	background-image: url("http://s14.postimg.org/4emkkhwv3/JZ76_N0_N5_ZH.jpg");
+	background-image: url("images/banner1.jpg");
 
 	}
 	section {

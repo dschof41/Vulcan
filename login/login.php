@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	
 	$result = mysqli_query($db_handle,$SQL);
 	$num_rows = mysqli_num_rows($result);
-	$fow = mysqli_fetch_assoc($result);
+	$row = mysqli_fetch_assoc($result);
 	//====================================================
 	//	CHECK TO SEE IF THE $result VARIABLE IS TRUE
 	//====================================================

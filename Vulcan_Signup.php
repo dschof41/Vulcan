@@ -21,7 +21,7 @@ session_start();
 
 	<style type="text/css">
 	header{
-	background-image: url("http://s17.postimg.org/69yqo2ybh/GXN82_BXGVD.jpg");
+	background-image: url("images/banner3.jpg");
 	}	
 	
 	section {
@@ -34,7 +34,6 @@ session_start();
 	}	
 	
 	.centerText{
-	height: 550px;
 	}
 	</style>
 	
@@ -90,6 +89,12 @@ session_start();
 				Email Address: <input type="text" name="email" value="" id="inputSignUp" title="Must be a valid email" required><br><br><br>
 				Password: <input type="password" name="password" value="" id="inputSignUp" title="Must be between 8 and 16 characters" required><br><br><br>
 				Confirm Password: <input type="password" name="confirmpw" value="" id="inputSignUp" required><br><br><br>
+				Security Question: <select name="question" id="inputSignUp" style="width:inherit">
+					<option value="0">What was your first pet's name?</option>
+					<option value="1">What city were you born in?</option>
+					<option value="2">What is youre mother's maiden name?</option>
+				</select><br><br><br>
+				Answer: <input type="text" name="answer" value="" id="inputSignUp" required><br><br><br>
 				<input id="submit" type="submit" value ="Create Account" onclick="return validatePassword();"><br><br><br>
 				<font size="2">Already have an account? <a href="http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Login.php">Sign In!</a></font>
 		</form>

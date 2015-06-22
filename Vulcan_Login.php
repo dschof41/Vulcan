@@ -13,7 +13,7 @@
 	<script src="js/javascript.js" type="text/javascript"></script>
 	<style type="text/css">
 	header{
-	background-image: url("http://s14.postimg.org/4emkkhwv3/JZ76_N0_N5_ZH.jpg");
+	background-image: url("images/banner1.jpg");
 	}
 	section {
 	height: 680px;
@@ -31,6 +31,12 @@
         return false;
     }
 }
+
+function toResetFlow(){
+	document.getElementById('pword').onclick=
+		location.href= "http://ec2-52-0-130-98.compute-1.amazonaws.com/Reset_Password.php";		
+	}
+
 	</script>	
 </head>
 <body>
@@ -72,7 +78,7 @@
   	<form id="userInfo" action="Vulcan_Login.php" method="post"> <br>
 				Username: <input type="text" name="username" value= "" id="inputLogin" required><br><br><br>
 				Password: <input type="password" name="password" value="" id="inputLogin" required><br><br>
-				<input id="submit" type="submit" value ="Log In"><br><br><br>
+				<input id="submit" type="submit" value ="Log In"><input id="pword" type="button" value ="Forgot password?" onclick="toResetFlow();"><br><br><br>
 				<font size="2">Don't have an account? <a href="http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Signup.php">Sign Up Here!</a></font>
 		</form>
 	

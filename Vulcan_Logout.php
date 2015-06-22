@@ -20,7 +20,7 @@ include 'login/logout.php';
 
 	<style type="text/css">
 	header{
-		background-image: url("http://s27.postimg.org/kh4j9fe8h/EC00_B0769_E.jpg");
+		background-image: url("images/banner7.jpg");
 
 	}
 

@@ -24,7 +24,7 @@ include 'login/php/view_group.php';
 
 	<style type="text/css">
 	header{
-	background-image: url("http://s14.postimg.org/cimf0i2e7/EE8_A129965.jpg");
+	background-image: url("images/banner6.jpg");
 	}	
 	
 	section {

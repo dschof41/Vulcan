@@ -22,7 +22,7 @@
 
 	<style type="text/css">
 	header{
-	background-image: url("http://s8.postimg.org/yrvywlrur/D9_D2_DC90_AD.jpg");
+	background-image: url("images/banner2.jpg");
 
 	}
 	section {

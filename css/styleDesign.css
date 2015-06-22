@@ -167,6 +167,7 @@
 #submit
 {	
 position: relative;
+display:inline;
 top: 19px;
 left: 54px;
 cursor:pointer; 
@@ -178,8 +179,22 @@ color: white;
 font-size:1.1em;
 font-family: "Century Gothic";
 }
-
-#submit:hover {
+#pword
+{	
+position:relative;
+display:inline-block;
+top:30px;
+left:15px;
+cursor:pointer; 
+padding:5px 25px;
+background: #1874CD; 
+border:1px solid #009cde; 
+border-radius: 5px;
+color: white;
+font-size:1.1em;
+font-family: "Century Gothic";
+}
+#submit:hover, #pword:hover {
 background-color:white;
 -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
 -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);

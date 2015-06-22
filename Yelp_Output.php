@@ -24,7 +24,7 @@
 	<!--------------------------------------------------------------------------->
 	<style type="text/css">
 	header{
-	background-image: url("http://s2.postimg.org/a51ch03wn/tv460banner7.png");
+	background-image: url("images/backgroundimage8.png");
 	}
 
   	#map-canvas {

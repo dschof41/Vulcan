@@ -29,7 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$uname = $_POST['username'];
 	$pword = $_POST['password'];
 	$email = $_POST['email'];
-	
+	$question = $_POST['question'];
+	$answer = $_POST['answer'];
 	//Validate email using php
 	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		$_SESSION['message'] = "Please enter valid email!";
@@ -64,11 +65,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$_SESSION['message'] = "";
 	}
 	else {
-		$$_SESSION['message'] = "Password must be between 8 and 16 characters";
+		$_SESSION['message'] = "Password must be between 8 and 16 characters";
+		header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Signup.php");
+		exit();
+	}
+	if (isset($_POST['answer']) && !empty($_POST['answer'])) {
+		$_SESSION['message'] = "";
+	}
+	else {
+		$_SESSION['message'] = "Choose and answer a security question!";
 		header ("Location: http://ec2-52-0-130-98.compute-1.amazonaws.com/Vulcan_Signup.php");
 		exit();
 
 	}
+
 
 
 //test to see if $errorMessage is blank
@@ -111,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		
 		else {
 
-			$SQL = "INSERT INTO login (L1, L2, userEmail) VALUES ($uname, md5($pword), $email)";
+			$SQL = "INSERT INTO login (L1, L2, userEmail, resetquestion, resetanswer) VALUES ($uname, md5($pword), $email, '$question', '$answer')";
 
 			$result = mysqli_query($db_handle, $SQL);
 
