@@ -42,6 +42,8 @@
        	 		$_SESSION['message'] = "Email sent! Thank you!";
        	 		//send email!
 				include 'login/send_password_reset.php';
+				header("Locaton: 'Vulcan_Login.php'");
+				exit();
        	 	}else{
        	 		$_SESSION['message'] = "Error" . mysqli_error($con);
        	 	}
